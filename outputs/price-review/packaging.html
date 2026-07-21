@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Carton price review prototype based on packaging formula V5.6." />
+    <title>PriceWorkbench | 包装核价</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="packaging.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html" aria-label="返回 MarketLens 市场看板"><span class="brand-mark">ML</span><span>MarketLens · 成本核价</span></a>
+      <nav class="module-nav" aria-label="核价导航">
+        <a class="nav-item" href="index.html"><b>01</b><span>品类目录</span></a>
+        <a class="nav-item active" href="#workspace"><b>02</b><span>纸箱</span></a>
+      </nav>
+      <div class="version-state"><span></span>包材 V5.6</div>
+    </header>
+
+    <main id="workspace" class="shell package-shell">
+      <section class="page-heading">
+        <div><p class="eyebrow">Packaging Price Review</p><h1>包装核价 · 纸箱</h1><p class="subhead">基于《包材产品价格核算公式 V5.6》中的纸箱价格 V1.4</p></div>
+        <div class="audit-stamp"><span>当前品类</span><strong>01 · 纸箱 V1.4</strong></div>
+      </section>
+
+      <section class="formula-strip" aria-label="纸箱计算公式">
+        <div><span>展开面积</span><strong>内径 / 外径展开公式</strong></div><i></i>
+        <div><span>产品成本</span><strong>面积 × 材质标准价 + 其他工艺</strong></div><i></i>
+        <div><span>产品总价</span><strong>产品成本 × (1 + 工艺偏差)</strong></div>
+      </section>
+
+      <section class="workspace-grid carton-workspace">
+        <article class="panel input-panel">
+          <div class="panel-heading"><div><span class="section-index">01</span><h2>纸箱参数</h2></div><button class="text-button" id="resetCarton" type="button">恢复纸箱样例</button></div>
+          <form class="quote-form" id="cartonForm">
+            <div class="field-grid carton-material-fields">
+              <label class="field"><span>尺寸口径</span><select id="dimensionMode" name="dimensionMode"><option value="内径">内径</option><option value="外径">外径</option></select></label>
+              <label class="field carton-material"><span>纸箱材质</span><select id="cartonMaterial" name="cartonMaterial"></select></label>
+            </div>
+            <div class="field-grid carton-dimension-fields">
+              <label class="field"><span>长 L (mm)</span><input id="cartonLength" type="number" min="0.01" step="0.01" inputmode="decimal" /></label>
+              <label class="field"><span>宽 W (mm)</span><input id="cartonWidth" type="number" min="0.01" step="0.01" inputmode="decimal" /></label>
+              <label class="field"><span>高 H (mm)</span><input id="cartonHeight" type="number" min="0.01" step="0.01" inputmode="decimal" /></label>
+            </div>
+            <div class="field-grid carton-cost-fields">
+              <label class="field"><span>订单数量 (个)</span><input id="orderQuantity" type="number" min="1" step="1" inputmode="numeric" /></label>
+              <label class="field"><span>其他工艺 (CNY/个)</span><input id="otherProcess" type="number" min="0" step="0.0001" inputmode="decimal" /></label>
+              <label class="field"><span>工艺偏差</span><input id="processVariance" type="number" min="0" step="0.001" inputmode="decimal" /></label>
+            </div>
+          </form>
+          <div class="selected-rate carton-rate"><div><span>当前材质标准价</span><strong id="cartonRate">-</strong><small id="cartonRateSource">-</small></div><div class="supplier-winner"><span>最低报价供应商</span><strong id="supplierWinner">-</strong></div></div>
+          <div class="input-note"><span></span><p id="cartonSelectionNote">选择材质后，标准价按 V1.4 供应商报价最低值计算。</p></div>
+        </article>
+
+        <article class="panel result-panel">
+          <div class="panel-heading"><div><span class="section-index">02</span><h2>纸箱核价结果</h2></div><span class="result-state" id="cartonResultState">已匹配</span></div>
+          <div class="result-main"><span>单个产品总价</span><strong id="cartonTotalPrice">CNY 0.00000</strong><small id="cartonDescriptor">-</small></div>
+          <div class="result-grid">
+            <div><span>展开面积</span><strong id="cartonArea">0.000000 ㎡</strong></div>
+            <div><span>材质成本</span><strong id="materialCost">CNY 0.00000</strong></div>
+            <div><span>产品成本</span><strong id="productCost">CNY 0.00000</strong></div>
+            <div><span>订单总价</span><strong id="orderTotal">CNY 0.00</strong></div>
+          </div>
+          <div class="calculation-trace"><span>计算过程</span><code id="cartonTrace">-</code></div>
+        </article>
+      </section>
+
+      <section class="threshold-grid">
+        <article class="threshold-card"><div><span>订单总面积</span><strong id="orderArea">0.000 ㎡</strong></div><small>依据单个展开面积 × 订单数量</small></article>
+        <article class="threshold-card warning"><div><span>200㎡ 开机门槛</span><strong id="minimumQty">-</strong></div><small id="minimumMessage">V1.4 的开机费为独立提示，不计入产品总价。</small></article>
+        <article class="threshold-card"><div><span>V1.4 开机费</span><strong id="setupFee">CNY 350.00</strong></div><small>原表标准价取供应商最高开机费</small></article>
+      </section>
+
+      <section id="rate-library" class="section-block">
+        <div class="section-heading"><div><p class="eyebrow">Supplier Benchmark</p><h2>纸箱材质供应商基准</h2></div><button class="text-button" id="restoreCartonRates" type="button">恢复全部 V1.4 报价</button></div>
+        <div class="rate-table-wrap carton-table-wrap"><table class="rate-table carton-rate-table"><thead><tr><th>纸箱材质</th><th>产品参考</th><th>标准价</th><th>嘉正</th><th>汇源</th><th>艺虹</th><th>荣采</th><th>鹏龙</th><th>博阳鸿</th></tr></thead><tbody id="cartonRateRows"></tbody></table></div>
+      </section>
+
+      <section id="formula-audit" class="baseline-grid carton-baseline">
+        <article class="panel baseline-panel"><div class="panel-heading"><div><span class="section-index">03</span><h2>展开面积公式</h2></div><span class="muted-tag">mm → ㎡</span></div><dl class="audit-list"><div><dt>内径</dt><dd>展开长 = 2 × (L + W) + 80；展开宽 = W + H + 60</dd></div><div><dt>外径</dt><dd>展开长 = 2 × (L + W) + 40；展开宽 = W + H + 40</dd></div><div><dt>展开面积</dt><dd>展开长 × 展开宽 ÷ 1,000,000</dd></div></dl></article>
+        <article class="panel baseline-panel"><div class="panel-heading"><div><span class="section-index">04</span><h2>公式审计</h2></div><span class="muted-tag">V1.4</span></div><dl class="audit-list"><div><dt>材质标准价</dt><dd>同材质的供应商报价最小值</dd></div><div><dt>产品成本</dt><dd>展开面积 × 材质标准价 + 其他工艺</dd></div><div><dt>产品总价</dt><dd>产品成本 × (1 + 工艺偏差)</dd></div><div><dt>开机费</dt><dd>低于 200㎡ 的 350 元开机费原表未计入产品总价</dd></div></dl></article>
+      </section>
+    </main>
+    <script src="packaging.js"></script>
+  </body>
+</html>

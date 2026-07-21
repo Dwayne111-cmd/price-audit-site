@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PriceWorkbench | 小册子说明书核价</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="packaging.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">ML</span><span>MarketLens · 成本核价</span></a>
+    <nav class="module-nav" aria-label="核价导航">
+      <a class="nav-item" href="index.html"><b>01</b><span>品类目录</span></a>
+      <a class="nav-item active" href="#workspace"><b>02</b><span>小册子说明书</span></a>
+    </nav>
+    <div class="version-state"><span></span>小册子 V2.1</div>
+  </header>
+
+  <main id="workspace" class="shell package-shell">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">Packaging Price Review</p>
+        <h1>包装核价 · 小册子说明书</h1>
+        <p class="subhead">V2.1 支持封皮与 8 组内页的独立纸张、印色、开型、拼版和装订核价</p>
+      </div>
+      <div class="audit-stamp"><span>成本数据库</span><strong id="databaseState">加载中</strong></div>
+    </section>
+
+    <section class="formula-strip">
+      <div><span>单个纸价 D29</span><strong>封皮 + 各内页纸张单价</strong></div>
+      <i></i>
+      <div><span>产品成本 B77</span><strong>纸张 + 印费 + 印后 + 调机加放</strong></div>
+      <i></i>
+      <div><span>产品总价 B78</span><strong>产品成本 × (1+工艺偏差)</strong></div>
+    </section>
+
+    <section class="workspace-grid booklet-workspace">
+      <article class="panel input-panel">
+        <div class="panel-heading"><div><span class="section-index">01</span><h2>产品与装订参数</h2></div><button id="resetBooklet" class="text-button" type="button">重置录入</button></div>
+        <div class="field-grid booklet-product-fields">
+          <label class="field"><span>成品高（装订边）mm</span><input id="height" type="number" min="0" step="0.01"></label>
+          <label class="field"><span>成品宽 mm</span><input id="width" type="number" min="0" step="0.01"></label>
+          <label class="field"><span>装订方式</span><select id="binding"><option value="骑马钉">骑马钉</option><option value="胶装">胶装</option></select></label>
+        </div>
+        <div class="field-grid booklet-order-fields">
+          <label class="field"><span>页数 P</span><input id="pages" type="number" min="0" step="1"></label>
+          <label class="field"><span>订单数量</span><input id="quantity" type="number" min="1" step="1"></label>
+          <label class="field"><span>其他工艺 / 个</span><input id="otherProcess" type="number" min="0" step="0.00001"></label>
+          <label class="field"><span>工艺偏差</span><input id="variance" type="number" min="0" step="0.001"></label>
+        </div>
+        <fieldset class="process-fieldset">
+          <legend>印后工艺</legend>
+          <div class="booklet-process-grid">
+            <label class="process-toggle"><input id="onlineOil" type="checkbox">联机过油</label>
+            <label class="process-toggle"><input id="cut" type="checkbox">裁切</label>
+            <label class="process-toggle"><input id="dieCut" type="checkbox">模切</label>
+            <label class="process-toggle"><input id="collate" type="checkbox">配页</label>
+          </div>
+        </fieldset>
+        <div class="input-note"><span></span><p id="runState">先配置封皮或内页纸张，再自动展开每组印费与调机成本。</p></div>
+      </article>
+
+      <article class="panel result-panel">
+        <div class="panel-heading"><div><span class="section-index">02</span><h2>小册子核价结果</h2></div><span class="result-state" id="resultState">待录入</span></div>
+        <div class="result-main"><span>单个产品总价 B78</span><strong id="total">CNY 0.00000</strong><small id="descriptor">-</small></div>
+        <div class="result-grid">
+          <div><span>产品成本 B77</span><strong id="cost">CNY 0.00000</strong></div>
+          <div><span>订单总价</span><strong id="orderTotal">CNY 0.00</strong></div>
+          <div><span>标准价 D77</span><strong id="standardPrice">CNY 0.00000</strong></div>
+          <div><span>参考 MOQ D78</span><strong id="referenceMoq">-</strong></div>
+        </div>
+        <div class="calculation-trace"><span>计算过程</span><code id="trace">-</code></div>
+      </article>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading"><div><p class="eyebrow">Paper And Print Plan</p><h2>封皮与内页配置</h2></div><span class="muted-tag">逐组核价</span></div>
+      <div class="rate-table-wrap"><table class="booklet-table"><thead><tr><th>组别</th><th>材质</th><th>克重</th><th>纸面尺寸</th><th>开型</th><th>拼版</th><th>得数</th><th>正面色</th><th>正面专色</th><th>背面色</th><th>背面专色</th><th>特规全开长</th><th>特规全开宽</th><th>特规对开长</th><th>特规对开宽</th></tr></thead><tbody id="bookletRows"></tbody></table></div>
+    </section>
+
+    <section class="baseline-grid">
+      <article class="panel baseline-panel">
+        <div class="panel-heading"><div><span class="section-index">03</span><h2>成本拆分 B77</h2></div><span class="muted-tag">元 / 个</span></div>
+        <div class="baseline-list" id="costRows"></div>
+      </article>
+      <article class="panel baseline-panel">
+        <div class="panel-heading"><div><span class="section-index">04</span><h2>分组印费与印后</h2></div><span class="muted-tag">V2.1 阈值</span></div>
+        <div class="rate-table-wrap carton-table-wrap"><table class="booklet-summary-table"><thead><tr><th>项目</th><th>开机状态</th><th>计入成本</th></tr></thead><tbody id="detailRows"></tbody></table></div>
+      </article>
+    </section>
+  </main>
+  <script src="booklet.js"></script>
+</body>
+</html>

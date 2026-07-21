@@ -1,0 +1,141 @@
+/* Subtle motion layer for the MarketLens live data workspace. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready .topbar {
+    animation: ml-enter 480ms cubic-bezier(0.2, 0.78, 0.22, 1) both;
+  }
+
+  .motion-ready .ticker-strip {
+    animation: ml-enter 520ms 70ms cubic-bezier(0.2, 0.78, 0.22, 1) both;
+  }
+
+  .motion-ready .metrics-viewport {
+    animation: ml-enter 560ms 125ms cubic-bezier(0.2, 0.78, 0.22, 1) both;
+  }
+
+  .motion-ready .attribution-workspace {
+    animation: ml-enter 590ms 180ms cubic-bezier(0.2, 0.78, 0.22, 1) both;
+  }
+
+  .motion-ready .content-grid,
+  .motion-ready .fund-panel {
+    animation: ml-enter 620ms 235ms cubic-bezier(0.2, 0.78, 0.22, 1) both;
+  }
+
+  .ticker-strip {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ticker-strip::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -92px;
+    width: 64px;
+    background: rgba(115, 169, 175, 0.1);
+    content: "";
+    pointer-events: none;
+    transform: skewX(-18deg);
+  }
+
+  .motion-ready .ticker-strip::after {
+    animation: ml-ticker-scan 9s 1.2s linear infinite;
+  }
+
+  .live-dot {
+    animation: ml-live-pulse 2.4s ease-out infinite;
+  }
+
+  .metric-card {
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    animation: ml-card-enter 430ms calc(120ms + var(--motion-index, 0) * 42ms) cubic-bezier(0.2, 0.78, 0.22, 1) both;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .sparkline polyline {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: ml-line-draw 880ms calc(180ms + var(--motion-index, 0) * 42ms) ease-out forwards;
+  }
+
+  .value-flash {
+    animation: ml-value-flash 520ms ease-out;
+  }
+
+  .chart-wrap {
+    overflow: hidden;
+  }
+
+  .chart-tooltip {
+    z-index: 3;
+  }
+
+  .chart-wrap.is-chart-refreshing::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -80px;
+    z-index: 2;
+    width: 36px;
+    background: rgba(112, 193, 181, 0.16);
+    content: "";
+    pointer-events: none;
+    animation: ml-chart-scan 700ms ease-out both;
+    transform: skewX(-18deg);
+  }
+
+  .chart-wrap.is-chart-refreshing canvas {
+    animation: ml-chart-settle 700ms ease-out both;
+  }
+}
+
+@keyframes ml-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ml-card-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ml-ticker-scan {
+  0%, 72% { transform: translateX(0) skewX(-18deg); }
+  90%, 100% { transform: translateX(calc(100vw + 160px)) skewX(-18deg); }
+}
+
+@keyframes ml-live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(87, 185, 156, 0.26); }
+  60%, 100% { box-shadow: 0 0 0 7px rgba(87, 185, 156, 0); }
+}
+
+@keyframes ml-line-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes ml-value-flash {
+  0% { color: #dceff0; transform: translateY(1px); }
+  45% { color: #85c6bd; transform: translateY(-1px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes ml-chart-scan {
+  from { transform: translateX(0) skewX(-18deg); }
+  to { transform: translateX(calc(100vw + 180px)) skewX(-18deg); }
+}
+
+@keyframes ml-chart-settle {
+  0% { opacity: 0.58; }
+  100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-strip::after,
+  .chart-wrap.is-chart-refreshing::after {
+    display: none;
+  }
+}

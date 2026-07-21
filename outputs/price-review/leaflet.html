@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PriceWorkbench | 折页说明书核价</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="packaging.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">ML</span><span>MarketLens · 成本核价</span></a>
+    <nav class="module-nav" aria-label="核价导航">
+      <a class="nav-item" href="index.html"><b>01</b><span>品类目录</span></a>
+      <a class="nav-item active" href="#workspace"><b>02</b><span>单张折页说明书</span></a>
+    </nav>
+    <div class="version-state"><span></span>单张折页 V2.0</div>
+  </header>
+
+  <main id="workspace" class="shell package-shell">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">Packaging Price Review</p>
+        <h1>包装核价 · 单张折页说明书</h1>
+        <p class="subhead">基于《说明书价格（单张折页）V2.0》的纸张、印刷、印后及调机完整核价逻辑</p>
+      </div>
+      <div class="audit-stamp"><span>成本数据库</span><strong id="databaseState">加载中</strong></div>
+    </section>
+
+    <section class="formula-strip">
+      <div><span>纸张成本 B15</span><strong>纸张面积 × 克重 × 吨价 ÷ 得数</strong></div>
+      <i></i>
+      <div><span>产品成本 B48</span><strong>纸张 + 印费 + 印后 + 调机加放</strong></div>
+      <i></i>
+      <div><span>产品总价 B49</span><strong>产品成本 × (1+工艺偏差)</strong></div>
+    </section>
+
+    <section class="workspace-grid carton-workspace leaflet-workspace">
+      <article class="panel input-panel">
+        <div class="panel-heading">
+          <div><span class="section-index">01</span><h2>产品与印刷参数</h2></div>
+          <button id="resetLeaflet" class="text-button" type="button">重置录入</button>
+        </div>
+
+        <div class="field-grid leaflet-product-fields">
+          <label class="field"><span>展开长 L (mm)</span><input id="length" type="number" min="0" step="0.01"></label>
+          <label class="field"><span>展开宽 W (mm)</span><input id="width" type="number" min="0" step="0.01"></label>
+          <label class="field"><span>材质</span><select id="material"><option value="胶板">胶板</option><option value="铜板">铜板</option></select></label>
+        </div>
+        <div class="field-grid leaflet-print-fields">
+          <label class="field"><span>克重 (g/㎡)</span><input id="gsm" type="number" min="0" step="1"></label>
+          <label class="field"><span>纸面尺寸</span><select id="paperFormat"><option value="正度">正度</option><option value="大度">大度</option><option value="特规">特规</option></select></label>
+          <label class="field"><span>开型</span><select id="openType"><option value="1">1 开（全开）</option><option value="2">2 开（对开）</option></select></label>
+          <label class="field"><span>拼版方式</span><select id="layout"><option value="自翻">自翻</option><option value="正背">正背</option></select></label>
+          <label class="field"><span>得数 (个/张)</span><input id="yield" type="number" min="1" step="1"></label>
+          <label class="field"><span>订单数量</span><input id="quantity" type="number" min="1" step="1"></label>
+        </div>
+
+        <div class="field-grid leaflet-custom-fields" id="customPaperFields">
+          <label class="field"><span>特规全开长 (mm)</span><input id="customFullLength" type="number" min="0" step="1"></label>
+          <label class="field"><span>特规全开宽 (mm)</span><input id="customFullWidth" type="number" min="0" step="1"></label>
+          <label class="field"><span>特规对开长 (mm)</span><input id="customHalfLength" type="number" min="0" step="1"></label>
+          <label class="field"><span>特规对开宽 (mm)</span><input id="customHalfWidth" type="number" min="0" step="1"></label>
+        </div>
+
+        <div class="selected-rate">
+          <div><span>当前面纸吨价</span><strong id="paperPrice">CNY 0.00</strong><small id="paperPriceSource">纸价表加载中</small></div>
+          <div><span>当前上机纸张面积</span><strong id="sheetArea">0.000000 ㎡</strong><small id="sheetAreaSource">由纸面尺寸与开型确定</small></div>
+        </div>
+
+        <div class="field-grid leaflet-colour-fields">
+          <label class="field"><span>正面普通印色</span><input id="frontNormal" type="number" min="0" step="1"></label>
+          <label class="field"><span>正面专色</span><input id="frontSpot" type="number" min="0" step="1"></label>
+          <label class="field"><span>背面普通印色</span><input id="backNormal" type="number" min="0" step="1"></label>
+          <label class="field"><span>背面专色</span><input id="backSpot" type="number" min="0" step="1"></label>
+        </div>
+
+        <fieldset class="process-fieldset">
+          <legend>印后工艺</legend>
+          <div class="process-grid">
+            <label class="process-toggle"><input id="onlineOil" type="checkbox">联机过油</label>
+            <label class="process-toggle"><input id="brightFilm" type="checkbox">覆光膜</label>
+            <label class="process-toggle"><input id="matteFilm" type="checkbox">覆哑膜</label>
+            <label class="process-toggle"><input id="cut" type="checkbox">裁切</label>
+            <label class="process-toggle"><input id="dieCut" type="checkbox">模切</label>
+            <label class="process-toggle"><input id="fold" type="checkbox">折页</label>
+          </div>
+        </fieldset>
+        <div class="field-grid leaflet-extra-fields">
+          <label class="field"><span>折数</span><input id="folds" type="number" min="0" step="1"></label>
+          <label class="field"><span>其他工艺 / 个</span><input id="otherProcess" type="number" min="0" step="0.00001"></label>
+          <label class="field"><span>工艺偏差</span><input id="variance" type="number" min="0" step="0.001"></label>
+          <div class="leaflet-status" id="runState">等待成本库加载</div>
+        </div>
+      </article>
+
+      <article class="panel result-panel">
+        <div class="panel-heading"><div><span class="section-index">02</span><h2>折页说明书核价结果</h2></div><span class="result-state" id="resultState">待录入</span></div>
+        <div class="result-main"><span>单个产品总价 B49</span><strong id="total">CNY 0.00000</strong><small id="descriptor">-</small></div>
+        <div class="result-grid">
+          <div><span>产品成本 B48</span><strong id="cost">CNY 0.00000</strong></div>
+          <div><span>订单总价</span><strong id="orderTotal">CNY 0.00</strong></div>
+          <div><span>标准价 E48</span><strong id="standardPrice">CNY 0.00000</strong></div>
+          <div><span>参考 MOQ E49</span><strong id="referenceMoq">-</strong></div>
+        </div>
+        <div class="calculation-trace"><span>计算过程</span><code id="trace">-</code></div>
+      </article>
+    </section>
+
+    <section class="baseline-grid">
+      <article class="panel baseline-panel">
+        <div class="panel-heading"><div><span class="section-index">03</span><h2>成本拆分 B48</h2></div><span class="muted-tag">元 / 个</span></div>
+        <div class="baseline-list" id="costRows"></div>
+      </article>
+      <article class="panel baseline-panel">
+        <div class="panel-heading"><div><span class="section-index">04</span><h2>印后工艺明细</h2></div><span class="muted-tag">V2.0 阈值</span></div>
+        <div class="rate-table-wrap carton-table-wrap"><table class="leaflet-table"><thead><tr><th>工艺</th><th>开机条件</th><th>计入成本</th></tr></thead><tbody id="processRows"></tbody></table></div>
+      </article>
+    </section>
+  </main>
+  <script src="leaflet.js"></script>
+</body>
+</html>

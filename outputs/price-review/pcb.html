@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="PCB price review prototype based on V1.1 workbook." />
+    <title>PriceWorkbench | PCB 核价</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html" aria-label="返回 MarketLens 市场看板">
+        <span class="brand-mark">ML</span>
+        <span>MarketLens · 成本核价</span>
+      </a>
+      <nav class="module-nav" aria-label="核价导航">
+        <a class="nav-item" href="index.html"><b>01</b><span>品类目录</span></a>
+        <a class="nav-item active" href="#workspace"><b>02</b><span>PCB</span></a>
+      </nav>
+      <div class="version-state"><span></span>公式 V1.1</div>
+    </header>
+
+    <main id="workspace" class="shell">
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">PCB Price Review</p>
+          <h1>PCB 核价工作台</h1>
+          <p class="subhead">基于《PCB价格核算公式 V1.1》的面积与拼数核价逻辑</p>
+        </div>
+        <div class="audit-stamp">
+          <span>基准版本</span>
+          <strong>2024.04 · V1.1</strong>
+        </div>
+      </section>
+
+      <section class="formula-strip" aria-label="计算公式">
+        <div><span>面积</span><strong>长 × 宽 ÷ 1,000,000</strong></div>
+        <i></i>
+        <div><span>单板价格</span><strong>面积 × 单价/㎡ ÷ 拼数</strong></div>
+        <i></i>
+        <div><span>结果精度</span><strong>保留 5 位小数</strong></div>
+      </section>
+
+      <section class="workspace-grid">
+        <article class="panel input-panel">
+          <div class="panel-heading">
+            <div><span class="section-index">01</span><h2>产品参数</h2></div>
+            <button class="text-button" id="resetSample" type="button">恢复 V1.1 样例</button>
+          </div>
+
+          <form id="quoteForm" class="quote-form">
+            <div class="field-grid material-fields">
+              <label class="field"><span>表面处理</span><select id="surface" name="surface"></select></label>
+              <label class="field"><span>厚度</span><select id="thickness" name="thickness"></select></label>
+              <label class="field"><span>层数</span><select id="layers" name="layers"></select></label>
+            </div>
+            <div class="field-grid dimension-fields">
+              <label class="field"><span>长 (mm)</span><input id="length" name="length" type="number" min="0.01" step="0.01" inputmode="decimal" /></label>
+              <label class="field"><span>宽 (mm)</span><input id="width" name="width" type="number" min="0.01" step="0.01" inputmode="decimal" /></label>
+              <label class="field"><span>拼数</span><input id="panelCount" name="panelCount" type="number" min="1" step="1" inputmode="numeric" /></label>
+            </div>
+          </form>
+
+          <div class="selected-rate">
+            <div>
+              <span>当前 V1.1 基准单价</span>
+              <strong id="selectedRate">-</strong>
+              <small id="rateSource">-</small>
+            </div>
+            <label class="rate-adjust"><span>调整后单价 / ㎡</span><input id="rateOverride" type="number" min="0" step="0.01" inputmode="decimal" /></label>
+          </div>
+
+          <div class="input-note"><span></span><p id="selectionNote">选择工艺参数后自动匹配 V1.1 单价矩阵。</p></div>
+        </article>
+
+        <article class="panel result-panel">
+          <div class="panel-heading">
+            <div><span class="section-index">02</span><h2>核价结果</h2></div>
+            <span class="result-state" id="resultState">已匹配</span>
+          </div>
+          <div class="result-main">
+            <span>单板价格 (含税)</span>
+            <strong id="boardPrice">CNY 0.00000</strong>
+            <small id="resultDescriptor">-</small>
+          </div>
+          <div class="result-grid">
+            <div><span>板面积</span><strong id="areaValue">0.000000 ㎡</strong></div>
+            <div><span>单价 / ㎡</span><strong id="rateValue">CNY 0.00</strong></div>
+            <div><span>整拼价格</span><strong id="panelPrice">CNY 0.00000</strong></div>
+            <div><span>拼数</span><strong id="panelCountValue">0</strong></div>
+          </div>
+          <div class="calculation-trace"><span>计算过程</span><code id="calculationTrace">-</code></div>
+        </article>
+      </section>
+
+      <section id="rate-library" class="section-block">
+        <div class="section-heading">
+          <div><p class="eyebrow">Rate Matrix</p><h2>V1.1 产品单价基准</h2></div>
+          <button class="text-button" id="restoreRates" type="button">恢复全部 V1.1 单价</button>
+        </div>
+        <div class="rate-table-wrap">
+          <table class="rate-table">
+            <thead><tr><th>表面处理</th><th>厚度</th><th>层数</th><th>单价 / ㎡</th><th>Excel 行</th><th>状态</th></tr></thead>
+            <tbody id="rateTableRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="cost-baseline" class="baseline-grid">
+        <article class="panel baseline-panel">
+          <div class="panel-heading"><div><span class="section-index">03</span><h2>平均成本构成</h2></div><span class="muted-tag">元 / ㎡</span></div>
+          <div class="baseline-list" id="costRows"></div>
+        </article>
+        <article class="panel baseline-panel">
+          <div class="panel-heading"><div><span class="section-index">04</span><h2>公式审计</h2></div><span class="muted-tag">V1.1</span></div>
+          <dl class="audit-list">
+            <div><dt>材料基准</dt><dd>5 家 Qualify 供应商平均值</dd></div>
+            <div><dt>加工成本</dt><dd>钻孔、贴膜、外型、沉铜、测试</dd></div>
+            <div><dt>其他成本</dt><dd>人工管理、水电、房租、折旧、包装、运输</dd></div>
+            <div><dt>产品单价</dt><dd>面积 × V1.1 单价/㎡ ÷ 拼数</dd></div>
+          </dl>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PriceWorkbench | 标签核价</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="packaging.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">ML</span><span>MarketLens · 成本核价</span></a>
+    <nav class="module-nav" aria-label="核价导航">
+      <a class="nav-item" href="index.html"><b>01</b><span>品类目录</span></a>
+      <a class="nav-item active" href="#workspace"><b>02</b><span>标签</span></a>
+    </nav>
+    <div class="version-state"><span></span>标签 V2.0</div>
+  </header>
+
+  <main id="workspace" class="shell package-shell">
+    <section class="page-heading">
+      <div><p class="eyebrow">Packaging Price Review</p><h1>包装核价 · 标签</h1><p class="subhead">按标签尺寸、工艺、材质和变量打印规则匹配 V2.0 单价与开机费分摊门槛</p></div>
+      <div class="audit-stamp"><span>成本数据库</span><strong id="databaseState">加载中</strong></div>
+    </section>
+
+    <section class="formula-strip"><div><span>面积 M14</span><strong>长度 × 高度 × 1.03 ÷ 100</strong></div><i></i><div><span>标签成本 M11</span><strong>标准单价 × 面积 + 变量打印</strong></div><i></i><div><span>分摊数 M12</span><strong>开机费 ÷ 标签成本</strong></div></section>
+
+    <section class="workspace-grid carton-workspace">
+      <article class="panel input-panel">
+        <div class="panel-heading"><div><span class="section-index">01</span><h2>标签参数</h2></div><button id="resetLabel" class="text-button" type="button">重置录入</button></div>
+        <div class="field-grid label-product-fields">
+          <label class="field"><span>标签长度 L (mm)</span><input id="length" type="number" min="0" step="0.01"></label>
+          <label class="field"><span>标签高度 W (mm)</span><input id="height" type="number" min="0" step="0.01"></label>
+          <label class="field"><span>订单数量</span><input id="quantity" type="number" min="1" step="1"></label>
+        </div>
+        <div class="field-grid label-process-fields">
+          <label class="field"><span>材质</span><select id="material"></select></label>
+          <label class="field"><span>工艺</span><select id="process"></select></label>
+          <label class="field"><span>材质类型</span><select id="materialType"><option value="纸类">纸类</option><option value="膜类">膜类</option></select></label>
+        </div>
+        <div class="field-grid label-variable-fields">
+          <label class="label-switch"><input id="variable" type="checkbox">变量打印</label>
+          <div class="leaflet-status" id="variableState">变量打印未启用</div>
+          <div class="leaflet-status" id="matchState">等待匹配</div>
+        </div>
+        <div class="label-match"><span>当前匹配</span><strong id="rateSource">-</strong><span id="rateDetail">-</span></div>
+      </article>
+
+      <article class="panel result-panel">
+        <div class="panel-heading"><div><span class="section-index">02</span><h2>标签核价结果</h2></div><span class="result-state" id="resultState">待录入</span></div>
+        <div class="result-main"><span>单个标签成本 M11</span><strong id="cost">CNY 0.00000</strong><small id="descriptor">-</small></div>
+        <div class="result-grid"><div><span>标签面积 M14</span><strong id="area">0.0000 cm²</strong></div><div><span>标准价 / cm²</span><strong id="rate">CNY 0.00000</strong></div><div><span>变量打印 / 个</span><strong id="variablePrice">CNY 0.00000</strong></div><div><span>开机费分摊数 M12</span><strong id="allocation">-</strong></div></div>
+        <div class="calculation-trace"><span>计算过程</span><code id="trace">-</code></div>
+      </article>
+    </section>
+
+    <section class="baseline-grid">
+      <article class="panel baseline-panel"><div class="panel-heading"><div><span class="section-index">03</span><h2>订单口径</h2></div><span class="muted-tag">未税</span></div><dl class="audit-list"><div><dt>标签成本</dt><dd id="orderCost">CNY 0.00</dd></div><div><dt>开机费</dt><dd id="setupFee">CNY 0.00</dd></div><div><dt>当前订单金额</dt><dd id="orderTotal">CNY 0.00</dd></div></dl></article>
+      <article class="panel baseline-panel"><div class="panel-heading"><div><span class="section-index">04</span><h2>变量打印阶梯</h2></div><span class="muted-tag">尺寸 + 类型</span></div><div class="rate-table-wrap carton-table-wrap"><table class="leaflet-table"><thead><tr><th>规则</th><th>长度 mm</th><th>高度 mm</th><th>材质类型</th><th>单价 / 个</th></tr></thead><tbody id="variableRows"></tbody></table></div></article>
+    </section>
+  </main>
+  <script src="label.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PriceWorkbench | 垫板核价</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="packaging.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html"><span class="brand-mark">ML</span><span>MarketLens · 成本核价</span></a>
+      <nav class="module-nav" aria-label="核价导航">
+        <a class="nav-item" href="index.html"><b>01</b><span>品类目录</span></a>
+        <a class="nav-item active" href="#workspace"><b>02</b><span>垫板</span></a>
+      </nav>
+      <div class="version-state"><span></span>包材 V5.6</div>
+    </header>
+    <main id="workspace" class="shell package-shell">
+      <section class="page-heading"><div><p class="eyebrow">Packaging Price Review</p><h1>包装核价 · 垫板</h1><p class="subhead">基于《包材产品价格核算公式 V5.6》中的垫板价格 V1.5</p></div><div class="audit-stamp"><span>当前品类</span><strong>02 · 垫板 V1.5</strong></div></section>
+      <section class="formula-strip"><div><span>展开面积</span><strong>(长 + 35) × (宽 + 35) ÷ 1,000,000</strong></div><i></i><div><span>产品成本</span><strong>面积 × 材质标准价 + 其他工艺</strong></div><i></i><div><span>产品总价</span><strong>产品成本 × (1 + 工艺偏差)</strong></div></section>
+      <section class="workspace-grid carton-workspace">
+        <article class="panel input-panel"><div class="panel-heading"><div><span class="section-index">01</span><h2>垫板参数</h2></div><button class="text-button" id="resetPad" type="button">恢复 V1.5 样例</button></div>
+          <form class="quote-form"><div class="field-grid carton-material-fields"><label class="field carton-material"><span>材质</span><select id="padMaterial"></select></label></div><div class="field-grid carton-dimension-fields"><label class="field"><span>长 L (mm)</span><input id="padLength" type="number" min="0.01" step="0.01" /></label><label class="field"><span>宽 W (mm)</span><input id="padWidth" type="number" min="0.01" step="0.01" /></label><label class="field"><span>订单数量 (个)</span><input id="padQuantity" type="number" min="1" step="1" /></label></div><div class="field-grid carton-cost-fields"><label class="field"><span>其他工艺 (CNY/个)</span><input id="padOther" type="number" min="0" step="0.0001" /></label><label class="field"><span>工艺偏差</span><input id="padVariance" type="number" min="0" step="0.001" /></label></div></form>
+          <div class="selected-rate carton-rate"><div><span>当前材质标准价</span><strong id="padRate">-</strong><small id="padRateSource">-</small></div><div class="supplier-winner"><span>最低报价供应商</span><strong id="padSupplier">-</strong></div></div><div class="input-note"><span></span><p>标准价为 V1.5 同材质供应商有效报价的最低值。</p></div>
+        </article>
+        <article class="panel result-panel"><div class="panel-heading"><div><span class="section-index">02</span><h2>垫板核价结果</h2></div><span class="result-state">已匹配</span></div><div class="result-main"><span>单个产品总价</span><strong id="padTotal">CNY 0.00000</strong><small id="padDescriptor">-</small></div><div class="result-grid"><div><span>展开面积</span><strong id="padArea">0.000000 ㎡</strong></div><div><span>材质成本</span><strong id="padMaterialCost">CNY 0.00000</strong></div><div><span>产品成本</span><strong id="padProductCost">CNY 0.00000</strong></div><div><span>订单总价</span><strong id="padOrderTotal">CNY 0.00</strong></div></div><div class="calculation-trace"><span>计算过程</span><code id="padTrace">-</code></div></article>
+      </section>
+      <section class="threshold-grid"><article class="threshold-card"><div><span>订单总面积</span><strong id="padOrderArea">0.000 ㎡</strong></div><small>单个展开面积 × 订单数量</small></article><article class="threshold-card warning"><div><span>200㎡ 开机门槛</span><strong id="padMinimum">-</strong></div><small>V1.5 的 350 元开机费为独立提示，未并入产品总价。</small></article><article class="threshold-card"><div><span>V1.5 开机费</span><strong>CNY 350.00</strong></div><small>原表按供应商最高开机费定义</small></article></section>
+      <section id="rate-library" class="section-block"><div class="section-heading"><div><p class="eyebrow">Supplier Benchmark</p><h2>垫板材质供应商基准</h2></div></div><div class="rate-table-wrap carton-table-wrap"><table class="rate-table carton-rate-table"><thead><tr><th>材质</th><th>标准价</th><th>嘉正</th><th>汇源</th><th>艺虹</th><th>荣采</th></tr></thead><tbody id="padRateRows"></tbody></table></div></section>
+    </main><script src="pad.js"></script>
+  </body>
+</html>

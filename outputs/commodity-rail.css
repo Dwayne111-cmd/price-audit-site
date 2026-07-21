@@ -1,0 +1,66 @@
+.ticker-strip {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.metrics-viewport {
+  position: relative;
+  overflow: hidden;
+  padding: 2px 0;
+}
+
+.metrics-track {
+  width: max-content;
+}
+
+.commodity-track-content {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  animation: commodity-rail 76s linear infinite;
+  will-change: transform;
+}
+
+.metrics-viewport:hover .commodity-track-content {
+  animation-play-state: paused;
+}
+
+.commodity-track-content.filtered {
+  width: auto;
+  flex-wrap: wrap;
+  animation: none;
+}
+
+.commodity-track-content .metric-card {
+  flex: 0 0 210px;
+  width: 210px;
+  min-height: 122px;
+}
+
+@media (min-width: 1000px) {
+  .commodity-track-content .metric-card {
+    flex-basis: calc((min(100vw, 1480px) - 93px) / 4);
+    width: calc((min(100vw, 1480px) - 93px) / 4);
+  }
+}
+
+@keyframes commodity-rail {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 5px)); }
+}
+
+@media (max-width: 720px) {
+  .ticker-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .commodity-track-content .metric-card {
+    flex-basis: 185px;
+    width: 185px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .commodity-track-content {
+    animation: none;
+  }
+}

@@ -1,1240 +1,1347 @@
-const categories = [
-  {
-    name: "MCU / 主控IC",
-    icon: "IC",
-    tone: "#62e3d6",
-    trend: "稳中偏紧",
-    copy: "价格差异通常来自内核资源、Flash/RAM、封装脚位、温区与生态锁定。国产替代可行，但需要关注量产验证周期。",
-    values: [101, 100, 99, 100, 102, 104, 103, 105, 107, 108, 109, 111],
-    driver: "Flash容量 / 供货周期",
-    factorShare: [
-      { label: "容量/外设", value: 34 },
-      { label: "封装脚位", value: 24 },
-      { label: "温区/生命周期", value: 18 },
-      { label: "渠道交期", value: 24 }
-    ],
-    action: "重点询同系列降配与Pin-to-Pin替代"
-  },
-  {
-    name: "存储器 / Flash DRAM",
-    icon: "MEM",
-    tone: "#5f9df7",
-    trend: "上行明显",
-    copy: "AI服务器与企业SSD需求推高存储链条景气度，报价需单独拆分容量、速率、封装与原厂渠道溢价。",
-    values: [92, 94, 98, 101, 106, 112, 118, 124, 129, 136, 142, 149],
-    driver: "容量密度 / 原厂配额",
-    factorShare: [
-      { label: "容量密度", value: 42 },
-      { label: "接口/速度", value: 18 },
-      { label: "原厂配额", value: 26 },
-      { label: "渠道库存", value: 14 }
-    ],
-    action: "锁季度价格，预留第二品牌认证"
-  },
-  {
-    name: "陶瓷电容 / MLCC",
-    icon: "CAP",
-    tone: "#8edb91",
-    trend: "低位修复",
-    copy: "常见价差来自尺寸、容值、电压、介质、厚度和车规等级。小尺寸高容值、X7R高压和车规MLCC仍有结构性溢价。",
-    values: [100, 98, 96, 95, 96, 97, 99, 100, 102, 103, 104, 105],
-    driver: "尺寸 / 容值 / 介质",
-    factorShare: [
-      { label: "尺寸/容值", value: 36 },
-      { label: "电压/介质", value: 28 },
-      { label: "可靠性等级", value: 16 },
-      { label: "渠道用量", value: 20 }
-    ],
-    action: "复核降容、电压余量和库存周转"
-  },
-  {
-    name: "贴片电阻 / 精密电阻",
-    icon: "RES",
-    tone: "#b6d46b",
-    trend: "低波动",
-    copy: "价格通常由尺寸、阻值、精度、温漂、功率和车规等级决定。单价低但用量大，适合做阶梯价和多品牌承认。",
-    values: [100, 99, 99, 98, 98, 99, 99, 100, 100, 101, 101, 101],
-    driver: "精度 / 温漂 / 功率",
-    factorShare: [
-      { label: "精度/温漂", value: 32 },
-      { label: "功率/尺寸", value: 22 },
-      { label: "车规等级", value: 14 },
-      { label: "年度用量", value: 32 }
-    ],
-    action: "按年度用量谈阶梯价，建立通用阻值库"
-  },
-  {
-    name: "铝电解 / 钽电容",
-    icon: "ELC",
-    tone: "#76c7f2",
-    trend: "结构分化",
-    copy: "容量、电压、寿命、ESR、耐温和品牌系列会拉开价格。高可靠、长寿命、低ESR型号需单独比较规格余量。",
-    values: [101, 101, 100, 100, 101, 102, 103, 104, 104, 105, 106, 106],
-    driver: "寿命 / ESR / 耐温",
-    factorShare: [
-      { label: "容量/电压", value: 28 },
-      { label: "寿命/耐温", value: 30 },
-      { label: "ESR/纹波", value: 22 },
-      { label: "品牌渠道", value: 20 }
-    ],
-    action: "核对寿命小时数和纹波电流后再替代"
-  },
-  {
-    name: "电感 / 磁珠",
-    icon: "IND",
-    tone: "#d5b86a",
-    trend: "温和上行",
-    copy: "核心价差来自电感量、饱和电流、DCR、屏蔽结构、尺寸和频率特性。电源类电感要连同效率和温升一起看。",
-    values: [99, 99, 100, 101, 101, 102, 103, 104, 105, 105, 106, 107],
-    driver: "饱和电流 / DCR / 尺寸",
-    factorShare: [
-      { label: "饱和电流", value: 30 },
-      { label: "DCR/效率", value: 24 },
-      { label: "尺寸/屏蔽", value: 24 },
-      { label: "交期渠道", value: 22 }
-    ],
-    action: "同步验证效率、温升和EMI余量"
-  },
-  {
-    name: "电源管理 / DC-DC LDO",
-    icon: "PWR",
-    tone: "#e7b85a",
-    trend: "分化",
-    copy: "价差由输入电压、输出电流、效率、频率、保护功能和封装热阻决定，国产替代空间通常较大。",
-    values: [103, 102, 101, 100, 101, 103, 102, 104, 106, 107, 106, 108],
-    driver: "电流能力 / 热设计",
-    factorShare: [
-      { label: "电流/电压", value: 32 },
-      { label: "效率/频率", value: 24 },
-      { label: "热设计封装", value: 20 },
-      { label: "品牌渠道", value: 24 }
-    ],
-    action: "同步比对效率曲线和外围BOM成本"
-  },
-  {
-    name: "连接器 / 端子线束",
-    icon: "CON",
-    tone: "#ef806d",
-    trend: "温和上涨",
-    copy: "金属件、塑胶料、镀层厚度、插拔寿命和认证要求会放大价差。需与结构和可靠性要求一起评估。",
-    values: [99, 100, 101, 101, 102, 104, 105, 106, 107, 108, 109, 111],
-    driver: "镀层 / 认证 / 模具",
-    factorShare: [
-      { label: "镀层/PIN数", value: 32 },
-      { label: "塑胶/端子", value: 26 },
-      { label: "模具加工", value: 20 },
-      { label: "认证交付", value: 22 }
-    ],
-    action: "拆分端子、胶壳、线束加工费用"
-  },
-  {
-    name: "保护器件 / TVS ESD",
-    icon: "ESD",
-    tone: "#c8a2ff",
-    trend: "平稳",
-    copy: "参数差异集中在反向工作电压、钳位电压、峰值脉冲功率、电容和封装尺寸，单价低但失效成本高。",
-    values: [100, 100, 99, 99, 100, 100, 101, 100, 101, 101, 102, 102],
-    driver: "钳位电压 / 电容",
-    factorShare: [
-      { label: "钳位/功率", value: 34 },
-      { label: "结电容", value: 24 },
-      { label: "封装尺寸", value: 18 },
-      { label: "渠道用量", value: 24 }
-    ],
-    action: "按接口速率和浪涌等级筛选"
-  }
+const commodities = [
+  { id: "gold", name: "黄金", code: "XAU/USD", unit: "美元/盎司", price: null, change: null, color: "#d97706", favorite: true },
+  { id: "silver", name: "国际银价", code: "SLVPRUSD", unit: "美元/盎司", price: null, change: null, color: "#b7c4cf", favorite: true },
+  { id: "wti", name: "国际原油", code: "WTI", unit: "美元/桶", price: null, change: null, color: "#155eef", favorite: true },
+  { id: "copper", name: "国际铜价", code: "XCU/USD", unit: "美元/吨", price: null, change: null, color: "#b45309", favorite: false }
 ];
 
-const vendorConnectors = [
-  {
-    name: "公司价格表",
-    status: "主数据",
-    method: "company-procurement-prices.json 或临时导入采购表",
-    note: "用于料号分析和议价基准。"
-  },
-  {
-    name: "授权分销源",
-    status: "补缺参考",
-    method: "DigiKey、Mouser、Arrow、Avnet、RS、TME 等",
-    note: "仅在公司表没有对应物料时用于参考。"
-  },
-  {
-    name: "聚合搜索源",
-    status: "补缺覆盖",
-    method: "Octopart/Nexar、Findchips、TrustedParts 等",
-    note: "用于补齐跨区域、跨供应商参考样本。"
-  },
-  {
-    name: "国内公开源",
-    status: "本土参考",
-    method: "LCSC、云汉芯城、华秋商城等",
-    note: "用于观察国内现货与常用品类波动。"
-  },
-  {
-    name: "自定义源池",
-    status: "可扩展",
-    method: "source-registry.json 或 SOURCE_REGISTRY_URL",
-    note: "新增网站只改配置，仍作为缺料补充。"
-  }
-];
+const canUseDashboardApi = ["127.0.0.1", "localhost"].includes(location.hostname);
 
-let companyRecords = [];
-let externalRecords = [];
-let dataMode = "公司价格";
+const sectors = [];
+let alerts = [];
+let fundWatch = [];
 
-const profiles = [
-  {
-    match: /stm|gd32|mcu|n32|ch32|主控/i,
-    category: "MCU / 主控IC",
-    spec: "内核资源、Flash容量、温区、封装脚位",
-    risk: "中风险",
-    costBreakdown: [
-      { label: "晶圆/内核资源", value: 38 },
-      { label: "封装测试", value: 22 },
-      { label: "品牌/生命周期", value: 20 },
-      { label: "渠道/库存", value: 20 }
-    ],
-    drivers: [
-      "同系列不同Flash/RAM配置会形成显著价格阶梯。",
-      "工业温区、LQFP/QFN封装与供货周期会放大报价差异。",
-      "生态迁移成本高，替代料不能只按单价判断。"
-    ],
-    actions: [
-      "拉取同内核、同脚位、低一档Flash容量的候选料。",
-      "要求供应商同步提供交期、最小包装和生命周期状态。",
-      "把固件适配成本折算到年度用量后再谈目标价。"
-    ]
-  },
-  {
-    match: /w25|gd25|mx25|flash|dram|nand|emmc|ddr|存储/i,
-    category: "存储器 / Flash DRAM",
-    spec: "容量、接口速率、封装、原厂渠道",
-    risk: "高关注",
-    costBreakdown: [
-      { label: "存储晶圆/容量", value: 45 },
-      { label: "封装测试", value: 18 },
-      { label: "原厂配额/品牌", value: 22 },
-      { label: "渠道/库存", value: 15 }
-    ],
-    drivers: [
-      "容量密度和原厂配额是当前主要价格驱动。",
-      "AI服务器和企业SSD需求抬高存储链条预期。",
-      "同容量不同封装、温区、批次来源可能造成明显价差。"
-    ],
-    actions: [
-      "按季度锁价，避免短周期补货被动追高。",
-      "预留第二品牌认证，优先找同容量同封装替代。",
-      "询价时要求拆分原厂、代理、现货渠道报价。"
-    ]
-  },
-  {
-    match: /uf|nf|pf|x5r|x7r|np0|c0g|mlcc|ceramic|cap|电容|钽电容|铝电解/i,
-    category: "陶瓷电容 / MLCC",
-    spec: "尺寸、容值、电压、介质、耐温、车规等级",
-    risk: "低风险",
-    costBreakdown: [
-      { label: "陶瓷粉体/电极", value: 35 },
-      { label: "尺寸/容值/电压", value: 28 },
-      { label: "可靠性等级", value: 17 },
-      { label: "渠道/用量", value: 20 }
-    ],
-    drivers: [
-      "小尺寸高容值MLCC仍有结构性溢价。",
-      "介质、电压余量、耐温和车规等级会显著影响价格。",
-      "同容值不同尺寸和厚度可能影响贴装、库存和替代范围。"
-    ],
-    actions: [
-      "检查是否可以放宽尺寸或电压余量。",
-      "把年度用量前20的电容单独做阶梯价谈判。",
-      "低风险料可采用多品牌并行承认策略。"
-    ]
-  },
-  {
-    match: /ohm|Ω|kohm|mohm|毫欧|电阻|resistor|0\.1%|1%|5%/i,
-    category: "贴片电阻 / 精密电阻",
-    spec: "尺寸、阻值、精度、温漂、功率、车规等级",
-    risk: "低风险",
-    costBreakdown: [
-      { label: "基材/膜层", value: 30 },
-      { label: "精度/温漂", value: 26 },
-      { label: "功率/车规", value: 18 },
-      { label: "渠道/年度量", value: 26 }
-    ],
-    drivers: [
-      "精度、温漂和功率等级是电阻报价的主要分层。",
-      "常规阻值价格稳定，但大用量会放大年度总差额。",
-      "精密电阻、低阻采样电阻和车规料需要单独评估替代风险。"
-    ],
-    actions: [
-      "建立常用阻值、尺寸、精度的标准承认清单。",
-      "将高用量阻值合并谈阶梯价和年度返利。",
-      "采样电阻替代前同步确认功率、温漂和温升。"
-    ]
-  },
-  {
-    match: /uh|mh|inductor|bead|fb|磁珠|电感/i,
-    category: "电感 / 磁珠",
-    spec: "电感量、饱和电流、DCR、屏蔽结构、尺寸",
-    risk: "中风险",
-    costBreakdown: [
-      { label: "磁芯/铜线", value: 34 },
-      { label: "电流/DCR规格", value: 26 },
-      { label: "屏蔽/尺寸结构", value: 18 },
-      { label: "渠道/交期", value: 22 }
-    ],
-    drivers: [
-      "饱和电流、DCR和尺寸直接影响单价与可替代范围。",
-      "屏蔽结构、频率特性和温升余量会造成明显规格溢价。",
-      "电源类电感不能只按电感量替代，需要连同效率和EMI验证。"
-    ],
-    actions: [
-      "优先筛选同尺寸、同饱和电流等级的二供。",
-      "比较单价时同步记录DCR、温升和效率影响。",
-      "对关键电源回路保留FAE验证和小批试产。"
-    ]
-  },
-  {
-    match: /tps|mp|sy|ldo|buck|boost|dcdc|dc-dc|电源|pmic/i,
-    category: "电源管理 / DC-DC LDO",
-    spec: "输入电压、输出电流、效率、热阻",
-    risk: "中风险",
-    costBreakdown: [
-      { label: "晶圆/功率器件", value: 36 },
-      { label: "效率/保护功能", value: 24 },
-      { label: "封装热设计", value: 18 },
-      { label: "品牌/渠道", value: 22 }
-    ],
-    drivers: [
-      "电流能力、频率和效率曲线是核心价差来源。",
-      "保护功能和热设计余量决定可替代范围。",
-      "外围BOM差异可能抵消芯片单价优势。"
-    ],
-    actions: [
-      "对比芯片单价时同步计算电感、电容和散热成本。",
-      "要求FAE确认关键负载点效率和环路稳定性。",
-      "优先筛同封装、同引脚定义的国产替代料。"
-    ]
-  },
-  {
-    match: /usb|type-c|fpc|btb|connector|terminal|连接器|端子|线束/i,
-    category: "连接器 / 端子线束",
-    spec: "镀层、PIN数、插拔寿命、认证",
-    risk: "中风险",
-    costBreakdown: [
-      { label: "金属端子/塑胶", value: 36 },
-      { label: "镀层/PIN数", value: 28 },
-      { label: "模具/加工", value: 18 },
-      { label: "认证/交付", value: 18 }
-    ],
-    drivers: [
-      "镀金厚度、塑胶耐温和认证等级直接影响报价。",
-      "小批量连接器容易被模具、起订量和包装费用拉高。",
-      "结构件替代需要同步确认装配公差和可靠性。"
-    ],
-    actions: [
-      "拆分端子、胶壳、包装和加工费后再比较总价。",
-      "把插拔寿命、盐雾、阻燃等级写入询价条件。",
-      "对非关键接口建立标准化连接器库。"
-    ]
-  },
-  {
-    match: /tvs|esd|保护|clamp|浪涌/i,
-    category: "保护器件 / TVS ESD",
-    spec: "工作电压、钳位电压、峰值功率、电容、封装",
-    risk: "低风险",
-    costBreakdown: [
-      { label: "芯片/击穿结构", value: 32 },
-      { label: "钳位/电容参数", value: 24 },
-      { label: "封装/可靠性", value: 18 },
-      { label: "渠道/用量", value: 26 }
-    ],
-    drivers: [
-      "工作电压、钳位电压和峰值脉冲功率决定主要规格层级。",
-      "高速接口用低电容器件会比普通ESD有明显溢价。",
-      "同参数不同封装或品牌，更多体现渠道与可靠性差异。"
-    ],
-    actions: [
-      "按接口速率、浪涌等级和封装尺寸建立替代清单。",
-      "对高频接口优先确认结电容和眼图余量。",
-      "低风险通用保护料可采用多品牌阶梯价策略。"
-    ]
-  }
-];
+const attributionRecords = [];
 
-const fallbackProfile = {
-  category: "通用电子料",
-  spec: "品牌、封装、温区、生命周期、渠道来源",
-  risk: "待确认",
-  costBreakdown: [
-    { label: "核心材料/芯片", value: 34 },
-    { label: "规格/封装", value: 24 },
-    { label: "品牌/可靠性", value: 18 },
-    { label: "渠道/交付", value: 24 }
-  ],
-  drivers: [
-    "当前输入未命中明确品类，建议补充封装、参数和目标品牌。",
-    "报价差异可能来自渠道来源、库存日期、起订量和交付条件。",
-    "若是关键料，需要确认生命周期状态和可替代等级。"
-  ],
-  actions: [
-    "补充完整规格书关键参数后重新分析。",
-    "按原厂代理、授权分销、现货渠道分别询价。",
-    "记录历史成交价、目标价和替代料认证状态。"
-  ]
+const state = {
+  range: "2Y",
+  search: "",
+  sectorGroup: "all",
+  alertLevel: "all",
+  threshold: 3,
+  alertsEnabled: true,
+  autoRefresh: true,
+  tick: 60,
+  selectedCommodity: "gold",
+  selectedFund: "001877",
+  fundRange: "1Y",
+  selectedAttribution: "",
+  selectedAnchor: "",
+  costView: "amount",
+  comparisonCosts: [],
+  componentSearchLinks: [],
+  componentSearchMeta: null,
+  liveConnected: false,
+  history: new Map(),
+  lastUpdated: null
 };
 
-function canonicalCategory(value) {
-  const text = String(value || "").toLowerCase();
-  return categories.find((item) => {
-    const name = item.name.toLowerCase();
-    return text.includes(name.split(" / ")[0].toLowerCase()) || name.includes(text);
-  })?.name || categories.find((item) => {
-    if (/mcu|主控/.test(text)) return item.name.includes("MCU");
-    if (/flash|dram|nand|emmc|存储/.test(text)) return item.name.includes("存储");
-    if (/mlcc|cap|电容|x5r|x7r/.test(text)) return item.name.includes("电容");
-    if (/res|ohm|电阻/.test(text)) return item.name.includes("电阻");
-    if (/ind|bead|电感|磁珠/.test(text)) return item.name.includes("电感");
-    if (/power|pmic|ldo|buck|boost|电源/.test(text)) return item.name.includes("电源");
-    if (/connector|type-c|usb|连接器|端子/.test(text)) return item.name.includes("连接器");
-    if (/tvs|esd|保护/.test(text)) return item.name.includes("保护");
-    return false;
-  })?.name || value || "通用电子料";
+const els = {
+  commodityCards: document.querySelector("#commodityCards"),
+  trendChart: document.querySelector("#trendChart"),
+  chartTitle: document.querySelector("#chartTitle"),
+  chartTooltip: document.querySelector("#chartTooltip"),
+  chartLegend: document.querySelector("#chartLegend"),
+  attributionRows: document.querySelector("#attributionRows"),
+  attributionDetail: document.querySelector("#attributionDetail"),
+  attributionSummary: document.querySelector("#attributionSummary"),
+  componentSearchForm: document.querySelector("#componentSearchForm"),
+  componentSearchButton: document.querySelector("#componentSearchButton"),
+  componentSearchState: document.querySelector("#componentSearchState"),
+  componentSources: document.querySelector("#componentSources"),
+  manualQuoteForm: document.querySelector("#manualQuoteForm"),
+  manualQuoteToggle: document.querySelector("#manualQuoteToggle"),
+  watchList: document.querySelector("#watchList"),
+  fundList: document.querySelector("#fundList"),
+  fundDataState: document.querySelector("#fundDataState"),
+  fundCode: document.querySelector("#fundCode"),
+  fundTitle: document.querySelector("#fundTitle"),
+  fundDescriptor: document.querySelector("#fundDescriptor"),
+  fundStats: document.querySelector("#fundStats"),
+  fundTrendChart: document.querySelector("#fundTrendChart"),
+  fundChartTooltip: document.querySelector("#fundChartTooltip"),
+  fundChartRange: document.querySelector("#fundChartRange"),
+  fundSource: document.querySelector("#fundSource"),
+  fundRangeTabs: document.querySelector("#fundRangeTabs"),
+  searchInput: document.querySelector("#searchInput"),
+  sectorFilter: document.querySelector("#sectorFilter"),
+  thresholdSlider: document.querySelector("#thresholdSlider"),
+  thresholdValue: document.querySelector("#thresholdValue"),
+  alertToggle: document.querySelector("#alertToggle"),
+  rangeTabs: document.querySelector("#rangeTabs"),
+  alertTabs: document.querySelector("#alertTabs"),
+  refreshNow: document.querySelector("#refreshNow"),
+  autoRefresh: document.querySelector("#autoRefresh"),
+  clearWatch: document.querySelector("#clearWatch"),
+  nextRefresh: document.querySelector("#nextRefresh"),
+  marketStatus: document.querySelector("#marketStatus"),
+  dataSource: document.querySelector("#dataSource"),
+  tickerShanghai: document.querySelector("#tickerShanghai"),
+  tickerShanghaiChange: document.querySelector("#tickerShanghaiChange"),
+  tickerShenzhen: document.querySelector("#tickerShenzhen"),
+  tickerShenzhenChange: document.querySelector("#tickerShenzhenChange"),
+  tickerUsdCny: document.querySelector("#tickerUsdCny"),
+  tickerUsdCnyChange: document.querySelector("#tickerUsdCnyChange"),
+  tickerUpSectors: document.querySelector("#tickerUpSectors"),
+  tickerUpSectorsMeta: document.querySelector("#tickerUpSectorsMeta"),
+  tickerDownSectors: document.querySelector("#tickerDownSectors"),
+  tickerDownSectorsMeta: document.querySelector("#tickerDownSectorsMeta"),
+  chartDataStatus: document.querySelector("#chartDataStatus"),
+  chartUpdatedAt: document.querySelector("#chartUpdatedAt"),
+  marketClock: document.querySelector("#marketClock"),
+};
+
+const navItems = [...document.querySelectorAll(".nav-item")];
+const viewTargets = {
+  overview: document.querySelector(".topbar"),
+  commodities: document.querySelector("#commodityCards"),
+  breadth: document.querySelector(".ticker-strip"),
+  funds: document.querySelector("#fundWorkspace"),
+  attribution: document.querySelector("#attributionWorkspace")
+};
+
+function setActiveView(view) {
+  navItems.forEach((item) => item.classList.toggle("active", item.dataset.view === view));
 }
 
-function normalizeSourceType(raw, fallback = "company") {
-  const text = String(raw.sourceType || raw.dataSourceType || raw.sourceKind || raw["来源类型"] || raw["价格口径"] || raw["数据类型"] || raw.source || fallback).toLowerCase();
-  if (/company|internal|erp|po|purchase|procurement|公司|内部|采购|订单|真实/.test(text)) return "company";
-  if (/external|public|market|web|platform|global|lcsc|digikey|mouser|nexar|平台|公开|外部|全网|网站/.test(text)) return "external";
-  return fallback;
-}
-
-function normalizeRecord(raw, fallbackSourceType = "company") {
-  const sourceType = normalizeSourceType(raw, fallbackSourceType);
-  const rawDate = raw.date || raw["日期"] || raw["采购日期"] || raw["下单日期"] || raw["订单日期"] || raw.month || raw["月份"];
-  const date = rawDate || (sourceType === "company" ? new Date().toISOString().slice(0, 10) : "");
-  const part = raw.part || raw.mpn || raw.model || raw["料号"] || raw["型号"] || raw["物料编码"];
-  const category = canonicalCategory(raw.category || raw["品类"] || raw["分类"]);
-  const supplier = raw.supplier || raw.vendor || raw.channel || raw["供应商"] || raw["采购供应商"] || raw["渠道"] || (sourceType === "company" ? "公司价格表" : "未标注供应商");
-  const unitPrice = Number(raw.unitPrice || raw.price || raw["历史采购价"] || raw["采购单价"] || raw["订单价"] || raw["成交价"] || raw["单价"] || raw["含税单价"] || raw["价格"]);
-  const qty = Number(raw.qty || raw.quantity || raw["数量"] || raw["采购数量"] || raw["订单数量"] || 1);
-  const currency = raw.currency || raw["币种"] || "CNY";
-
-  if (!date || !part || !Number.isFinite(unitPrice)) return null;
-  return {
-    date: String(date).slice(0, 7),
-    part: String(part).trim(),
-    category,
-    supplier: String(supplier).trim(),
-    unitPrice,
-    qty: Number.isFinite(qty) && qty > 0 ? qty : 1,
-    currency,
-    sourceType,
-    sourceLabel: sourceType === "company" ? "公司价格" : "外部参考价",
-    source: raw.source || raw.sourceId || raw["来源"] || ""
-  };
-}
-
-function latestRecord(records) {
-  return [...records].sort((a, b) => a.date.localeCompare(b.date)).at(-1);
-}
-
-function collapseCompanyPrices(records) {
-  const byPart = new Map();
-  records.forEach((record) => {
-    const key = record.part.toLowerCase();
-    const current = byPart.get(key);
-    if (!current || record.date.localeCompare(current.date) >= 0) {
-      byPart.set(key, record);
-    }
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const target = viewTargets[item.dataset.view];
+    if (!target) return;
+    setActiveView(item.dataset.view);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-  return [...byPart.values()];
+});
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    const current = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!current) return;
+    const view = Object.entries(viewTargets).find(([, target]) => target === current.target)?.[0];
+    if (view) setActiveView(view);
+  }, { rootMargin: "-24% 0px -58%", threshold: [0.15, 0.4, 0.7] });
+
+  Object.values(viewTargets).filter(Boolean).forEach((target) => observer.observe(target));
 }
 
-function weightedAverage(records) {
-  const totalQty = records.reduce((sum, item) => sum + item.qty, 0);
-  const totalValue = records.reduce((sum, item) => sum + item.unitPrice * item.qty, 0);
-  return totalQty ? totalValue / totalQty : 0;
+function hasNumber(value) {
+  return Number.isFinite(value);
 }
 
-function recordsForCategory(categoryName) {
-  const external = externalRecords.filter((item) => item.category === categoryName);
-  if (external.length) return { records: external, sourceType: "external" };
-  return { records: [], sourceType: "model" };
+function formatPrice(item) {
+  if (!hasNumber(item.price)) return "—";
+  return item.price > 1000 ? item.price.toLocaleString("zh-CN", { maximumFractionDigits: 0 }) : item.price.toFixed(2);
 }
 
-function buildValuesFromRecords(categoryName) {
-  const { records: categoryRecords, sourceType } = recordsForCategory(categoryName);
-  if (!categoryRecords.length) {
-    return {
-      values: Array.from({ length: 12 }, () => 100),
-      sampleCount: 0,
-      monthCount: 0,
-      quality: "待外部采集",
-      sourceType
-    };
+function signed(value) {
+  if (!hasNumber(value)) return "—";
+  return `${value > 0 ? "+" : ""}${value.toFixed(2)}%`;
+}
+
+function changeClass(value) {
+  if (!hasNumber(value)) return "flat";
+  if (value > 0.05) return "up";
+  if (value < -0.05) return "down";
+  return "flat";
+}
+
+function groupName(group) {
+  return { defense: "军事/航天", finance: "金融", cycle: "周期资源", tech: "科技制造" }[group] || "其他";
+}
+
+function updateMarketClock() {
+  els.marketClock.textContent = new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(new Date());
+}
+
+function seriesFor(item) {
+  const selectedRangeHistory = state.history.get(`${item.id}:${state.range}`);
+  const sparklineHistory = state.history.get(`${item.id}:sparkline`);
+  const points = selectedRangeHistory?.length ? selectedRangeHistory : sparklineHistory;
+  return points?.map((entry) => entry.value) || [];
+}
+
+function chartSeriesFor(item) {
+  const liveHistory = state.history.get(`${item.id}:${state.range}`);
+  return liveHistory?.map((entry) => entry.value) || [];
+}
+
+function historyPointFor(item, index) {
+  const liveHistory = state.history.get(`${item.id}:${state.range}`);
+  return liveHistory?.[index] || null;
+}
+
+async function loadSparklineHistory(item) {
+  const key = `${item.id}:sparkline`;
+  if (state.history.has(key)) return;
+  if (!canUseDashboardApi) return;
+  try {
+    const response = await fetch(`/api/history?id=${encodeURIComponent(item.id)}&range=1M`);
+    if (!response.ok) throw new Error("Sparkline history unavailable");
+    const payload = await response.json();
+    if (!Array.isArray(payload.points) || payload.points.length < 2) throw new Error("Insufficient sparkline history");
+    state.history.set(key, payload.points);
+    renderCards();
+  } catch (error) {
+    console.warn(`Sparkline history unavailable for ${item.id}:`, error.message);
   }
+}
 
-  const monthMap = new Map();
-  categoryRecords.forEach((item) => {
-    if (!monthMap.has(item.date)) monthMap.set(item.date, []);
-    monthMap.get(item.date).push(item);
+function loadSparklineHistories() {
+  return Promise.all(commodities.map(loadSparklineHistory));
+}
+
+function sparklineSvg(item) {
+  const data = seriesFor(item);
+  if (data.length < 2) {
+    const status = item.unavailable
+      ? "公开报价需授权"
+      : hasNumber(item.price)
+        ? "暂无可验证历史数据"
+        : "行情数据加载中";
+    return `<div class="sparkline-unavailable">${status}</div>`;
+  }
+  const min = Math.min(...data);
+  const max = Math.max(...data);
+  const pts = data.map((v, i) => {
+    const x = (i / (data.length - 1)) * 166;
+    const y = 34 - ((v - min) / (max - min || 1)) * 30;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
   });
-
-  const months = [...monthMap.keys()].sort();
-  const averages = months.map((month) => weightedAverage(monthMap.get(month)));
-  const baseline = averages[0] || 1;
-  const indexes = averages.map((value) => (value / baseline) * 100);
-  const quality = months.length >= 6 ? "月度采样" : "插值预览";
-
-  if (indexes.length === 1) {
-    return {
-      values: Array.from({ length: 12 }, () => Math.round(indexes[0])),
-      sampleCount: categoryRecords.length,
-      monthCount: months.length,
-      quality,
-      sourceType
-    };
-  }
-
-  if (indexes.length >= 12) {
-    return {
-      values: indexes.slice(-12).map((value) => Math.round(value)),
-      sampleCount: categoryRecords.length,
-      monthCount: months.length,
-      quality,
-      sourceType
-    };
-  }
-
-  const filled = Array.from({ length: 12 }, (_, index) => {
-    const position = (index / 11) * (indexes.length - 1);
-    const left = Math.floor(position);
-    const right = Math.min(Math.ceil(position), indexes.length - 1);
-    const ratio = position - left;
-    const interpolated = indexes[left] + (indexes[right] - indexes[left]) * ratio;
-    return Math.round(interpolated);
-  });
-  return {
-    values: filled,
-    sampleCount: categoryRecords.length,
-    monthCount: months.length,
-    quality,
-    sourceType
-  };
+  return `<svg class="sparkline" viewBox="0 0 166 40" aria-hidden="true"><polyline points="${pts.join(" ")}" fill="none" stroke="${item.color}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 }
 
-function recordsSummary() {
-  const records = [...companyRecords, ...externalRecords];
-  const categoriesHit = new Set(records.map((item) => item.category));
-  const dates = records.map((item) => item.date).sort();
-  return {
-    companyCount: companyRecords.length,
-    externalCount: externalRecords.length,
-    categoryCount: categoriesHit.size,
-    range: dates.length ? `${dates[0]} - ${dates.at(-1)}` : "暂无价格"
-  };
-}
-
-function sourceTextForCategory(categoryName) {
-  const { records, sourceType } = recordsForCategory(categoryName);
-  if (sourceType === "external") {
-    const suppliers = [...new Set(records.map((item) => item.supplier))].slice(0, 4).join(" / ");
-    return `外部参考价：${suppliers}`;
-  }
-  if (sourceType === "company") return "公司价格表";
-  return "待外部采集";
-}
-
-function findQuoteRecords(part, categoryName) {
-  const keyword = part.toLowerCase();
-  const exactCompany = companyRecords.filter((item) => item.part.toLowerCase() === keyword);
-  if (exactCompany.length) return { title: "匹配公司价格表", records: exactCompany, mode: "公司价格", sourceType: "company" };
-  const fuzzyCompany = companyRecords.filter((item) => item.part.toLowerCase().includes(keyword) || keyword.includes(item.part.toLowerCase()));
-  if (fuzzyCompany.length) return { title: "匹配公司价格表", records: fuzzyCompany, mode: "公司价格", sourceType: "company" };
-  const exactExternal = externalRecords.filter((item) => item.part.toLowerCase() === keyword);
-  if (exactExternal.length) return { title: "匹配外部参考价", records: exactExternal, mode: "外部参考价", sourceType: "external" };
-  const fuzzyExternal = externalRecords.filter((item) => item.part.toLowerCase().includes(keyword) || keyword.includes(item.part.toLowerCase()));
-  if (fuzzyExternal.length) return { title: "匹配外部参考价", records: fuzzyExternal, mode: "外部参考价", sourceType: "external" };
-  const companyCategory = companyRecords.filter((item) => item.category === categoryName).slice(-8);
-  if (companyCategory.length) {
-    return {
-      title: "同品类公司价格表",
-      records: companyCategory,
-      mode: "公司价格",
-      sourceType: "company"
-    };
-  }
-  return {
-    title: "同品类外部参考价",
-    records: externalRecords.filter((item) => item.category === categoryName).slice(-8),
-    mode: "外部参考价",
-    sourceType: "external"
-  };
-}
-
-function priceStats(records) {
-  if (!records.length) return null;
-  const prices = records.map((item) => item.unitPrice).sort((a, b) => a - b);
-  return {
-    min: prices[0],
-    median: prices[Math.floor(prices.length / 2)],
-    max: prices.at(-1),
-    latest: latestRecord(records)
-  };
-}
-
-function renderPricePanel(quoteGroup, stats, quoteRows) {
-  if (!stats) {
-    return `<p class="empty-note">暂无可用价格数据，请等待每日采集或临时导入价格文件。</p>`;
-  }
-
-  if (quoteGroup.sourceType === "company") {
-    const item = latestRecord(quoteGroup.records);
-    const label = quoteGroup.records.length === 1 ? "公司价格" : "匹配价格";
-    const value = quoteGroup.records.length === 1 ? `${item.currency} ${item.unitPrice}` : `${quoteGroup.records.length} 项`;
-    return `
-      <div class="quote-stats quote-stats-single">
-        <div><span>${label}</span><strong>${value}</strong></div>
+function renderCards() {
+  const term = state.search.trim();
+  const list = commodities.filter((item) => `${item.name}${item.code}`.includes(term));
+  const cards = list.map((item, index) => `
+    <article class="metric-card" data-id="${item.id}" style="--metric-color:${item.color}; --motion-index:${index}">
+      <div class="metric-top">
+        <div>
+          <h3>${item.name}</h3>
+          <small>${item.code} · ${item.unit} · ${item.source || "待连接"}</small>
+        </div>
+        <button class="star ${item.favorite ? "active" : ""}" data-fav-commodity="${item.id}" title="加入自选">★</button>
       </div>
-      <div class="quote-table">${quoteRows}</div>
-    `;
+      <div>
+        <span class="price">${formatPrice(item)}</span>
+        <span class="change ${changeClass(item.change)}">${signed(item.change)}</span>
+      </div>
+      <div class="metric-bottom">${sparklineSvg(item)}</div>
+    </article>
+  `).join("");
+  const loopCards = term ? cards : `${cards}${cards}`;
+  els.commodityCards.innerHTML = `<div class="commodity-track-content${term ? " filtered" : ""}">${loopCards}</div>`;
+}
+
+function renderChart() {
+  const canvas = els.trendChart;
+  const ctx = canvas.getContext("2d");
+  const rect = canvas.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = Math.max(640, Math.floor(rect.width * dpr));
+  canvas.height = Math.max(220, Math.floor(rect.height * dpr));
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  const w = rect.width;
+  const h = rect.height;
+  const pad = { top: 20, right: 20, bottom: 32, left: 50 };
+  ctx.clearRect(0, 0, w, h);
+
+  const active = commodities.find((item) => item.id === state.selectedCommodity) || commodities[0];
+  const rangeLabel = { "1D": "1日", "5D": "5日", "1M": "1月", "6M": "6月", "1Y": "1年", "2Y": "近2年" }[state.range] || state.range;
+  els.chartTitle.textContent = `${active.name} ${rangeLabel}价格走势`;
+  const lines = [active].filter((item, index, arr) => (
+    item
+    && hasNumber(item.price)
+    && chartSeriesFor(item).length >= 2
+    && arr.findIndex((x) => x.id === item.id) === index
+  ));
+  if (!lines.length) {
+    ctx.fillStyle = "#11171b";
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#8fa3ad";
+    ctx.textAlign = "center";
+    ctx.font = "13px Segoe UI, Microsoft YaHei, sans-serif";
+    ctx.fillText("等待商品行情与趋势数据", w / 2, h / 2);
+    ctx.textAlign = "left";
+    els.chartLegend.innerHTML = "<span>等待公开历史行情返回</span>";
+    return;
+  }
+  const all = lines.flatMap((item) => chartSeriesFor(item));
+  const min = Math.min(...all);
+  const max = Math.max(...all);
+
+  ctx.fillStyle = "#11171b";
+  ctx.fillRect(0, 0, w, h);
+  ctx.strokeStyle = "#25343b";
+  ctx.lineWidth = 1;
+  ctx.font = "12px Segoe UI, Microsoft YaHei, sans-serif";
+  ctx.fillStyle = "#8fa3ad";
+
+  for (let i = 0; i <= 5; i++) {
+    const y = pad.top + ((h - pad.top - pad.bottom) / 5) * i;
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y);
+    ctx.lineTo(w - pad.right, y);
+    ctx.stroke();
+    const label = max - ((max - min) / 5) * i;
+    ctx.fillText(label > 1000 ? Math.round(label).toLocaleString("zh-CN") : label.toFixed(1), 10, y + 4);
   }
 
+  lines.forEach((item, lineIndex) => {
+    const data = chartSeriesFor(item);
+    ctx.beginPath();
+    data.forEach((v, i) => {
+      const x = pad.left + (i / (data.length - 1)) * (w - pad.left - pad.right);
+      const y = pad.top + (1 - (v - min) / (max - min || 1)) * (h - pad.top - pad.bottom);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = item.color;
+    ctx.lineWidth = lineIndex === 0 ? 3 : 2;
+    ctx.stroke();
+  });
+
+  const activeHistory = state.history.get(`${active.id}:${state.range}`);
+  const labels = activeHistory?.length
+    ? [activeHistory[0].label, activeHistory[Math.floor(activeHistory.length / 2)].label, activeHistory[activeHistory.length - 1].label]
+    : state.range === "2Y" ? ["2024", "2025", "2026"] : ["起点", "中段", "当前"];
+  ctx.fillStyle = "#8fa3ad";
+  labels.forEach((label, i) => {
+    const x = pad.left + (i / (labels.length - 1)) * (w - pad.left - pad.right);
+    ctx.fillText(label, x - 12, h - 16);
+  });
+
+  els.chartLegend.innerHTML = lines.map((item) => `<span><i class="legend-dot" style="background:${item.color}"></i>${item.name}</span>`).join("");
+  flashChart();
+}
+
+function formatQuotePrice(value) {
+  return Number(value).toLocaleString("zh-CN", { minimumFractionDigits: value < 1 ? 4 : 2, maximumFractionDigits: value < 1 ? 4 : 2 });
+}
+
+function moneyPerPiece(value, currency) {
+  return `${currency || "CNY"} ${formatQuotePrice(value)}/件`;
+}
+
+function signedMoney(value, currency) {
+  const sign = value > 0 ? "+" : value < 0 ? "-" : "";
+  return `${sign}${currency || "CNY"} ${formatQuotePrice(Math.abs(value))}/件`;
+}
+
+function quoteById(id) {
+  return attributionRecords.find((record) => record.id === id) || null;
+}
+
+function quoteLabel(record) {
+  return `${record.supplier} · ${moneyPerPiece(record.quote, record.currency)}`;
+}
+
+function quoteTierLabel(record) {
+  return record.quantity ? `${record.quantity.toLocaleString("zh-CN")}件阶梯` : "公开单价";
+}
+
+function quoteSourceMeta(record) {
+  const internal = record.sourceType === "internal";
+  return {
+    type: internal ? "internal" : "external",
+    label: internal ? "受保护报价库" : "公开渠道",
+    detail: record.sourceDetail || record.source || (internal ? "本地导入报价" : "公开渠道报价")
+  };
+}
+
+function quoteSourceBadge(record) {
+  const source = quoteSourceMeta(record);
+  return `<span class="quote-source-badge ${source.type}">${source.label}</span>`;
+}
+
+function comparisonPair() {
+  const current = quoteById(state.selectedAttribution);
+  const anchor = quoteById(state.selectedAnchor);
+  return { current, anchor };
+}
+
+function costVisualMetric(value, total) {
+  return state.costView === "share" ? `${((value / total) * 100).toFixed(1)}%` : formatQuotePrice(value);
+}
+
+function costContribution(cost, record) {
+  const totalDelta = record.quote - record.anchor;
+  if (Math.abs(totalDelta) < 0.001) return "—";
+  return `${Math.abs(((cost.quote - cost.anchor) / totalDelta) * 100).toFixed(1)}%`;
+}
+
+function renderCostEntry() {
   return `
-    <div class="quote-stats">
-      <div><span>最低</span><strong>${stats.latest.currency} ${stats.min}</strong></div>
-      <div><span>中位</span><strong>${stats.latest.currency} ${stats.median}</strong></div>
-      <div><span>最高</span><strong>${stats.latest.currency} ${stats.max}</strong></div>
+    <div class="cost-entry-form" data-cost-entry>
+      <label><span>归因项</span><select data-cost-name><option>原厂与核心规格</option><option>封测与品质</option><option>渠道与服务</option><option>库存与交期</option><option>税运与付款条件</option><option>其他</option></select></label>
+      <label><span>当前成本</span><input data-cost-quote type="number" min="0" step="0.0001" placeholder="0.0000" /></label>
+      <label><span>锚点成本</span><input data-cost-anchor type="number" min="0" step="0.0001" placeholder="0.0000" /></label>
+      <label class="cost-entry-note"><span>证据 / 备注</span><input data-cost-note type="text" placeholder="规格、税运、交期或报价条件" /></label>
+      <button type="button" class="ghost-button" data-add-cost>添加归因</button>
     </div>
-    <div class="quote-table">${quoteRows}</div>
   `;
 }
 
-function priceMetricText(quoteGroup, stats) {
-  if (!stats) return "暂无";
-  const item = latestRecord(quoteGroup.records);
-  const prefix = quoteGroup.sourceType === "company" ? "" : "参考 ";
-  return `${prefix}${item.currency} ${item.unitPrice}`;
+function renderCostBreakdown(record) {
+  const amountScale = Math.max(record.quote, record.anchor);
+  const costs = state.comparisonCosts;
+  return `
+    <section class="cost-breakdown" aria-label="${record.model} 成本归因">
+      <div class="cost-heading">
+        <div><span>成本归因录入</span><small>单位：${record.currency}/件 · 仅使用你确认的成本与证据</small></div>
+        <div class="cost-view-toggle" role="group" aria-label="成本拆分口径">
+          <button type="button" class="${state.costView === "amount" ? "active" : ""}" data-cost-view="amount">金额</button>
+          <button type="button" class="${state.costView === "share" ? "active" : ""}" data-cost-view="share">占比</button>
+        </div>
+      </div>
+      ${renderCostEntry()}
+      <div class="cost-list">
+        ${costs.length ? costs.map((cost, index) => {
+          const actualDelta = cost.quote - cost.anchor;
+          const quoteWidth = state.costView === "share" ? (cost.quote / record.quote) * 100 : (cost.quote / amountScale) * 100;
+          const anchorWidth = state.costView === "share" ? (cost.anchor / record.anchor) * 100 : (cost.anchor / amountScale) * 100;
+          return `
+            <div class="cost-row">
+              <div class="cost-row-head"><div><strong>${cost.name}</strong><span>${cost.note || "未补充证据"}</span></div><b class="cost-contribution-brief">价差贡献 ${costContribution(cost, record)}</b></div>
+              <div class="cost-price-grid">
+                <span><small>当前</small><b>${formatQuotePrice(cost.quote)}</b></span>
+                <span><small>锚点</small><b>${formatQuotePrice(cost.anchor)}</b></span>
+                <span class="${actualDelta >= 0 ? "up" : "down"}"><small>实际差额</small><b>${actualDelta > 0 ? "+" : ""}${formatQuotePrice(actualDelta)}</b></span>
+              </div>
+              <div class="cost-bars" aria-label="当前 ${costVisualMetric(cost.quote, record.quote)}，锚点 ${costVisualMetric(cost.anchor, record.anchor)}">
+                <div class="cost-bar"><span>当</span><i><b class="quote" style="width:${quoteWidth}%"></b></i><strong>${costVisualMetric(cost.quote, record.quote)}</strong></div>
+                <div class="cost-bar"><span>锚</span><i><b class="anchor" style="width:${anchorWidth}%"></b></i><strong>${costVisualMetric(cost.anchor, record.anchor)}</strong></div>
+              </div>
+              <button type="button" class="cost-remove" data-remove-cost="${index}" title="删除归因项">删除</button>
+            </div>
+          `;
+        }).join("") : `<div class="empty-state attribution-empty">公开渠道报价只能形成价差，尚未录入可验证的成本归因。</div>`}
+      </div>
+    </section>
+  `;
 }
 
-function priceBasisText(quoteGroup) {
-  if (quoteGroup.sourceType === "company") return "公司价格表";
-  if (quoteGroup.sourceType === "external") return "外部参考价";
-  return "暂无价格数据";
+function renderSourceLinks() {
+  els.componentSources.innerHTML = state.componentSearchLinks.length ? state.componentSearchLinks.map((item) => `
+    <a href="${item.url}" target="_blank" rel="noreferrer" class="source-link">${item.label}<span>公开页面</span></a>
+  `).join("") : "";
 }
 
-function selectedQuote(part, preferredCategory) {
-  const profile = getProfile(part);
-  const group = findQuoteRecords(part, preferredCategory || profile.category);
-  return {
-    part,
-    profile,
-    group,
-    record: latestRecord(group.records),
-    stats: priceStats(group.records)
-  };
+function comparisonOptions(selectedId) {
+  return attributionRecords.map((record) => `<option value="${record.id}" ${record.id === selectedId ? "selected" : ""}>${quoteLabel(record)}</option>`).join("");
 }
 
-function formatPrice(record) {
-  if (!record || !Number.isFinite(record.unitPrice)) return "暂无";
-  return `${record.currency || "CNY"} ${record.unitPrice}`;
+function renderComparisonDetail(current, anchor) {
+  const selectors = `
+    <div class="comparison-selects">
+      <label><span>当前报价</span><select data-comparison-role="current">${comparisonOptions(current?.id)}</select></label>
+      <label><span>对比锚点</span><select data-comparison-role="anchor">${comparisonOptions(anchor?.id)}</select></label>
+    </div>
+  `;
+  if (!current || !anchor || current.id === anchor.id) {
+    return `${selectors}<div class="empty-state attribution-empty">至少选择两条不同的渠道报价，才能形成价差对比。</div>`;
+  }
+  if (current.currency !== anchor.currency) {
+    return `${selectors}<div class="empty-state attribution-empty">当前报价与锚点币种不同，暂不计算价差。请选择相同币种，或录入换汇后的同口径报价。</div>`;
+  }
+
+  const actualDelta = current.quote - anchor.quote;
+  const delta = (actualDelta / anchor.quote) * 100;
+  const status = actualDelta > 0 ? "high" : "review";
+  const record = { model: current.model, quote: current.quote, anchor: anchor.quote, currency: current.currency };
+  const action = actualDelta > 0
+    ? `向 ${current.supplier} 核对数量阶梯、税运、库存与交期，并以 ${anchor.supplier} 的 ${moneyPerPiece(anchor.quote, anchor.currency)} 作为询价锚点。`
+    : `核验 ${current.supplier} 的批次、交期与真伪保障，确认其低价条件可被采购执行。`;
+  return `
+    ${selectors}
+    <div class="detail-model"><div><strong>${current.model}</strong><span>${current.spec || current.category || "规格待补充"}</span></div><span class="risk-tag ${status}">${actualDelta > 0 ? "高价待核" : "低价待核"}</span></div>
+    <div class="detail-stats">
+      <div><span>当前报价</span><strong>${moneyPerPiece(current.quote, current.currency)}</strong><div class="quote-origin"><small>${current.supplier} · ${quoteTierLabel(current)}</small>${quoteSourceBadge(current)}</div></div>
+      <div><span>对比锚点</span><strong>${moneyPerPiece(anchor.quote, anchor.currency)}</strong><div class="quote-origin"><small>${anchor.supplier} · ${quoteTierLabel(anchor)}</small>${quoteSourceBadge(anchor)}</div></div>
+      <div><span>实际价差</span><strong class="${actualDelta >= 0 ? "up" : "down"}">${signedMoney(actualDelta, current.currency)}</strong></div>
+      <div><span>相对锚点</span><strong class="${actualDelta >= 0 ? "up" : "down"}">${signed(delta)}</strong><small>报价口径需复核含税与交期</small></div>
+    </div>
+    ${renderCostBreakdown(record)}
+    <section class="quote-evidence"><div class="factor-title"><span>报价来源证据</span><small>数据库分类与原始渠道</small></div><div class="quote-evidence-grid"><div class="quote-evidence-item"><span>当前数据库</span>${quoteSourceBadge(current)}<strong>${quoteSourceMeta(current).detail}</strong></div><div class="quote-evidence-item"><span>当前库存</span><strong>${current.stock ?? "—"}</strong></div><div class="quote-evidence-item"><span>当前交期</span><strong>${current.lead || "—"}</strong></div><div class="quote-evidence-item"><span>锚点数据库</span>${quoteSourceBadge(anchor)}<strong>${quoteSourceMeta(anchor).detail}</strong></div><div class="quote-evidence-item"><span>锚点库存</span><strong>${anchor.stock ?? "—"}</strong></div><div class="quote-evidence-item"><span>锚点交期</span><strong>${anchor.lead || "—"}</strong></div></div></section>
+    <div class="procurement-action"><span>采购动作</span><strong>${action}</strong></div>
+  `;
 }
 
-function buildAttributionFactors(baseProfile, compareProfile, comparable) {
-  const baseItems = baseProfile.costBreakdown || fallbackProfile.costBreakdown;
-  const sourceFactors = comparable
-    ? baseItems
-    : [
-        { label: "品类/规格差异", value: 34 },
-        { label: "品牌/生命周期", value: 24 },
-        { label: "封装/认证条件", value: 20 },
-        { label: "渠道/交付条件", value: 22 }
-      ];
-  return sourceFactors.map((item, index) => ({
-    label: item.label,
-    value: item.value,
-    note: comparable
-      ? (baseProfile.drivers[index] || compareProfile.drivers?.[index] || "需结合规格书确认")
-      : "两边不属于同一窄品类，不能直接按单价判断优劣"
-  }));
+function renderEmptyAttributionDetail() {
+  return `
+    <div class="detail-model">
+      <div><strong>价差归因</strong><span>等待可比较报价</span></div>
+      <span class="data-state">未建立对比</span>
+    </div>
+    <div class="detail-stats">
+      <div><span>当前报价</span><strong>—</strong></div>
+      <div><span>对比锚点</span><strong>—</strong></div>
+      <div><span>实际价差</span><strong>—</strong></div>
+      <div><span>相对锚点</span><strong>—</strong><small>等待可比较报价</small></div>
+    </div>
+    <section class="cost-breakdown">
+      <div class="cost-heading"><div><span>成本归因</span><small>仅显示已录入且可验证的成本项</small></div></div>
+      <div class="empty-state attribution-empty">暂无可验证成本项</div>
+    </section>
+  `;
 }
 
 function renderAttribution() {
-  const panel = document.querySelector("#attributionPanel");
-  if (!panel) return;
-
-  const basePart = document.querySelector("#basePartInput").value.trim();
-  const comparePart = document.querySelector("#comparePartInput").value.trim();
-  const targetPriceValue = Number(document.querySelector("#targetPriceInput").value);
-  const targetSource = document.querySelector("#targetSourceInput").value.trim() || "手动输入价格";
-
-  if (!basePart) {
-    panel.innerHTML = `<p class="empty-note">请先输入基准料号。</p>`;
+  renderSourceLinks();
+  const list = attributionRecords;
+  const sourceLabels = [...new Set(list.map((record) => quoteSourceMeta(record).label))];
+  els.attributionSummary.textContent = list.length ? `来源：${sourceLabels.join(" / ")}` : "尚未查询";
+  if (!list.length) {
+    els.attributionRows.innerHTML = `<div class="empty-state attribution-empty">输入物料型号与规格后查询；外网静态版可先手动录入供应商报价并做价差归因。</div>`;
+    els.attributionDetail.innerHTML = renderEmptyAttributionDetail();
     return;
   }
 
-  const base = selectedQuote(basePart);
-  if (!base.record) {
-    panel.innerHTML = `
-      <div class="result-header">
-        <div>
-          <span class="eyebrow">Attribution Result</span>
-          <div class="result-code">${basePart}</div>
-        </div>
-        <span class="risk-pill">缺少基准价</span>
-      </div>
-      <p class="empty-note">公司价格表和外部参考价都没有命中该料号，无法计算价差。请先补充公司价格。</p>
+  const current = quoteById(state.selectedAttribution) || list[0];
+  if (state.selectedAttribution !== current.id) state.selectedAttribution = current.id;
+  const anchor = quoteById(state.selectedAnchor) || list.find((record) => record.id !== current.id) || null;
+  if (anchor && state.selectedAnchor !== anchor.id) state.selectedAnchor = anchor.id;
+  els.attributionRows.innerHTML = list.map((record) => {
+    const isCurrent = record.id === current.id;
+    const isAnchor = anchor && record.id === anchor.id;
+    return `
+      <button class="quote-row ${isCurrent ? "active" : ""} ${isAnchor ? "anchor" : ""}" type="button" data-attribution-id="${record.id}">
+        <span class="quote-supplier"><strong>${record.supplier}</strong>${quoteSourceBadge(record)}</span>
+        <span class="quote-material"><strong>${record.model}</strong><small>${record.spec || record.category || "规格待补充"}</small></span>
+        <span class="quote-price">${moneyPerPiece(record.quote, record.currency)}</span>
+        <span class="quote-stock">${record.stock ?? "—"}</span>
+        <span class="quote-lead">${record.lead || "—"}</span>
+      </button>
     `;
+  }).join("");
+  els.attributionDetail.innerHTML = renderComparisonDetail(current, anchor);
+}
+
+function renderSectors() {
+  const term = state.search.trim();
+  let list = sectors
+    .filter((item) => state.sectorGroup === "all" || item.group === state.sectorGroup)
+    .filter((item) => item.name.includes(term) || !term);
+
+  list = list.sort((a, b) => b.change - a.change);
+
+  if (!list.length) {
+    els.sectorRows.innerHTML = `<tr><td colspan="7"><div class="empty-state">等待东方财富公开板块行情</div></td></tr>`;
+    renderHeatMap([]);
     return;
   }
 
-  const useManualTarget = Number.isFinite(targetPriceValue) && targetPriceValue > 0;
-  const compare = comparePart ? selectedQuote(comparePart, base.profile.category) : null;
-  const compareRecord = useManualTarget
-    ? {
-        part: comparePart || "目标价",
-        category: base.record.category || base.profile.category,
-        supplier: targetSource,
-        sourceType: "manual",
-        unitPrice: targetPriceValue,
-        currency: base.record.currency || "CNY",
-        date: new Date().toISOString().slice(0, 10)
-      }
-    : compare?.record;
+  const visible = list.slice(0, 10);
+  els.sectorRows.innerHTML = visible.map((item, index) => `
+    <tr>
+      <td>${index + 1}</td>
+      <td>
+        <div class="sector-name"><strong>${item.name}</strong></div>
+        <div class="sector-sub">${groupName(item.group)}</div>
+      </td>
+      <td><span class="change ${changeClass(item.change)}">${signed(item.change)}</span></td>
+      <td><div class="heat-bar"><span style="width:${item.heat}%"></span></div></td>
+      <td>${item.flow >= 0 ? "+" : ""}${item.flow.toFixed(1)}亿</td>
+      <td>${item.breadth}</td>
+      <td><button class="star ${item.favorite ? "active" : ""}" data-fav-sector="${item.name}" title="加入自选">★</button></td>
+    </tr>
+  `).join("");
 
-  if (!compareRecord) {
-    panel.innerHTML = `
-      <div class="result-header">
-        <div>
-          <span class="eyebrow">Attribution Result</span>
-          <div class="result-code">${basePart}</div>
-        </div>
-        <span class="risk-pill">待补对比价</span>
-      </div>
-      <p class="empty-note">已找到基准价 ${formatPrice(base.record)}，请再输入对比料号、目标价或供应商报价。</p>
+  renderHeatMap(visible);
+}
+
+function renderHeatMap(list = sectors) {
+  const show = list.length ? list : sectors;
+  if (!show.length) {
+    els.heatMap.innerHTML = `<div class="empty-state">暂无板块数据</div>`;
+    els.upCount.textContent = "—";
+    els.downCount.textContent = "—";
+    return;
+  }
+  els.heatMap.innerHTML = show.slice(0, 6).map((item) => {
+    const intensity = Math.min(1, Math.max(0.2, Math.abs(item.change) / 5));
+    const color = item.change >= 0
+      ? `rgba(217, 45, 32, ${0.56 + intensity * 0.38})`
+      : `rgba(7, 148, 85, ${0.48 + intensity * 0.38})`;
+    return `<div class="heat-cell" style="background:${color}"><strong>${item.name}</strong><span>${signed(item.change)} · 热度${item.heat}</span></div>`;
+  }).join("");
+  els.upCount.textContent = sectors.filter((item) => item.change >= 0).length;
+  els.downCount.textContent = sectors.filter((item) => item.change < 0).length;
+}
+
+function renderWatchList() {
+  const watchedCommodities = commodities.filter((item) => item.favorite).map((item) => ({
+    name: item.name,
+    meta: `${formatPrice(item)} ${item.unit}`,
+    change: item.change
+  }));
+  const watchedSectors = sectors.filter((item) => item.favorite).map((item) => ({
+    name: item.name,
+    meta: `${groupName(item.group)} · 热度${item.heat}`,
+    change: item.change
+  }));
+  const list = [...watchedCommodities, ...watchedSectors];
+  els.watchList.innerHTML = list.length ? list.map((item) => `
+    <div class="watch-item">
+      <div><strong>${item.name}</strong><div class="muted">${item.meta}</div></div>
+      <span class="change ${changeClass(item.change)}">${signed(item.change)}</span>
+    </div>
+  `).join("") : `<div class="empty-state">暂无自选，点击星标加入关注</div>`;
+}
+
+function formatFundNav(value) {
+  return hasNumber(value) ? Number(value).toFixed(4) : "—";
+}
+
+function fundSeriesForRange(fund, range = state.fundRange) {
+  const days = { "1M": 31, "3M": 93, "6M": 186, "1Y": 366, "2Y": 732 }[range] || 366;
+  const series = Array.isArray(fund?.series) ? fund.series : [];
+  if (!series.length) return [];
+  const cutoff = Date.now() - days * 24 * 60 * 60_000;
+  const visible = series.filter((point) => point.timestamp >= cutoff);
+  return visible.length >= 2 ? visible : series.slice(-Math.min(series.length, 2));
+}
+
+function fundChange(current, reference) {
+  if (!hasNumber(current) || !hasNumber(reference) || reference === 0) return null;
+  return ((current - reference) / reference) * 100;
+}
+
+function fundMetrics(fund) {
+  const series = Array.isArray(fund?.series) ? fund.series : [];
+  const latest = series[series.length - 1];
+  if (!latest) return {};
+  const currentValue = latest.value;
+  const changeAt = (offset) => fundChange(currentValue, series[Math.max(0, series.length - 1 - offset)]?.value);
+  const year = new Date(latest.timestamp).getFullYear();
+  const ytdStart = series.find((point) => point.date >= `${year}-01-01`) || series[0];
+  const oneYear = fundSeriesForRange(fund, "1Y");
+  const oneYearValues = oneYear.map((point) => point.value);
+  const min = Math.min(...oneYearValues);
+  const max = Math.max(...oneYearValues);
+  const position = max > min ? ((currentValue - min) / (max - min)) * 100 : 50;
+  return {
+    latest,
+    fiveDay: changeAt(5),
+    oneMonth: changeAt(22),
+    ytd: fundChange(currentValue, ytdStart?.value),
+    oneYear: fundChange(currentValue, oneYear[0]?.value),
+    position: Math.max(0, Math.min(100, position))
+  };
+}
+
+function fundSparklineSvg(fund) {
+  const points = fundSeriesForRange(fund, "3M");
+  if (points.length < 2) return `<span class="fund-sparkline-empty">历史净值待加载</span>`;
+  const values = points.map((point) => point.value);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const polyline = values.map((value, index) => {
+    const x = (index / (values.length - 1)) * 100;
+    const y = 28 - ((value - min) / (max - min || 1)) * 22;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(" ");
+  return `<svg class="fund-sparkline" viewBox="0 0 100 32" aria-hidden="true"><polyline points="${polyline}" fill="none" stroke="${fund.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>`;
+}
+
+function drawFundChart(fund) {
+  const canvas = els.fundTrendChart;
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const rect = canvas.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = Math.max(640, Math.floor(rect.width * dpr));
+  canvas.height = Math.max(180, Math.floor(rect.height * dpr));
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  const width = rect.width;
+  const height = rect.height;
+  const pad = { top: 18, right: 18, bottom: 30, left: 52 };
+  ctx.fillStyle = "#11171b";
+  ctx.fillRect(0, 0, width, height);
+  const points = fundSeriesForRange(fund);
+  if (points.length < 2) {
+    ctx.fillStyle = "#84979e";
+    ctx.font = "12px Segoe UI, Microsoft YaHei, sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("等待公开历史净值", width / 2, height / 2);
+    ctx.textAlign = "left";
+    return;
+  }
+
+  const values = points.map((point) => point.value);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const plotWidth = width - pad.left - pad.right;
+  const plotHeight = height - pad.top - pad.bottom;
+  ctx.strokeStyle = "#26363d";
+  ctx.lineWidth = 1;
+  ctx.fillStyle = "#82959d";
+  ctx.font = "11px Segoe UI, Microsoft YaHei, sans-serif";
+  for (let index = 0; index <= 4; index += 1) {
+    const y = pad.top + (plotHeight / 4) * index;
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y);
+    ctx.lineTo(width - pad.right, y);
+    ctx.stroke();
+    const label = max - ((max - min) / 4) * index;
+    ctx.fillText(label.toFixed(3), 6, y + 4);
+  }
+
+  ctx.beginPath();
+  points.forEach((point, index) => {
+    const x = pad.left + (index / (points.length - 1)) * plotWidth;
+    const y = pad.top + (1 - (point.value - min) / (max - min || 1)) * plotHeight;
+    if (index === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = fund.color;
+  ctx.lineWidth = 2.5;
+  ctx.stroke();
+
+  const labels = [points[0].date, points[Math.floor(points.length / 2)].date, points[points.length - 1].date];
+  ctx.fillStyle = "#82959d";
+  labels.forEach((label, index) => {
+    const x = pad.left + (index / (labels.length - 1)) * plotWidth;
+    ctx.fillText(label.slice(5), x - 14, height - 10);
+  });
+}
+
+function renderFundDetail(fund) {
+  if (!fund) {
+    els.fundCode.textContent = "—";
+    els.fundTitle.textContent = "基金趋势";
+    els.fundDescriptor.textContent = "等待公开历史净值";
+    els.fundStats.innerHTML = "";
+    els.fundChartRange.textContent = "—";
+    drawFundChart(null);
+    return;
+  }
+  const metrics = fundMetrics(fund);
+  const rangeLabel = { "1M": "近1月", "3M": "近3月", "6M": "近6月", "1Y": "近1年", "2Y": "近2年" }[state.fundRange];
+  els.fundCode.textContent = fund.code;
+  els.fundTitle.textContent = fund.name;
+  els.fundDescriptor.textContent = `${fund.type} · 最新确认净值日期 ${fund.navDate}`;
+  els.fundStats.innerHTML = [
+    ["最新确认净值", formatFundNav(fund.nav)],
+    ["当日涨跌", signed(fund.dailyChange), changeClass(fund.dailyChange)],
+    ["近1月", signed(metrics.oneMonth), changeClass(metrics.oneMonth)],
+    ["近1年位置", `${metrics.position?.toFixed(0) ?? "—"}%`]
+  ].map(([label, value, tone]) => `<div><span>${label}</span><strong class="${tone || ""}">${value}</strong></div>`).join("");
+  els.fundChartRange.textContent = `${rangeLabel} · ${fundSeriesForRange(fund).length} 个确认净值点`;
+  els.fundSource.textContent = fund.source || "东方财富公开历史净值";
+  drawFundChart(fund);
+}
+
+function renderFunds() {
+  if (!fundWatch.length) {
+    els.fundList.innerHTML = `<div class="empty-state">等待公开基金净值</div>`;
+    renderFundDetail(null);
+    return;
+  }
+  const selected = fundWatch.find((fund) => fund.code === state.selectedFund) || fundWatch[0];
+  state.selectedFund = selected.code;
+  els.fundList.innerHTML = fundWatch.map((fund, index) => {
+    const metrics = fundMetrics(fund);
+    return `
+      <button class="fund-row ${fund.code === selected.code ? "active" : ""}" type="button" data-fund-code="${fund.code}">
+        <span class="fund-row-index">0${index + 1}</span>
+        <span class="fund-row-main"><strong>${fund.name}</strong><small>${fund.code} · ${fund.type} · ${fund.navDate || "净值待确认"}</small></span>
+        <span class="fund-row-nav"><small>确认净值</small><strong>${formatFundNav(fund.nav)}</strong></span>
+        <span class="change ${changeClass(fund.dailyChange)}">${signed(fund.dailyChange)}</span>
+        <span class="fund-row-spark">${fundSparklineSvg(fund)}</span>
+      </button>
     `;
+  }).join("");
+  renderFundDetail(selected);
+}
+
+let fundsInFlight = false;
+
+async function loadFunds() {
+  if (fundsInFlight || location.protocol === "file:") return;
+  if (!canUseDashboardApi) {
+    els.fundDataState.textContent = "外网静态预览";
+    els.fundList.innerHTML = `<div class="empty-state">基金净值接口未部署到外网</div>`;
+    renderFundDetail(null);
+    return;
+  }
+  fundsInFlight = true;
+  els.fundDataState.textContent = "加载确认净值";
+  try {
+    const response = await fetch("/api/funds");
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "基金净值请求失败");
+    fundWatch = Array.isArray(payload.funds) ? payload.funds : [];
+    els.fundDataState.textContent = fundWatch.length ? `已确认 ${fundWatch.length} 只基金净值` : "公开净值暂不可用";
+    renderFunds();
+  } catch (error) {
+    els.fundDataState.textContent = "公开净值暂不可用";
+    els.fundList.innerHTML = `<div class="empty-state">${error.message || "基金净值请求失败"}</div>`;
+    renderFundDetail(null);
+    console.warn("Fund data unavailable:", error.message);
+  } finally {
+    fundsInFlight = false;
+  }
+}
+
+function buildAlerts() {
+  const time = new Intl.DateTimeFormat("zh-CN", { hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
+  const sectorAlerts = sectors
+    .filter((item) => hasNumber(item.change) && Math.abs(item.change) >= state.threshold)
+    .sort((a, b) => Math.abs(b.change) - Math.abs(a.change))
+    .slice(0, 4)
+    .map((item) => ({
+      title: `${item.name} ${signed(item.change)}`,
+      target: "东方财富公开板块",
+      level: Math.abs(item.change) >= 4 ? "high" : "medium",
+      delta: signed(item.change),
+      time,
+      body: `上涨/下跌家数 ${item.breadth} · 资金流 ${item.flow >= 0 ? "+" : ""}${item.flow.toFixed(1)}亿（公开口径）`
+    }));
+  const commodityAlerts = commodities
+    .filter((item) => hasNumber(item.change) && Math.abs(item.change) >= state.threshold)
+    .sort((a, b) => Math.abs(b.change) - Math.abs(a.change))
+    .slice(0, 3)
+    .map((item) => ({
+      title: `${item.name} 日内变动 ${signed(item.change)}`,
+      target: "Twelve Data",
+      level: Math.abs(item.change) >= 3 ? "high" : "medium",
+      delta: signed(item.change),
+      time,
+      body: `${item.code} · ${item.unit} · 免费公开数据源`
+    }));
+  return [...sectorAlerts, ...commodityAlerts];
+}
+
+function renderAlerts() {
+  if (!state.alertsEnabled) {
+    els.alertFeed.innerHTML = `<div class="empty-state">异动提醒已关闭</div>`;
     return;
   }
 
-  const delta = compareRecord.unitPrice - base.record.unitPrice;
-  const deltaPercent = base.record.unitPrice ? (delta / base.record.unitPrice) * 100 : 0;
-  const direction = delta > 0 ? "对比价更高" : delta < 0 ? "对比价更低" : "两边价格一致";
-  const comparable = (compareRecord.category || base.profile.category) === (base.record.category || base.profile.category);
-  const factors = buildAttributionFactors(base.profile, compare?.profile || base.profile, comparable);
-  const deltaClass = delta > 0 ? "delta-up" : delta < 0 ? "delta-down" : "";
+  const term = state.search.trim();
+  const list = alerts.filter((item) => {
+    const matchText = !term || `${item.title}${item.target}${item.body}`.includes(term);
+    const matchLevel = state.alertLevel === "all" || item.level === state.alertLevel || (state.alertLevel === "watch" && item.target.includes("关注"));
+    const matchThreshold = Math.abs(parseFloat(item.delta)) >= state.threshold || item.level === "high";
+    return matchText && matchLevel && matchThreshold;
+  });
 
-  panel.innerHTML = `
-    <div class="result-header">
+  els.alertFeed.innerHTML = list.length ? list.map((item) => `
+    <article class="alert-item">
+      <span class="severity ${item.level}"></span>
       <div>
-        <span class="eyebrow">Attribution Result</span>
-        <div class="result-code">${basePart} → ${compareRecord.part}</div>
+        <strong class="alert-title">${item.title}</strong>
+        <div class="alert-meta"><span>${item.time} · ${item.target}</span><span>${item.body}</span></div>
       </div>
-      <span class="risk-pill">${comparable ? "同品类可比" : "可比性待确认"}</span>
-    </div>
-    <div class="attribution-summary">
-      <div class="metric"><span>价差结论</span><strong>${direction}</strong></div>
-      <div class="metric"><span>差额</span><strong class="${deltaClass}">${base.record.currency || "CNY"} ${Math.abs(delta).toFixed(4)}</strong></div>
-      <div class="metric"><span>差异比例</span><strong class="${deltaClass}">${deltaPercent >= 0 ? "+" : ""}${deltaPercent.toFixed(2)}%</strong></div>
-    </div>
-    <section class="quote-panel">
-      <div class="quote-head">
-        <h3>价格口径</h3>
-        <span>公司价格优先，外部价格仅补缺</span>
-      </div>
-      <div class="comparison-table">
-        <div class="comparison-row">
-          <span>基准料号</span>
-          <strong>${base.record.part}</strong>
-          <b>${formatPrice(base.record)}</b>
-        </div>
-        <div class="comparison-row">
-          <span>基准来源</span>
-          <strong>${priceBasisText(base.group)}</strong>
-          <b>${base.record.date || "未标注日期"}</b>
-        </div>
-        <div class="comparison-row">
-          <span>对比对象</span>
-          <strong>${compareRecord.part}</strong>
-          <b>${formatPrice(compareRecord)}</b>
-        </div>
-        <div class="comparison-row">
-          <span>对比来源</span>
-          <strong>${useManualTarget ? targetSource : priceBasisText(compare.group)}</strong>
-          <b>${compareRecord.date || "未标注日期"}</b>
-        </div>
-      </div>
-    </section>
-    <section class="attribution-factors">
-      <div class="quote-head">
-        <h3>归因拆解</h3>
-        <span>${comparable ? "按当前品类规则拆分" : "跨品类仅作风险提示"}</span>
-      </div>
-      ${factors.map((factor, index) => `
-        <div class="attribution-factor">
-          <strong>${factor.label}</strong>
-          <div class="attribution-factor-track">
-            <span class="factor-${index + 1}" style="--factor:${factor.value}%"></span>
-          </div>
-          <span>${factor.value}%</span>
-          <p class="empty-note">${factor.note}</p>
-        </div>
-      `).join("")}
-    </section>
-    <section class="attribution-actions">
-      <div class="quote-head">
-        <h3>采购动作</h3>
-        <span>用于议价和复核</span>
-      </div>
-      <ul class="action-list">
-        <li>要求供应商补齐税率、MOQ、交期、包装和报价有效期，避免口径不一致。</li>
-        <li>若为同品类替代料，优先核对封装、脚位、关键规格和可靠性等级。</li>
-        <li>用公司价格作为主锚点，外部公开价只作为缺料或异常报价时的参考。</li>
-      </ul>
-    </section>
-  `;
+      <span class="tag ${item.delta.startsWith("-") ? "down" : "up"}">${item.delta}</span>
+    </article>
+  `).join("") : `<div class="empty-state">当前筛选下暂无异动</div>`;
 }
 
-function renderCostBreakdown(profile) {
-  const items = profile.costBreakdown || fallbackProfile.costBreakdown;
-  const segments = items
-    .map((item, index) => `<span class="cost-segment cost-${index + 1}" style="--share:${item.value}"></span>`)
-    .join("");
-  const rows = items
-    .map((item, index) => `
-      <div class="cost-row">
-        <span class="cost-key cost-${index + 1}"></span>
-        <span>${item.label}</span>
-        <strong>${item.value}%</strong>
-      </div>
-    `)
-    .join("");
-
-  return `
-    <section class="cost-panel">
-      <div class="quote-head">
-        <h3>成本组成参考</h3>
-        <span>规则口径</span>
-      </div>
-      <div class="cost-stack" aria-label="成本组成百分比">${segments}</div>
-      <div class="cost-grid">${rows}</div>
-    </section>
-  `;
+function flashValue(element) {
+  if (!element || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  element.classList.remove("value-flash");
+  window.requestAnimationFrame(() => element.classList.add("value-flash"));
+  window.setTimeout(() => element.classList.remove("value-flash"), 600);
 }
 
-function renderFactorShare(item) {
-  return `
-    <div class="factor-share">
-      <span class="factor-title">价差因素参考权重</span>
-      ${(item.factorShare || []).map((factor, index) => `
-        <div class="factor-row">
-          <div class="factor-label">
-            <i class="factor-dot factor-${index + 1}"></i>
-            <span>${factor.label}</span>
-          </div>
-          <div class="factor-track">
-            <span class="factor-fill factor-${index + 1}" style="--factor:${factor.value}%"></span>
-          </div>
-          <strong>${factor.value}%</strong>
-        </div>
-      `).join("")}
-    </div>
-  `;
+function setTextWithFlash(element, value) {
+  const nextValue = String(value);
+  const changed = element.textContent !== nextValue;
+  element.textContent = nextValue;
+  if (changed && nextValue !== "—") flashValue(element);
 }
 
-function createChart(values, color) {
-  const width = 340;
-  const height = 150;
-  const chartLeft = 38;
-  const chartRight = 10;
-  const chartTop = 12;
-  const chartBottom = 28;
-  const innerWidth = width - chartLeft - chartRight;
-  const innerHeight = height - chartTop - chartBottom;
-  const min = Math.floor((Math.min(...values) - 4) / 10) * 10;
-  const max = Math.ceil((Math.max(...values) + 4) / 10) * 10;
-  const span = max - min || 1;
-  const points = values.map((value, index) => {
-    const x = chartLeft + (index / (values.length - 1)) * innerWidth;
-    const y = chartTop + (1 - (value - min) / span) * innerHeight;
-    return [x, y];
-  });
-  const line = points.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
-  const smoothLine = points.reduce((path, point, index) => {
-    const [x, y] = point;
-    if (index === 0) return `M ${x.toFixed(1)} ${y.toFixed(1)}`;
-    const [prevX, prevY] = points[index - 1];
-    const controlX = (prevX + x) / 2;
-    return `${path} C ${controlX.toFixed(1)} ${prevY.toFixed(1)}, ${controlX.toFixed(1)} ${y.toFixed(1)}, ${x.toFixed(1)} ${y.toFixed(1)}`;
-  }, "");
-  const baseline = chartTop + innerHeight;
-  const area = `${chartLeft},${baseline} ${line} ${width - chartRight},${baseline}`;
-  const ticks = [min, Math.round((min + max) / 2), max];
-  const grid = ticks
-    .map((tick) => {
-      const y = chartTop + (1 - (tick - min) / span) * innerHeight;
-      return `
-        <line class="chart-grid" x1="${chartLeft}" y1="${y.toFixed(1)}" x2="${width - chartRight}" y2="${y.toFixed(1)}" />
-        <text class="chart-axis-label" x="${chartLeft - 8}" y="${(y + 4).toFixed(1)}" text-anchor="end">${tick}</text>
-      `;
-    })
-    .join("");
-  const monthLabels = [
-    { label: "1月", index: 0 },
-    { label: "6月", index: 5 },
-    { label: "12月", index: 11 }
-  ]
-    .map(({ label, index }) => {
-      const x = chartLeft + (index / (values.length - 1)) * innerWidth;
-      return `<text class="chart-axis-label" x="${x.toFixed(1)}" y="${height - 5}" text-anchor="middle">${label}</text>`;
-    })
-    .join("");
-  const dots = points
-    .filter((_, index) => index === 0 || index === points.length - 1 || index === 5)
-    .map(([x, y]) => `<circle class="chart-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.4" style="--card-color:${color}"></circle>`)
-    .join("");
-
-  return `
-    <svg class="chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="12个月平均价格指数走势，纵轴为价格指数，基准等于100，横轴为月份">
-      <text class="chart-title" x="${chartLeft}" y="8">价格指数（基准=100）</text>
-      ${grid}
-      <line class="chart-axis" x1="${chartLeft}" y1="${chartTop}" x2="${chartLeft}" y2="${baseline}" />
-      <line class="chart-axis" x1="${chartLeft}" y1="${baseline}" x2="${width - chartRight}" y2="${baseline}" />
-      <polyline class="chart-area" points="${area}"></polyline>
-      <path class="chart-line" d="${smoothLine}" style="--card-color:${color}"></path>
-      ${dots}
-      ${monthLabels}
-    </svg>
-  `;
+function flashChart() {
+  const chartWrap = els.trendChart?.closest(".chart-wrap");
+  if (!chartWrap || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  chartWrap.classList.remove("is-chart-refreshing");
+  window.requestAnimationFrame(() => chartWrap.classList.add("is-chart-refreshing"));
+  window.setTimeout(() => chartWrap.classList.remove("is-chart-refreshing"), 750);
 }
 
-function renderCategories() {
-  const grid = document.querySelector("#categoryGrid");
-  grid.innerHTML = categories
-    .map((item) => {
-      const trendData = buildValuesFromRecords(item.name);
-      const values = trendData.values;
-      const change = values.at(-1) - values[0];
-      const sign = change >= 0 ? "+" : "";
-      const trendLabel = trendData.sourceType === "model" ? "待采集" : `${item.trend} ${sign}${change.toFixed(0)}pt`;
-      return `
-        <article class="category-card" style="--card-color:${item.tone}">
-          <div class="category-top">
-            <div class="category-icon" aria-hidden="true">${item.icon}</div>
-            <span class="trend-badge">${trendLabel}</span>
-          </div>
-          <div class="source-badge">来源 · ${sourceTextForCategory(item.name)}</div>
-          <h3>${item.name}</h3>
-          <p>${item.copy}</p>
-          ${createChart(values, item.tone)}
-          <div class="card-meta">
-            ${renderFactorShare(item)}
-            <div><span>采购动作</span><strong>${item.action}</strong></div>
-          </div>
-          <p class="card-source">数据来源：${sourceTextForCategory(item.name)}</p>
-        </article>
-      `;
-    })
-    .join("");
-}
-
-function renderDataSources() {
-  const sourceGrid = document.querySelector("#sourceGrid");
-  const insights = document.querySelector("#dataInsights");
-  const sourceSummary = document.querySelector("#sourceSummary");
-  if (!sourceGrid || !insights) return;
-
-  const summary = recordsSummary();
-  const externalNames = [...new Set(externalRecords.map((item) => item.supplier))].slice(0, 5).join(" / ");
-  sourceSummary.textContent = companyRecords.length
-    ? `当前折线图来源：${externalNames ? `外部参考价：${externalNames}` : "待外部采集"}；公司表只作为当前公司价格。`
-    : `当前折线图来源：${externalNames ? `外部参考价：${externalNames}` : "待外部采集"}。导入公司价格表后会用于料号分析。`;
-  sourceGrid.innerHTML = vendorConnectors
-    .map((item) => `
-      <article class="source-card">
-        <div>
-          <span class="source-status">${item.status}</span>
-          <h3>${item.name}</h3>
-        </div>
-        <p>${item.method}</p>
-        <strong>${item.note}</strong>
-      </article>
-    `)
-    .join("");
-  insights.innerHTML = `
-    <div class="metric"><span>公司价格</span><strong>${summary.companyCount}</strong></div>
-    <div class="metric"><span>外部参考</span><strong>${summary.externalCount}</strong></div>
-    <div class="metric"><span>覆盖品类</span><strong>${summary.categoryCount}</strong></div>
-    <div class="metric"><span>价格周期</span><strong>${summary.range}</strong></div>
-  `;
-}
-
-function splitCsvLine(line) {
-  const cells = [];
-  let value = "";
-  let quoted = false;
-  for (let index = 0; index < line.length; index += 1) {
-    const char = line[index];
-    if (char === '"' && line[index + 1] === '"') {
-      value += '"';
-      index += 1;
-    } else if (char === '"') {
-      quoted = !quoted;
-    } else if (char === "," && !quoted) {
-      cells.push(value.trim());
-      value = "";
-    } else {
-      value += char;
-    }
+function setTicker(valueEl, changeEl, quote, maximumFractionDigits = 2) {
+  if (!quote || !hasNumber(quote.price)) {
+    setTextWithFlash(valueEl, "—");
+    changeEl.textContent = "公开数据暂不可用";
+    changeEl.className = "flat";
+    return;
   }
-  cells.push(value.trim());
-  return cells;
+  setTextWithFlash(valueEl, quote.price.toLocaleString("zh-CN", { maximumFractionDigits }));
+  changeEl.textContent = signed(quote.change);
+  changeEl.className = quote.change > 0.05 ? "rise" : quote.change < -0.05 ? "fall" : "flat";
 }
 
-function parseCsv(text, fallbackSourceType = "company") {
-  const lines = text.split(/\r?\n/).filter((line) => line.trim());
-  if (lines.length < 2) return [];
-  const headers = splitCsvLine(lines[0]).map((header) => header.trim());
-  return lines.slice(1)
-    .map((line) => {
-      const cells = splitCsvLine(line);
-      return headers.reduce((row, header, index) => {
-        row[header] = cells[index] || "";
-        return row;
-      }, {});
-    })
-    .map((row) => normalizeRecord(row, fallbackSourceType))
-    .filter(Boolean);
+function updateOverview(overview, aShareBreadth) {
+  setTicker(els.tickerShanghai, els.tickerShanghaiChange, overview?.shanghai, 2);
+  setTicker(els.tickerShenzhen, els.tickerShenzhenChange, overview?.shenzhen, 2);
+  setTicker(els.tickerUsdCny, els.tickerUsdCnyChange, overview?.usdcny, 4);
+  const availableBreadth = aShareBreadth && Number.isFinite(aShareBreadth.total);
+  setTextWithFlash(els.tickerUpSectors, availableBreadth ? aShareBreadth.rising.toLocaleString("zh-CN") : "—");
+  els.tickerUpSectorsMeta.textContent = availableBreadth ? `A股共${aShareBreadth.total.toLocaleString("zh-CN")}只` : "等待A股统计";
+  els.tickerUpSectorsMeta.className = "flat";
+  setTextWithFlash(els.tickerDownSectors, availableBreadth ? aShareBreadth.falling.toLocaleString("zh-CN") : "—");
+  els.tickerDownSectorsMeta.textContent = availableBreadth ? "东方财富公开口径" : "等待A股统计";
+  els.tickerDownSectorsMeta.className = "flat";
 }
 
-function setupDataImport() {
-  const input = document.querySelector("#quoteUpload");
-  if (!input) return;
-  input.addEventListener("change", async () => {
-    const file = input.files?.[0];
-    if (!file) return;
-    const text = await file.text();
-    const parsed = file.name.toLowerCase().endsWith(".json") ? JSON.parse(text) : null;
-    const rows = file.name.toLowerCase().endsWith(".json")
-      ? (Array.isArray(parsed) ? parsed : parsed.records || []).map((row) => normalizeRecord(row, "company")).filter(Boolean)
-      : parseCsv(text, "company");
-    if (!rows.length) {
-      document.querySelector("#sourceSummary").textContent = "未识别到有效价格数据，请检查字段：日期、料号、品类、供应商、单价、数量、币种。";
-      return;
-    }
-    companyRecords = collapseCompanyPrices(rows);
-    dataMode = `公司价格 · ${file.name}`;
-    renderDataSources();
-    renderCategories();
-    renderResult();
-    renderAttribution();
-  });
-  renderDataSources();
+function renderAll() {
+  renderCards();
+  renderChart();
+  renderAttribution();
+  renderWatchList();
+  renderFunds();
 }
 
-async function loadCompanyPriceBook() {
+function replaceMarketItems(target, next, favoriteKey) {
+  const favorites = new Set(target.filter((item) => item.favorite).map((item) => item[favoriteKey]));
+  target.splice(0, target.length, ...next.map((item) => ({ ...item, favorite: favorites.has(item[favoriteKey]) })));
+}
+
+async function loadHistory() {
+  const item = commodities.find((entry) => entry.id === state.selectedCommodity);
+  if (!item || location.protocol === "file:") return;
+  if (!canUseDashboardApi) {
+    els.chartDataStatus.textContent = "外网静态预览";
+    els.chartUpdatedAt.textContent = "连接后端后更新";
+    renderChart();
+    return;
+  }
+  if (!hasNumber(item.price)) {
+    els.chartDataStatus.textContent = "等待报价";
+    return;
+  }
+  els.chartDataStatus.textContent = "加载中";
   try {
-    const response = await fetch(`./data/company-procurement-prices.json?ts=${Date.now()}`);
-    if (!response.ok) return;
-    const data = await response.json();
-    const rows = (Array.isArray(data) ? data : data.records || [])
-      .map((row) => normalizeRecord(row, "company"))
-      .filter(Boolean);
-    if (!rows.length) return;
-
-    companyRecords = collapseCompanyPrices(rows);
-    dataMode = "公司价格";
+    const response = await fetch(`/api/history?id=${encodeURIComponent(item.id)}&range=${encodeURIComponent(state.range)}`);
+    if (!response.ok) throw new Error((await response.json()).error || "趋势数据暂不可用");
+    const payload = await response.json();
+    state.history.set(`${item.id}:${state.range}`, payload.points);
+    els.chartDataStatus.textContent = `${payload.source || "公开行情"} · ${payload.points.length} 点`;
+    els.chartUpdatedAt.textContent = new Intl.DateTimeFormat("zh-CN", { hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
+    renderChart();
   } catch (error) {
-    console.warn("Company price book load skipped:", error);
+    els.chartDataStatus.textContent = "趋势不可用";
+    console.warn("History data unavailable:", error.message);
   }
 }
 
-async function loadPriceHistory() {
+let refreshInFlight = false;
+
+async function refreshMarket({ withHistory = false } = {}) {
+  if (refreshInFlight || location.protocol === "file:") return;
+  if (!canUseDashboardApi) {
+    state.liveConnected = false;
+    els.marketStatus.textContent = "外网静态预览";
+    els.dataSource.textContent = "前端页面已发布";
+    els.nextRefresh.textContent = "实时行情接口未部署到外网";
+    els.chartDataStatus.textContent = "外网静态预览";
+    renderAll();
+    return false;
+  }
+  refreshInFlight = true;
+  els.refreshNow.disabled = true;
+  els.refreshNow.textContent = "正在刷新";
   try {
-    const response = await fetch(`./data/price-history.json?ts=${Date.now()}`);
-    if (!response.ok) return;
-    const data = await response.json();
-    const rows = (data.records || []).map((row) => normalizeRecord(row, "external")).filter(Boolean);
-    if (!rows.length) return;
-
-    externalRecords = rows;
+    const response = await fetch("/api/market");
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "实时数据请求失败");
+    replaceMarketItems(commodities, payload.commodities, "id");
+    replaceMarketItems(sectors, payload.sectors, "name");
+    updateOverview(payload.overview, payload.aShareBreadth);
+    state.liveConnected = true;
+    state.tick = 60;
+    state.lastUpdated = payload.refreshedAt || new Date().toISOString();
+    els.marketStatus.textContent = payload.aShareStatus?.isTradingDay === true
+      ? "公开数据监测中"
+      : payload.aShareStatus?.isTradingDay === false
+        ? "公开数据 · 非交易日"
+        : payload.aShareStatus?.limited
+          ? "公开数据监测中 · 日历限频"
+          : "公开数据监测中 · 日历待校验";
+      els.dataSource.textContent = "Twelve · Alpha · Metalprice · 东方财富延迟 · 腾讯 · TuShare";
+    renderAll();
+    if (withHistory) await Promise.all([loadHistory(), loadSparklineHistories()]);
+    return true;
   } catch (error) {
-    console.warn("Price history load skipped:", error);
+    state.liveConnected = false;
+    els.marketStatus.textContent = "公开数据暂不可用";
+    els.dataSource.textContent = "保留上次成功数据";
+    els.nextRefresh.textContent = error.message || "数据源暂不可用";
+    console.warn("Live data unavailable:", error.message);
+    return false;
+  } finally {
+    refreshInFlight = false;
+    els.refreshNow.disabled = false;
+    els.refreshNow.textContent = "刷新行情";
   }
 }
 
-function getProfile(part) {
-  return profiles.find((profile) => profile.match.test(part)) || fallbackProfile;
+function setComponentSearchState(message, tone = "") {
+  els.componentSearchState.textContent = message;
+  els.componentSearchState.className = `component-search-state ${tone}`.trim();
 }
 
-function volumeText(volume) {
+function optionalNumber(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
+}
+
+function resetComparisonCosts() {
+  state.comparisonCosts = [];
+}
+
+function normalizeComponentQuote(quote, index) {
+  const sourceHint = [quote.source, quote.sourceName, quote.importedFrom, quote.database]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  const sourceType = quote.sourceType === "internal" || quote.database === "internal" || quote.importedFrom === "excel" || /excel|\.xlsx?\b|公司内部|内部数据库/.test(sourceHint)
+    ? "internal"
+    : "external";
+  const source = quote.source || (sourceType === "internal" ? "Excel 导入报价" : "公开渠道报价");
   return {
-    small: "小批量询价更易受MOQ和现货渠道影响",
-    medium: "量产阶段适合用阶梯价和季度锁价压缩波动",
-    large: "高频拉动建议绑定预测、备货和年度返利"
-  }[volume];
+    id: quote.id || `quote-${Date.now()}-${index}`,
+    model: quote.model || quote.mpn || state.componentSearchMeta?.mpn || "未标注型号",
+    category: quote.category || state.componentSearchMeta?.spec || "规格待补充",
+    spec: quote.spec || state.componentSearchMeta?.spec || state.componentSearchMeta?.package || "规格待补充",
+    supplier: quote.supplier || "未标注供应商",
+    quote: Number(quote.price ?? quote.quote),
+    currency: quote.currency || "CNY",
+    quantity: optionalNumber(quote.quantity),
+    stock: optionalNumber(quote.stock),
+    lead: quote.lead || "—",
+    source,
+    sourceDetail: quote.sourceDetail || quote.sourceName || source,
+    sourceType,
+    sourceUrl: quote.sourceUrl || ""
+  };
 }
 
-function scenarioText(scenario) {
-  return {
-    consumer: "消费电子可优先评估多品牌替代和交期弹性",
-    industrial: "工业控制需要兼顾温区、生命周期和批次稳定",
-    auto: "车规/高可靠场景需优先保留认证与失效风险余量"
-  }[scenario];
-}
-
-function renderResult() {
-  const part = document.querySelector("#partInput").value.trim() || "未输入物料";
-  const volume = document.querySelector("#volumeSelect").value;
-  const scenario = document.querySelector("#scenarioSelect").value;
-  const profile = getProfile(part);
-  const panel = document.querySelector("#resultPanel");
-  const quoteGroup = findQuoteRecords(part, profile.category);
-  const stats = priceStats(quoteGroup.records);
-  const quoteRows = quoteGroup.records
-    .slice(-4)
-    .map((item) => `
-      <div class="quote-row">
-        <span>${item.date}</span>
-        <strong>${item.supplier}</strong>
-        <span>${item.part}</span>
-        <b>${item.currency} ${item.unitPrice}</b>
-      </div>
-    `)
-    .join("");
-
-  panel.innerHTML = `
-    <div class="result-header">
-      <div>
-        <span class="eyebrow">Analysis Result</span>
-        <div class="result-code">${part}</div>
-      </div>
-      <span class="risk-pill">${profile.risk}</span>
-    </div>
-    <div class="result-grid">
-      <div class="metric"><span>识别品类</span><strong>${profile.category}</strong></div>
-      <div class="metric"><span>当前价格</span><strong>${priceMetricText(quoteGroup, stats)}</strong></div>
-      <div class="metric"><span>价格口径</span><strong>${priceBasisText(quoteGroup)}</strong></div>
-    </div>
-    <div class="metric">
-      <span>关键规格</span>
-      <strong>${profile.spec}</strong>
-    </div>
-    <section class="quote-panel">
-      <div class="quote-head">
-        <h3>${quoteGroup.title}</h3>
-        <span>${quoteGroup.mode || dataMode}</span>
-      </div>
-      ${renderPricePanel(quoteGroup, stats, quoteRows)}
-    </section>
-    ${renderCostBreakdown(profile)}
-    <div class="result-columns">
-      <section>
-        <h3>价差来源</h3>
-        <ul class="driver-list">
-          ${profile.drivers.map((item) => `<li>${item}</li>`).join("")}
-          <li>${volumeText(volume)}。</li>
-          <li>${scenarioText(scenario)}。</li>
-        </ul>
-      </section>
-      <section>
-        <h3>采购建议</h3>
-        <ul class="action-list">
-          ${profile.actions.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
-      </section>
-    </div>
-  `;
-}
-
-function setupAnalyzer() {
-  const form = document.querySelector("#analyzerForm");
-  const footerInput = document.querySelector("#footerSearch");
-  const footerBtn = document.querySelector("#footerSearchBtn");
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    renderResult();
-  });
-  document.querySelector("#volumeSelect").addEventListener("change", renderResult);
-  document.querySelector("#scenarioSelect").addEventListener("change", renderResult);
-  footerBtn.addEventListener("click", () => {
-    const value = footerInput.value.trim();
-    if (value) {
-      document.querySelector("#partInput").value = value;
-      const basePartInput = document.querySelector("#basePartInput");
-      if (basePartInput) basePartInput.value = value;
-      renderResult();
-      renderAttribution();
-      document.querySelector("#analyzer").scrollIntoView({ behavior: "smooth" });
-    }
-  });
-  renderResult();
-}
-
-function setupAttribution() {
-  const form = document.querySelector("#attributionForm");
-  if (!form) return;
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    renderAttribution();
-  });
-  ["basePartInput", "comparePartInput", "targetPriceInput", "targetSourceInput"].forEach((id) => {
-    const input = document.querySelector(`#${id}`);
-    if (input) input.addEventListener("change", renderAttribution);
-  });
+function applyQuoteResults(quotes, links = []) {
+  const normalized = quotes.map(normalizeComponentQuote).filter((quote) => Number.isFinite(quote.quote) && quote.quote >= 0);
+  attributionRecords.splice(0, attributionRecords.length, ...normalized);
+  state.componentSearchLinks = links;
+  state.selectedAttribution = normalized[0]?.id || "";
+  state.selectedAnchor = normalized[1]?.id || "";
+  resetComparisonCosts();
   renderAttribution();
 }
 
-function setupHeroCanvas() {
-  const canvas = document.querySelector("#heroCanvas");
-  const context = canvas.getContext("2d");
-  let width = 0;
-  let height = 0;
-  let frame = 0;
-
-  function resize() {
-    const rect = canvas.getBoundingClientRect();
-    const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    width = rect.width;
-    height = rect.height;
-    canvas.width = width * ratio;
-    canvas.height = height * ratio;
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+async function searchComponentQuotes(formData) {
+  const mpn = String(formData.get("mpn") || "").trim();
+  const spec = String(formData.get("spec") || "").trim();
+  const packageName = String(formData.get("package") || "").trim();
+  const quantity = Math.max(1, Number(formData.get("quantity")) || 1);
+  if (mpn.length < 2) {
+    setComponentSearchState("请输入至少两个字符的型号 / MPN。", "error");
+    return;
   }
+  if (location.protocol === "file:") {
+    setComponentSearchState("请通过本机服务打开看板，才能查询渠道报价。", "error");
+    return;
+  }
+  if (!canUseDashboardApi) {
+    state.componentSearchMeta = { mpn, spec, package: packageName, quantity };
+    setComponentSearchState("外网静态版未连接抓价后端。可点击“录入报价”，先用供应商报价做价差归因。", "warning");
+    return;
+  }
+  state.componentSearchMeta = { mpn, spec, package: packageName, quantity };
+  els.componentSearchButton.disabled = true;
+  els.componentSearchButton.textContent = "查询中";
+  setComponentSearchState(`正在查询 ${mpn} 的公开渠道报价...`);
+  try {
+    const params = new URLSearchParams({ mpn, spec, package: packageName, quantity: String(quantity) });
+    const response = await fetch(`/api/component-quotes?${params.toString()}`);
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "渠道报价查询失败");
+    applyQuoteResults(Array.isArray(payload.quotes) ? payload.quotes : [], Array.isArray(payload.searchLinks) ? payload.searchLinks : []);
+    setComponentSearchState(payload.quotes?.length
+      ? `已返回 ${payload.quotes.length} 条可比较报价，选择两条即可归因。`
+      : (payload.message || "未取得可验证报价。可打开公开页面，或手动录入供应商报价。"), payload.quotes?.length ? "success" : "warning");
+  } catch (error) {
+    attributionRecords.splice(0, attributionRecords.length);
+    state.componentSearchLinks = [];
+    state.selectedAttribution = "";
+    state.selectedAnchor = "";
+    resetComparisonCosts();
+    renderAttribution();
+    setComponentSearchState(error.message || "渠道报价查询失败。", "error");
+  } finally {
+    els.componentSearchButton.disabled = false;
+    els.componentSearchButton.textContent = "查询报价";
+  }
+}
 
-  function draw() {
-    frame += 0.006;
-    context.clearRect(0, 0, width, height);
-    context.lineWidth = 1;
-    for (let i = 0; i < 28; i += 1) {
-      const y = ((i * 47 + frame * 1400) % (height + 160)) - 80;
-      const start = width * (0.12 + ((i % 5) * 0.06));
-      const end = width * (0.58 + ((i % 4) * 0.08));
-      const alpha = 0.07 + (i % 4) * 0.025;
-      context.strokeStyle = `rgba(98, 227, 214, ${alpha})`;
-      context.beginPath();
-      context.moveTo(start, y);
-      context.lineTo(end, y + Math.sin(frame + i) * 24);
-      context.lineTo(end + 90, y + 34);
-      context.stroke();
-      context.fillStyle = `rgba(98, 227, 214, ${alpha + 0.08})`;
-      context.fillRect(end + 88, y + 32, 4, 4);
+function addManualQuote(formData) {
+  const mpn = String(new FormData(els.componentSearchForm).get("mpn") || "").trim();
+  const price = Number(formData.get("price"));
+  if (!mpn) {
+    setComponentSearchState("请先输入物料型号，再录入供应商报价。", "error");
+    return;
+  }
+  if (!Number.isFinite(price) || price < 0) {
+    setComponentSearchState("请输入有效的单价。", "error");
+    return;
+  }
+  const previousCurrent = state.selectedAttribution;
+  const quote = normalizeComponentQuote({
+    id: `manual-${Date.now()}`,
+    model: mpn,
+    spec: String(new FormData(els.componentSearchForm).get("spec") || "").trim(),
+    category: String(new FormData(els.componentSearchForm).get("package") || "").trim(),
+    supplier: String(formData.get("supplier") || "手动录入"),
+    price,
+    currency: String(formData.get("currency") || "CNY"),
+    stock: formData.get("stock"),
+    lead: String(formData.get("lead") || "—"),
+    quantity: Number(new FormData(els.componentSearchForm).get("quantity")) || null,
+    source: "手动录入报价",
+    sourceType: "external"
+  }, attributionRecords.length);
+  attributionRecords.unshift(quote);
+  state.selectedAttribution = quote.id;
+  state.selectedAnchor = previousCurrent && previousCurrent !== quote.id ? previousCurrent : attributionRecords.find((item) => item.id !== quote.id)?.id || "";
+  resetComparisonCosts();
+  els.manualQuoteForm.reset();
+  els.manualQuoteForm.hidden = true;
+  setComponentSearchState(`已加入 ${quote.supplier} 的手动报价，可在右侧选择对比锚点。`, "success");
+  renderAttribution();
+}
+
+els.searchInput.addEventListener("input", (event) => {
+  state.search = event.target.value;
+  renderAll();
+});
+
+els.rangeTabs.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-range]");
+  if (!button) return;
+  state.range = button.dataset.range;
+  els.rangeTabs.querySelectorAll("button").forEach((item) => item.classList.toggle("active", item === button));
+  renderChart();
+  loadHistory();
+});
+
+els.fundRangeTabs.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-fund-range]");
+  if (!button) return;
+  state.fundRange = button.dataset.fundRange;
+  els.fundRangeTabs.querySelectorAll("button").forEach((item) => item.classList.toggle("active", item === button));
+  renderFunds();
+});
+
+els.componentSearchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  searchComponentQuotes(new FormData(els.componentSearchForm));
+});
+
+els.manualQuoteToggle.addEventListener("click", () => {
+  els.manualQuoteForm.hidden = !els.manualQuoteForm.hidden;
+  if (!els.manualQuoteForm.hidden) els.manualQuoteForm.querySelector("input[name='supplier']").focus();
+});
+
+els.manualQuoteForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  addManualQuote(new FormData(els.manualQuoteForm));
+});
+
+els.attributionDetail.addEventListener("click", (event) => {
+  const costViewButton = event.target.closest("button[data-cost-view]");
+  if (costViewButton) {
+    state.costView = costViewButton.dataset.costView;
+    renderAttribution();
+    return;
+  }
+  const addCostButton = event.target.closest("button[data-add-cost]");
+  if (addCostButton) {
+    const entry = addCostButton.closest("[data-cost-entry]");
+    const quote = Number(entry.querySelector("[data-cost-quote]").value);
+    const anchor = Number(entry.querySelector("[data-cost-anchor]").value);
+    if (!Number.isFinite(quote) || !Number.isFinite(anchor) || quote < 0 || anchor < 0) {
+      setComponentSearchState("请为归因项填写当前成本和锚点成本。", "error");
+      return;
     }
-    requestAnimationFrame(draw);
+    state.comparisonCosts.push({
+      name: entry.querySelector("[data-cost-name]").value,
+      quote,
+      anchor,
+      note: entry.querySelector("[data-cost-note]").value.trim()
+    });
+    renderAttribution();
+    return;
+  }
+  const removeCostButton = event.target.closest("button[data-remove-cost]");
+  if (removeCostButton) {
+    state.comparisonCosts.splice(Number(removeCostButton.dataset.removeCost), 1);
+    renderAttribution();
+  }
+});
+
+els.attributionDetail.addEventListener("change", (event) => {
+  const selector = event.target.closest("select[data-comparison-role]");
+  if (!selector) return;
+  const previousPair = `${state.selectedAttribution}:${state.selectedAnchor}`;
+  if (selector.dataset.comparisonRole === "current") state.selectedAttribution = selector.value;
+  if (selector.dataset.comparisonRole === "anchor") state.selectedAnchor = selector.value;
+  if (state.selectedAttribution === state.selectedAnchor) {
+    state.selectedAnchor = attributionRecords.find((record) => record.id !== state.selectedAttribution)?.id || "";
+  }
+  if (previousPair !== `${state.selectedAttribution}:${state.selectedAnchor}`) resetComparisonCosts();
+  renderAttribution();
+});
+
+document.addEventListener("click", (event) => {
+  const commodityButton = event.target.closest("[data-fav-commodity]");
+  const sectorButton = event.target.closest("[data-fav-sector]");
+  const attributionRow = event.target.closest("[data-attribution-id]");
+  const fundRow = event.target.closest("[data-fund-code]");
+  const card = event.target.closest(".metric-card");
+
+  if (fundRow) {
+    state.selectedFund = fundRow.dataset.fundCode;
+    renderFunds();
+    return;
   }
 
-  resize();
-  window.addEventListener("resize", resize);
-  draw();
-}
+  if (attributionRow) {
+    const previousPair = `${state.selectedAttribution}:${state.selectedAnchor}`;
+    state.selectedAttribution = attributionRow.dataset.attributionId;
+    if (state.selectedAttribution === state.selectedAnchor) {
+      state.selectedAnchor = attributionRecords.find((record) => record.id !== state.selectedAttribution)?.id || "";
+    }
+    if (previousPair !== `${state.selectedAttribution}:${state.selectedAnchor}`) resetComparisonCosts();
+    renderAttribution();
+    return;
+  }
 
-async function init() {
-  await loadCompanyPriceBook();
-  await loadPriceHistory();
-  renderCategories();
-  setupDataImport();
-  setupAnalyzer();
-  setupAttribution();
-  setupHeroCanvas();
-}
+  if (commodityButton) {
+    const item = commodities.find((entry) => entry.id === commodityButton.dataset.favCommodity);
+    if (item) item.favorite = !item.favorite;
+    renderAll();
+    return;
+  }
 
-init();
+  if (sectorButton) {
+    const item = sectors.find((entry) => entry.name === sectorButton.dataset.favSector);
+    if (item) item.favorite = !item.favorite;
+    renderAll();
+    return;
+  }
+
+  if (card) {
+    state.selectedCommodity = card.dataset.id;
+    renderChart();
+    loadHistory();
+  }
+});
+
+els.refreshNow.addEventListener("click", async () => {
+  if (location.protocol === "file:") {
+    els.nextRefresh.textContent = "请通过本机服务打开看板";
+    return;
+  }
+  const [refreshed] = await Promise.all([refreshMarket({ withHistory: true }), loadFunds()]);
+  if (refreshed) els.nextRefresh.textContent = "刚刚刷新";
+});
+
+els.autoRefresh.addEventListener("click", () => {
+  state.autoRefresh = !state.autoRefresh;
+  els.autoRefresh.classList.toggle("active", state.autoRefresh);
+});
+
+els.clearWatch.addEventListener("click", () => {
+  commodities.forEach((item) => item.favorite = false);
+  sectors.forEach((item) => item.favorite = false);
+  renderAll();
+});
+
+els.trendChart.addEventListener("mousemove", (event) => {
+  const rect = els.trendChart.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const percent = Math.max(0, Math.min(1, (x - 50) / (rect.width - 70)));
+  const active = commodities.find((item) => item.id === state.selectedCommodity) || commodities[0];
+  const data = chartSeriesFor(active);
+  if (!data.length) return;
+  const index = Math.round(percent * (data.length - 1));
+  const point = historyPointFor(active, index);
+  const exactPrice = data[index].toLocaleString("zh-CN", { maximumFractionDigits: 6 });
+  els.chartTooltip.hidden = false;
+  els.chartTooltip.style.left = `${Math.min(rect.width - 180, Math.max(8, x + 12))}px`;
+  els.chartTooltip.style.top = `${Math.max(12, event.clientY - rect.top - 46)}px`;
+  els.chartTooltip.innerHTML = `<strong>${active.name}</strong><br>${point?.label || state.range} · ${exactPrice} ${active.unit}`;
+});
+
+els.trendChart.addEventListener("mouseleave", () => {
+  els.chartTooltip.hidden = true;
+});
+
+els.fundTrendChart.addEventListener("mousemove", (event) => {
+  const fund = fundWatch.find((item) => item.code === state.selectedFund);
+  const points = fundSeriesForRange(fund);
+  if (!points.length) return;
+  const rect = els.fundTrendChart.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const percent = Math.max(0, Math.min(1, (x - 52) / (rect.width - 70)));
+  const point = points[Math.round(percent * (points.length - 1))];
+  els.fundChartTooltip.hidden = false;
+  els.fundChartTooltip.style.left = `${Math.min(rect.width - 176, Math.max(8, x + 12))}px`;
+  els.fundChartTooltip.style.top = `${Math.max(10, event.clientY - rect.top - 50)}px`;
+  els.fundChartTooltip.innerHTML = `<strong>${fund.name}</strong><br>${point.date} · ${formatFundNav(point.value)}<br>${signed(point.change)}`;
+});
+
+els.fundTrendChart.addEventListener("mouseleave", () => {
+  els.fundChartTooltip.hidden = true;
+});
+
+window.addEventListener("resize", () => {
+  renderChart();
+  renderFundDetail(fundWatch.find((fund) => fund.code === state.selectedFund));
+});
+
+updateMarketClock();
+window.requestAnimationFrame(() => document.body.classList.add("motion-ready"));
+setInterval(() => {
+  updateMarketClock();
+  if (!canUseDashboardApi) {
+    els.nextRefresh.textContent = "外网静态预览";
+    return;
+  }
+  if (!state.autoRefresh) {
+    els.nextRefresh.textContent = "自动刷新已暂停";
+    return;
+  }
+  state.tick -= 1;
+  if (state.tick <= 0) {
+    refreshMarket();
+    loadFunds();
+    state.tick = 60;
+  }
+  els.nextRefresh.textContent = `自动刷新 ${state.tick}s`;
+}, 1000);
+
+renderAll();
+if (location.protocol !== "file:" && canUseDashboardApi) {
+  refreshMarket({ withHistory: true });
+  loadFunds();
+} else if (location.protocol !== "file:") {
+  refreshMarket({ withHistory: false });
+  loadHistory();
+  loadFunds();
+}
