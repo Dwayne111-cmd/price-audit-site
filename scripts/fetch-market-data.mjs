@@ -108,6 +108,61 @@ async function fetchFredHistory(item, range) {
   };
 }
 
+async function fetchXausGoldHistory(item, range) {
+  const payload = await fetchJson("https://xaus.com/api/v1/history");
+  const allPoints = Array.isArray(payload?.points) ? payload.points.map((entry) => {
+    const value = Number(entry.c);
+    return {
+      label: entry.d,
+      value: Number(value.toFixed(4))
+    };
+  }).filter((point) => point.label && Number.isFinite(point.value)) : [];
+  const points = allPoints.slice(-historyPointCount(item, range));
+  const setting = ranges[range] || ranges["2Y"];
+  if (points.length < setting.minPoints) throw new Error(`${item.name} XAUS history has insufficient points.`);
+  return {
+    id: item.id,
+    range,
+    points,
+    source: "XAUS公开日频黄金现货",
+    refreshedAt
+  };
+}
+
+async function fetchXausSilverHistory(item, range) {
+  const payload = await fetchJson("https://xaus.com/api/v1/intraday?symbol=xag&hours=48");
+  const allPoints = Array.isArray(payload?.points) ? payload.points.map((entry) => {
+    const timestamp = Number(entry.t) * 1000;
+    const value = Number(entry.p);
+    return {
+      label: new Intl.DateTimeFormat("zh-CN", {
+        timeZone: "Asia/Shanghai",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      }).format(new Date(timestamp)),
+      value: Number(value.toFixed(4))
+    };
+  }).filter((point) => point.label && Number.isFinite(point.value)) : [];
+  const points = allPoints.slice(-Math.min(allPoints.length, Math.max(24, historyPointCount(item, range))));
+  if (points.length < 2) throw new Error(`${item.name} XAUS intraday history has insufficient points.`);
+  return {
+    id: item.id,
+    range,
+    points,
+    source: "XAUS公开48小时白银现货分时",
+    refreshedAt
+  };
+}
+
+async function fetchCommodityHistory(item, range) {
+  if (item.id === "gold") return fetchXausGoldHistory(item, range);
+  if (item.id === "silver") return fetchXausSilverHistory(item, range);
+  return fetchFredHistory(item, range);
+}
+
 async function fetchGoldApiQuote(item) {
   if (!item.goldApiSymbol) return null;
   const payload = await fetchJson(`https://api.gold-api.com/price/${item.goldApiSymbol}`);
@@ -380,7 +435,7 @@ async function main() {
     for (const range of Object.keys(ranges)) {
       const filePath = path.join(historyDir, `${item.id}-${range}.json`);
       try {
-        const history = await fetchFredHistory(item, range);
+        const history = await fetchCommodityHistory(item, range);
         histories.set(`${item.id}:${range}`, history);
         await writeJson(filePath, history);
         health[`history:${item.id}:${range}`] = "fulfilled";
@@ -406,7 +461,6 @@ async function main() {
 
   const liveCommodities = commodities.map((item) => {
     const history = histories.get(`${item.id}:1D`) || histories.get(`${item.id}:1M`) || histories.get(`${item.id}:2Y`);
-    if (history) return quoteFromHistory(item, history);
     const goldApiQuote = goldApiQuotes.get(item.id);
     if (goldApiQuote) {
       const tencentQuote = item.tencentCode ? tencentCommodityResult.get(item.tencentCode) : null;
@@ -415,6 +469,7 @@ async function main() {
         change: tencentQuote?.change ?? goldApiQuote.change
       };
     }
+    if (history) return quoteFromHistory(item, history);
     const tencentQuote = item.tencentCode ? tencentCommodityResult.get(item.tencentCode) : null;
     return tencentQuote
       ? { ...item, ...tencentQuote }
@@ -440,7 +495,7 @@ async function main() {
     },
     overview: overviewResult.status === "fulfilled" ? overviewResult.value : previousMarket.overview || null,
     sources: {
-      commodities: "FRED公开商品历史 / Gold-API公开现货 / 腾讯财经公开期货",
+      commodities: "XAUS公开贵金属历史 / FRED公开商品历史 / Gold-API公开现货 / 腾讯财经公开期货",
       sectors: "东方财富延迟公开行情",
       breadth: "东方财富延迟公开A股列表",
       indexes: "腾讯财经公开行情"
