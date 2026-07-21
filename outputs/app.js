@@ -5,7 +5,7 @@ const commodities = [
   { id: "copper", name: "国际铜价", code: "XCU/USD", unit: "美元/吨", price: null, change: null, color: "#b45309", favorite: false }
 ];
 
-const canUseDashboardApi = ["127.0.0.1", "localhost"].includes(location.hostname);
+const canUseDashboardApi = ["127.0.0.1", "localhost"].includes(location.hostname) && location.port === "8900";
 
 const sectors = [];
 let alerts = [];
@@ -22,7 +22,7 @@ const state = {
   alertsEnabled: true,
   autoRefresh: true,
   tick: 60,
-  selectedCommodity: "gold",
+  selectedCommodity: "copper",
   selectedFund: "001877",
   fundRange: "1Y",
   selectedAttribution: "",
@@ -185,7 +185,7 @@ function historyPointFor(item, index) {
 async function loadSparklineHistory(item) {
   const key = `${item.id}:sparkline`;
   if (state.history.has(key)) return;
-  if (!canUseDashboardApi) return;
+  if (!canUseDashboardApi) return loadStaticHistory(item, "1M", key).then(() => renderCards());
   try {
     const response = await fetch(`/api/history?id=${encodeURIComponent(item.id)}&range=1M`);
     if (!response.ok) throw new Error("Sparkline history unavailable");
@@ -774,9 +774,17 @@ let fundsInFlight = false;
 async function loadFunds() {
   if (fundsInFlight || location.protocol === "file:") return;
   if (!canUseDashboardApi) {
-    els.fundDataState.textContent = "外网静态预览";
-    els.fundList.innerHTML = `<div class="empty-state">基金净值接口未部署到外网</div>`;
-    renderFundDetail(null);
+    els.fundDataState.textContent = "加载静态净值";
+    try {
+      const payload = await fetchStaticJson("funds.json");
+      fundWatch = Array.isArray(payload.funds) ? payload.funds : [];
+      els.fundDataState.textContent = fundWatch.length ? `已同步 ${fundWatch.length} 只基金净值` : "静态净值暂不可用";
+      renderFunds();
+    } catch (error) {
+      els.fundDataState.textContent = "静态净值暂不可用";
+      els.fundList.innerHTML = `<div class="empty-state">${error.message || "基金净值暂不可用"}</div>`;
+      renderFundDetail(null);
+    }
     return;
   }
   fundsInFlight = true;
@@ -913,13 +921,46 @@ function replaceMarketItems(target, next, favoriteKey) {
   target.splice(0, target.length, ...next.map((item) => ({ ...item, favorite: favorites.has(item[favoriteKey]) })));
 }
 
+function staticDataUrl(pathname) {
+  return `./data/${pathname}?v=${Date.now()}`;
+}
+
+async function fetchStaticJson(pathname) {
+  const response = await fetch(staticDataUrl(pathname), { cache: "no-store" });
+  if (!response.ok) throw new Error(`静态数据暂不可用：${pathname}`);
+  return response.json();
+}
+
+async function loadStaticHistory(item, range, cacheKey = `${item.id}:${range}`) {
+  try {
+    const payload = await fetchStaticJson(`history/${item.id}-${range}.json`);
+    if (!Array.isArray(payload.points) || payload.points.length < 2) throw new Error("静态趋势点不足");
+    state.history.set(cacheKey, payload.points);
+    if (cacheKey === `${item.id}:${state.range}`) {
+      els.chartDataStatus.textContent = payload.source || "公开行情";
+      els.chartUpdatedAt.textContent = payload.refreshedAt
+        ? new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date(payload.refreshedAt))
+        : "静态数据";
+      renderChart();
+    }
+    return true;
+  } catch (error) {
+    if (cacheKey === `${item.id}:${state.range}`) {
+      els.chartDataStatus.textContent = "趋势不可用";
+      els.chartUpdatedAt.textContent = "等待下一次自动采集";
+      renderChart();
+    }
+    console.warn("Static history unavailable:", error.message);
+    return false;
+  }
+}
+
 async function loadHistory() {
   const item = commodities.find((entry) => entry.id === state.selectedCommodity);
   if (!item || location.protocol === "file:") return;
   if (!canUseDashboardApi) {
-    els.chartDataStatus.textContent = "外网静态预览";
-    els.chartUpdatedAt.textContent = "连接后端后更新";
-    renderChart();
+    els.chartDataStatus.textContent = "加载静态趋势";
+    await loadStaticHistory(item, state.range);
     return;
   }
   if (!hasNumber(item.price)) {
@@ -932,7 +973,7 @@ async function loadHistory() {
     if (!response.ok) throw new Error((await response.json()).error || "趋势数据暂不可用");
     const payload = await response.json();
     state.history.set(`${item.id}:${state.range}`, payload.points);
-    els.chartDataStatus.textContent = `${payload.source || "公开行情"} · ${payload.points.length} 点`;
+    els.chartDataStatus.textContent = payload.source || "公开行情";
     els.chartUpdatedAt.textContent = new Intl.DateTimeFormat("zh-CN", { hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
     renderChart();
   } catch (error) {
@@ -946,13 +987,30 @@ let refreshInFlight = false;
 async function refreshMarket({ withHistory = false } = {}) {
   if (refreshInFlight || location.protocol === "file:") return;
   if (!canUseDashboardApi) {
-    state.liveConnected = false;
-    els.marketStatus.textContent = "外网静态预览";
-    els.dataSource.textContent = "前端页面已发布";
-    els.nextRefresh.textContent = "实时行情接口未部署到外网";
-    els.chartDataStatus.textContent = "外网静态预览";
-    renderAll();
-    return false;
+    try {
+      const payload = await fetchStaticJson("market.json");
+      replaceMarketItems(commodities, Array.isArray(payload.commodities) ? payload.commodities : commodities, "id");
+      replaceMarketItems(sectors, Array.isArray(payload.sectors) ? payload.sectors : [], "name");
+      updateOverview(payload.overview, payload.aShareBreadth);
+      state.liveConnected = true;
+      state.tick = 60;
+      state.lastUpdated = payload.refreshedAt || null;
+      els.marketStatus.textContent = "静态数据已同步";
+      els.dataSource.textContent = "公开延迟行情";
+      els.nextRefresh.textContent = payload.refreshedAt
+        ? `更新于 ${new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date(payload.refreshedAt))}`
+        : "等待下一次自动采集";
+      renderAll();
+      if (withHistory) await Promise.all([loadHistory(), loadSparklineHistories()]);
+      return true;
+    } catch (error) {
+      state.liveConnected = false;
+      els.marketStatus.textContent = "静态数据暂不可用";
+      els.dataSource.textContent = "等待自动采集";
+      els.nextRefresh.textContent = error.message || "静态数据暂不可用";
+      renderAll();
+      return false;
+    }
   }
   refreshInFlight = true;
   els.refreshNow.disabled = true;
@@ -1320,7 +1378,7 @@ window.requestAnimationFrame(() => document.body.classList.add("motion-ready"));
 setInterval(() => {
   updateMarketClock();
   if (!canUseDashboardApi) {
-    els.nextRefresh.textContent = "外网静态预览";
+    els.nextRefresh.textContent = state.lastUpdated ? "每日自动同步" : "等待自动采集";
     return;
   }
   if (!state.autoRefresh) {

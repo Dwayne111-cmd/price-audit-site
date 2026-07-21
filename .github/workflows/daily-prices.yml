@@ -1,4 +1,4 @@
-name: Daily Component Prices
+name: Daily MarketLens Data
 
 on:
   schedule:
@@ -7,9 +7,15 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: marketlens-data
+  cancel-in-progress: false
 
 jobs:
-  fetch-prices:
+  fetch-data:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -20,23 +26,25 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Fetch public prices
-        env:
-          MATERIALS_URL: ${{ secrets.MATERIALS_URL }}
-          MATERIALS_TOKEN: ${{ secrets.MATERIALS_TOKEN }}
-          SOURCE_REGISTRY_URL: ${{ secrets.SOURCE_REGISTRY_URL }}
-          SOURCE_REGISTRY_TOKEN: ${{ secrets.SOURCE_REGISTRY_TOKEN }}
-          PRICE_SCRAPER_SOURCE_SCOPE: global
-          MOUSER_API_KEY: ${{ secrets.MOUSER_API_KEY }}
-          DIGIKEY_CLIENT_ID: ${{ secrets.DIGIKEY_CLIENT_ID }}
-          DIGIKEY_ACCESS_TOKEN: ${{ secrets.DIGIKEY_ACCESS_TOKEN }}
-          NEXAR_TOKEN: ${{ secrets.NEXAR_TOKEN }}
-        run: node scripts/fetch-prices.mjs
+      - name: Fetch public market data
+        run: node scripts/fetch-market-data.mjs
 
-      - name: Commit updated price history
+      - name: Commit updated static data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add outputs/data/price-history.json
-          git diff --cached --quiet || git commit -m "chore: update component price history"
+          git add outputs/data/market.json outputs/data/funds.json outputs/data/history
+          git diff --cached --quiet || git commit -m "chore: update MarketLens static data"
           git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: outputs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

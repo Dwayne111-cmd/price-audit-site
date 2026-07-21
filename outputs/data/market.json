@@ -1,0 +1,322 @@
+{
+  "commodities": [
+    {
+      "id": "gold",
+      "name": "黄金",
+      "code": "XAU/USD",
+      "goldApiSymbol": "XAU",
+      "tencentCode": "hf_GC",
+      "unit": "美元/盎司",
+      "color": "#d97706",
+      "favorite": true,
+      "price": 4066.7,
+      "change": 1.33,
+      "source": "Gold-API公开现货报价",
+      "delayed": true,
+      "unavailable": false
+    },
+    {
+      "id": "silver",
+      "name": "国际银价",
+      "code": "XAG/USD",
+      "goldApiSymbol": "XAG",
+      "tencentCode": "hf_SI",
+      "unit": "美元/盎司",
+      "color": "#b7c4cf",
+      "favorite": true,
+      "price": 58.385,
+      "change": 2.64,
+      "source": "Gold-API公开现货报价",
+      "delayed": true,
+      "unavailable": false
+    },
+    {
+      "id": "wti",
+      "name": "国际原油",
+      "code": "WTI",
+      "fredSeries": "DCOILWTICO",
+      "tencentCode": "hf_CL",
+      "unit": "美元/桶",
+      "color": "#155eef",
+      "favorite": true,
+      "price": 79.2,
+      "change": 9.32,
+      "source": "FRED公开日频商品价格",
+      "delayed": true,
+      "unavailable": false
+    },
+    {
+      "id": "copper",
+      "name": "国际铜价",
+      "code": "PCOPPUSDM",
+      "fredSeries": "PCOPPUSDM",
+      "unit": "美元/吨",
+      "color": "#b45309",
+      "favorite": false,
+      "price": 13552.04,
+      "change": 0.3,
+      "source": "FRED公开月频商品价格",
+      "delayed": true,
+      "unavailable": false
+    }
+  ],
+  "sectors": [
+    {
+      "name": "半导体设备",
+      "group": "tech",
+      "change": 12.51,
+      "heat": 99,
+      "flow": 22,
+      "breadth": "24/24"
+    },
+    {
+      "name": "半导体材料",
+      "group": "tech",
+      "change": 9.52,
+      "heat": 99,
+      "flow": 9.1,
+      "breadth": "30/31"
+    },
+    {
+      "name": "集成电路封测",
+      "group": "other",
+      "change": 8.64,
+      "heat": 99,
+      "flow": 12.1,
+      "breadth": "13/13"
+    },
+    {
+      "name": "集成电路制造",
+      "group": "other",
+      "change": 8.47,
+      "heat": 99,
+      "flow": 12,
+      "breadth": "8/8"
+    },
+    {
+      "name": "镍",
+      "group": "other",
+      "change": 8.17,
+      "heat": 99,
+      "flow": 2.7,
+      "breadth": "1/1"
+    },
+    {
+      "name": "半导体",
+      "group": "tech",
+      "change": 8.11,
+      "heat": 99,
+      "flow": 96.4,
+      "breadth": "179/181"
+    },
+    {
+      "name": "分立器件",
+      "group": "other",
+      "change": 8.07,
+      "heat": 99,
+      "flow": 0.9,
+      "breadth": "18/18"
+    },
+    {
+      "name": "白银",
+      "group": "other",
+      "change": 7.82,
+      "heat": 99,
+      "flow": 4.3,
+      "breadth": "3/3"
+    },
+    {
+      "name": "第四代半导体",
+      "group": "tech",
+      "change": 7.66,
+      "heat": 99,
+      "flow": -0.6,
+      "breadth": "3/4"
+    },
+    {
+      "name": "电子化学品Ⅲ",
+      "group": "tech",
+      "change": 7.51,
+      "heat": 99,
+      "flow": 2.6,
+      "breadth": "35/37"
+    },
+    {
+      "name": "电子化学品Ⅱ",
+      "group": "tech",
+      "change": 7.51,
+      "heat": 99,
+      "flow": 2.6,
+      "breadth": "35/37"
+    },
+    {
+      "name": "激光设备",
+      "group": "other",
+      "change": 7.47,
+      "heat": 99,
+      "flow": -0.6,
+      "breadth": "10/11"
+    },
+    {
+      "name": "光学元件",
+      "group": "other",
+      "change": 6.92,
+      "heat": 99,
+      "flow": -0.5,
+      "breadth": "24/25"
+    },
+    {
+      "name": "橡胶助剂",
+      "group": "other",
+      "change": 6.64,
+      "heat": 99,
+      "flow": 0.1,
+      "breadth": "2/2"
+    },
+    {
+      "name": "玻纤制造",
+      "group": "other",
+      "change": 6.63,
+      "heat": 99,
+      "flow": 0.8,
+      "breadth": "8/8"
+    },
+    {
+      "name": "半导体概念",
+      "group": "tech",
+      "change": 5.92,
+      "heat": 99,
+      "flow": 119.9,
+      "breadth": "463/506"
+    },
+    {
+      "name": "第三代半导体",
+      "group": "tech",
+      "change": 5.24,
+      "heat": 99,
+      "flow": 27.4,
+      "breadth": "99/106"
+    },
+    {
+      "name": "综合电力设备商",
+      "group": "cycle",
+      "change": 2.78,
+      "heat": 74,
+      "flow": 1.6,
+      "breadth": "2/2"
+    },
+    {
+      "name": "商业航天",
+      "group": "defense",
+      "change": 2.72,
+      "heat": 77,
+      "flow": -5.3,
+      "breadth": "251/299"
+    },
+    {
+      "name": "氟化工",
+      "group": "cycle",
+      "change": 2.38,
+      "heat": 71,
+      "flow": -1.7,
+      "breadth": "7/10"
+    },
+    {
+      "name": "磷肥及磷化工",
+      "group": "cycle",
+      "change": 2.19,
+      "heat": 68,
+      "flow": 0.5,
+      "breadth": "8/9"
+    },
+    {
+      "name": "军工电子Ⅲ",
+      "group": "defense",
+      "change": 2.09,
+      "heat": 69,
+      "flow": 1.8,
+      "breadth": "47/61"
+    },
+    {
+      "name": "军工电子Ⅱ",
+      "group": "defense",
+      "change": 2.09,
+      "heat": 69,
+      "flow": 1.8,
+      "breadth": "47/61"
+    },
+    {
+      "name": "电力设备",
+      "group": "cycle",
+      "change": 1.66,
+      "heat": 81,
+      "flow": 28.2,
+      "breadth": "285/402"
+    }
+  ],
+  "aShareBreadth": {
+    "rising": 2553,
+    "falling": 2506,
+    "flat": 98,
+    "total": 5157
+  },
+  "aShareStatus": {
+    "configured": false,
+    "isTradingDay": null,
+    "date": "2026-07-21",
+    "limited": false
+  },
+  "overview": {
+    "shanghai": {
+      "code": "s_sh000001",
+      "name": "��ָ֤��",
+      "price": 3843.46,
+      "change": 1.24,
+      "source": "腾讯财经公开行情"
+    },
+    "shenzhen": {
+      "code": "s_sz399001",
+      "name": "��֤��ָ",
+      "price": 14176.45,
+      "change": 4.16,
+      "source": "腾讯财经公开行情"
+    },
+    "usdcny": null
+  },
+  "sources": {
+    "commodities": "FRED公开商品历史 / Gold-API公开现货 / 腾讯财经公开期货",
+    "sectors": "东方财富延迟公开行情",
+    "breadth": "东方财富延迟公开A股列表",
+    "indexes": "腾讯财经公开行情"
+  },
+  "health": {
+    "history:gold:1D": "reused-previous: 黄金 has no FRED history mapping.",
+    "history:gold:5D": "reused-previous: 黄金 has no FRED history mapping.",
+    "history:gold:1M": "reused-previous: 黄金 has no FRED history mapping.",
+    "history:gold:6M": "reused-previous: 黄金 has no FRED history mapping.",
+    "history:gold:1Y": "reused-previous: 黄金 has no FRED history mapping.",
+    "history:gold:2Y": "reused-previous: 黄金 has no FRED history mapping.",
+    "history:silver:1D": "reused-previous: 国际银价 has no FRED history mapping.",
+    "history:silver:5D": "reused-previous: 国际银价 has no FRED history mapping.",
+    "history:silver:1M": "reused-previous: 国际银价 has no FRED history mapping.",
+    "history:silver:6M": "reused-previous: 国际银价 has no FRED history mapping.",
+    "history:silver:1Y": "reused-previous: 国际银价 has no FRED history mapping.",
+    "history:silver:2Y": "reused-previous: 国际银价 has no FRED history mapping.",
+    "history:wti:1D": "fulfilled",
+    "history:wti:5D": "fulfilled",
+    "history:wti:1M": "fulfilled",
+    "history:wti:6M": "fulfilled",
+    "history:wti:1Y": "fulfilled",
+    "history:wti:2Y": "fulfilled",
+    "history:copper:1D": "fulfilled",
+    "history:copper:5D": "fulfilled",
+    "history:copper:1M": "fulfilled",
+    "history:copper:6M": "fulfilled",
+    "history:copper:1Y": "fulfilled",
+    "history:copper:2Y": "fulfilled",
+    "overview": "fulfilled",
+    "sectors": "fulfilled",
+    "breadth": "fulfilled"
+  },
+  "refreshedAt": "2026-07-21T06:06:16.487Z"
+}
