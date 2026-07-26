@@ -263,7 +263,7 @@
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-07-25",
+    "date": "2026-07-26",
     "limited": false
   },
   "overview": {
@@ -315,8 +315,8 @@
     "history:copper:1Y": "fulfilled",
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "fulfilled",
+    "sectors": "rejected",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-07-25T08:34:51.972Z"
+  "refreshedAt": "2026-07-26T09:28:30.420Z"
 }
