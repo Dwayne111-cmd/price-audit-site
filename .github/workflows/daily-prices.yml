@@ -29,11 +29,14 @@ jobs:
       - name: Fetch public market data
         run: node scripts/fetch-market-data.mjs
 
+      - name: Fetch public rare-earth data
+        run: node scripts/fetch-rare-earth.mjs
+
       - name: Commit updated static data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add outputs/data/market.json outputs/data/funds.json outputs/data/history
+          git add outputs/data/market.json outputs/data/funds.json outputs/data/rare-earth.json outputs/data/history
           git diff --cached --quiet || git commit -m "chore: update MarketLens static data"
           git push
 

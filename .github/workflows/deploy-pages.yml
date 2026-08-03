@@ -25,6 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Verify private data isolation
+        run: |
+          test ! -f private-data/component-access-key.txt
+          test ! -f outputs/data/internal-quotes.json
+          test ! -f outputs/data/internal-material-specs.json
+          test -f outputs/data/component-quotes.secure.json
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

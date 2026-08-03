@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarketLens | 市场信号与采购价差</title>
+    <link rel="stylesheet" href="./styles.css?v=finance-workspace-2" />
+    <link rel="stylesheet" href="./floating-nav.css?v=finance-workspace-1" />
+    <link rel="stylesheet" href="./dark-terminal.css?v=terminal-1" />
+    <link rel="stylesheet" href="./commodity-rail.css?v=rail-1" />
+    <link rel="stylesheet" href="./attribution.css?v=attribution-1" />
+    <link rel="stylesheet" href="./motion.css?v=market-motion-1" />
+    <link rel="stylesheet" href="./fund-watch.css?v=fund-watch-1" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <div class="brand">
+          <span class="brand-mark">ML</span>
+          <div>
+            <strong>MarketLens</strong>
+            <span>Commodity & Sector Signals</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="overview"><span>01</span>市场总览</button>
+          <button class="nav-item" data-view="commodities"><span>02</span>大宗商品</button>
+          <button class="nav-item" data-view="breadth"><span>03</span>市场广度</button>
+          <button class="nav-item" data-view="funds"><span>04</span>基金观察</button>
+          <button class="nav-item" data-view="attribution"><span>05</span>采购归因</button>
+          <a class="nav-item nav-link" href="./price-review/index.html"><span>06</span>成本核价</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="status-card">
+            <span class="live-dot"></span>
+            <div>
+              <strong id="marketStatus">等待公开数据源</strong>
+              <small id="nextRefresh">准备连接</small>
+            </div>
+          </div>
+          <div class="mini-note">
+            <span>数据源</span>
+            <strong id="dataSource">等待公开数据源</strong>
+          </div>
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <header class="topbar">
+          <div class="title-block">
+            <span class="page-kicker">实时监测工作台</span>
+            <h1>市场信号与采购价差工作台</h1>
+            <p>跟踪大宗商品与 A 股广度，同时识别供应报价中的异常价差、归因证据与采购动作。</p>
+          </div>
+
+          <div class="toolbar">
+            <div class="market-clock" aria-label="北京时间">
+              <span>北京时间</span>
+              <time id="marketClock">—</time>
+            </div>
+            <label class="search-box">
+              <span class="search-icon">Search</span>
+              <input id="searchInput" type="search" placeholder="搜索黄金、原油、航天、银行..." />
+            </label>
+            <button id="autoRefresh" class="icon-button active" title="自动刷新">Auto</button>
+            <button id="refreshNow" class="primary-button">刷新行情</button>
+          </div>
+        </header>
+
+        <section class="ticker-strip" aria-label="市场摘要">
+          <div><span>上证指数</span><strong id="tickerShanghai">—</strong><em id="tickerShanghaiChange">—</em></div>
+          <div><span>深证成指</span><strong id="tickerShenzhen">—</strong><em id="tickerShenzhenChange">—</em></div>
+          <div><span>美元/人民币</span><strong id="tickerUsdCny">—</strong><em id="tickerUsdCnyChange">—</em></div>
+          <div><span>上涨股数</span><strong id="tickerUpSectors">—</strong><em id="tickerUpSectorsMeta">公开口径</em></div>
+          <div><span>下跌股数</span><strong id="tickerDownSectors">—</strong><em id="tickerDownSectorsMeta">公开口径</em></div>
+        </section>
+
+        <section class="metrics-viewport" aria-label="流通品价格">
+          <div class="metrics-track" id="commodityCards"></div>
+        </section>
+
+        <section class="attribution-workspace" id="attributionWorkspace">
+          <article class="panel attribution-list-panel">
+            <div class="panel-header attribution-header">
+              <div>
+                <span class="section-label">Quote Discovery</span>
+                <h2>渠道报价搜索</h2>
+              </div>
+              <span class="data-state">真实来源优先</span>
+            </div>
+            <form class="component-search" id="componentSearchForm">
+              <label class="component-field component-field-model"><span>型号 / MPN</span><input id="componentMpn" name="mpn" type="search" required autocomplete="off" placeholder="例如 W25Q128JVSIQ" /></label>
+              <label class="component-field"><span>规格关键词</span><input id="componentSpec" name="spec" type="text" autocomplete="off" placeholder="容量、电压、温度等级" /></label>
+              <label class="component-field"><span>封装</span><input id="componentPackage" name="package" type="text" autocomplete="off" placeholder="例如 SOP-8" /></label>
+              <label class="component-field component-field-quantity"><span>数量</span><input id="componentQuantity" name="quantity" type="number" min="1" step="1" value="100" /></label>
+              <button id="componentSearchButton" class="primary-button" type="submit">查询报价</button>
+              <button id="manualQuoteToggle" class="ghost-button" type="button">录入报价</button>
+            </form>
+            <div class="component-search-state" id="componentSearchState" role="status">输入型号与数量，查询已接入渠道；也可以手动录入供应商报价。</div>
+            <form class="manual-quote-form" id="manualQuoteForm" hidden>
+              <label><span>供应商</span><input name="supplier" required autocomplete="off" placeholder="供应商 / 渠道名称" /></label>
+              <label><span>单价</span><input name="price" required type="number" min="0" step="0.0001" placeholder="0.00" /></label>
+              <label><span>币种</span><select name="currency"><option value="CNY">CNY</option><option value="USD">USD</option></select></label>
+              <label><span>库存</span><input name="stock" type="number" min="0" step="1" placeholder="可选" /></label>
+              <label><span>交期</span><input name="lead" type="text" autocomplete="off" placeholder="例如 2-4 周" /></label>
+              <button class="ghost-button" type="submit">加入对比</button>
+            </form>
+            <div class="component-sources" id="componentSources"></div>
+            <div class="attribution-controls"><span class="attribution-summary" id="attributionSummary">尚未查询</span></div>
+            <div class="quote-head" aria-hidden="true">
+              <span>供应商 / 来源</span>
+              <span>型号 / 规格</span>
+              <span>阶梯价</span>
+              <span>库存</span>
+              <span>交期</span>
+            </div>
+            <div class="quote-list" id="attributionRows"></div>
+          </article>
+
+          <aside class="panel attribution-detail-panel">
+            <div class="panel-header compact">
+              <div>
+                <span class="section-label">Attribution</span>
+                <h2>价差归因</h2>
+              </div>
+            </div>
+            <div id="attributionDetail"></div>
+          </aside>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel chart-panel">
+            <div class="panel-header">
+              <div>
+                <span class="section-label">Commodity Trend</span>
+                <h2 id="chartTitle">黄金近2年价格走势</h2>
+              </div>
+              <div class="segmented" id="rangeTabs" aria-label="时间范围">
+                <button data-range="1D">1日</button>
+                <button data-range="5D">5日</button>
+                <button data-range="1M">1月</button>
+                <button data-range="6M">6月</button>
+                <button data-range="1Y">1年</button>
+                <button class="active" data-range="2Y">2年</button>
+              </div>
+            </div>
+
+            <div class="chart-summary">
+              <div><span>趋势数据</span><strong id="chartDataStatus">待加载</strong></div>
+              <div><span>更新时间</span><strong id="chartUpdatedAt">—</strong></div>
+              <div><span>数据口径</span><strong>公开数据</strong></div>
+            </div>
+
+            <div class="chart-wrap">
+              <canvas id="trendChart" width="880" height="360" aria-label="价格趋势图"></canvas>
+              <div id="chartTooltip" class="chart-tooltip" hidden></div>
+            </div>
+            <div class="legend-row" id="chartLegend"></div>
+          </article>
+
+          <aside class="panel watch-panel">
+            <div class="panel-header compact">
+              <div>
+                <span class="section-label">Watchlist</span>
+                <h2>自选行情</h2>
+              </div>
+              <button id="clearWatch" class="ghost-button">清空</button>
+            </div>
+            <div id="watchList" class="watch-list"></div>
+            <div class="rule-box">
+              <div class="rule-title">
+                <strong>关注方式</strong>
+                <span>行情卡片星标</span>
+              </div>
+              <p class="watch-note">点击黄金、原油等行情卡片右上角的星标，即可在此处固定显示。</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="panel fund-panel" id="fundWorkspace">
+          <div class="panel-header fund-panel-header">
+            <div>
+              <span class="section-label">Fund Watch</span>
+              <h2>基金观察</h2>
+            </div>
+            <span class="fund-data-state" id="fundDataState">等待确认净值</span>
+          </div>
+          <div class="fund-workspace">
+            <div class="fund-list" id="fundList" aria-label="基金列表"></div>
+            <div class="fund-detail">
+              <div class="fund-detail-header">
+                <div>
+                  <span class="section-label" id="fundCode">—</span>
+                  <h3 id="fundTitle">基金趋势</h3>
+                  <p id="fundDescriptor">等待公开历史净值</p>
+                </div>
+                <div class="segmented fund-range-tabs" id="fundRangeTabs" aria-label="基金走势时间范围">
+                  <button data-fund-range="1M">1月</button>
+                  <button data-fund-range="3M">3月</button>
+                  <button data-fund-range="6M">6月</button>
+                  <button class="active" data-fund-range="1Y">1年</button>
+                  <button data-fund-range="2Y">2年</button>
+                </div>
+              </div>
+              <div class="fund-stat-grid" id="fundStats"></div>
+              <div class="fund-chart-wrap">
+                <canvas id="fundTrendChart" width="920" height="300" aria-label="基金净值走势"></canvas>
+                <div id="fundChartTooltip" class="chart-tooltip" hidden></div>
+              </div>
+              <div class="fund-chart-footer">
+                <span id="fundChartRange">—</span>
+                <span id="fundSource">东方财富公开历史净值</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

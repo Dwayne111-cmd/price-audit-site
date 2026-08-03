@@ -1,6 +1,9 @@
 *.log
 .DS_Store
 Thumbs.db
+.env
 private-data/
 work/
 *.cmd
+outputs/data/internal-quotes.json
+outputs/data/internal-material-specs.json
