@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4343.2998,
-      "change": 2.43,
+      "price": 4347.2002,
+      "change": 0.14,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 63.707,
-      "change": 3.83,
+      "price": 64.336,
+      "change": 1.38,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "医疗研发外包",
-      "group": "other",
-      "change": 13.03,
-      "heat": 99,
-      "flow": 24.6,
-      "breadth": "29/29"
-    },
-    {
-      "name": "印制电路板",
-      "group": "other",
-      "change": 8.31,
-      "heat": 99,
-      "flow": 122.6,
-      "breadth": "48/48"
-    },
-    {
-      "name": "医疗服务",
-      "group": "other",
-      "change": 8.19,
-      "heat": 99,
-      "flow": 25.4,
-      "breadth": "51/52"
-    },
-    {
-      "name": "其他生物制品",
-      "group": "other",
-      "change": 8.09,
-      "heat": 99,
-      "flow": 9.8,
-      "breadth": "39/39"
-    },
-    {
       "name": "钴",
       "group": "other",
-      "change": 7.19,
+      "change": 6.41,
       "heat": 99,
-      "flow": 0.7,
+      "flow": 0.9,
       "breadth": "2/2"
     },
     {
-      "name": "稀土",
+      "name": "肉鸡养殖",
       "group": "other",
-      "change": 6.9,
+      "change": 5.95,
       "heat": 99,
-      "flow": 15.1,
+      "flow": 1.2,
+      "breadth": "8/8"
+    },
+    {
+      "name": "黄金",
+      "group": "other",
+      "change": 5.57,
+      "heat": 99,
+      "flow": 6.9,
+      "breadth": "10/10"
+    },
+    {
+      "name": "贵金属",
+      "group": "other",
+      "change": 5.53,
+      "heat": 99,
+      "flow": 9.9,
+      "breadth": "13/13"
+    },
+    {
+      "name": "院线",
+      "group": "other",
+      "change": 5.45,
+      "heat": 96,
+      "flow": 2.8,
       "breadth": "4/4"
     },
     {
       "name": "白银",
       "group": "other",
-      "change": 6.84,
-      "heat": 99,
-      "flow": 6,
+      "change": 5.4,
+      "heat": 96,
+      "flow": 2.9,
       "breadth": "3/3"
     },
     {
-      "name": "生物制品",
+      "name": "诊断服务",
       "group": "other",
-      "change": 6.56,
-      "heat": 99,
-      "flow": 12.1,
-      "breadth": "57/58"
+      "change": 5.14,
+      "heat": 93,
+      "flow": 2.4,
+      "breadth": "5/5"
     },
     {
-      "name": "元件",
+      "name": "畜禽饲料",
       "group": "other",
-      "change": 6.41,
-      "heat": 99,
-      "flow": 124.3,
-      "breadth": "62/67"
+      "change": 4.62,
+      "heat": 88,
+      "flow": 1.2,
+      "breadth": "9/9"
     },
     {
-      "name": "镍",
+      "name": "金融信息服务",
       "group": "other",
-      "change": 6.3,
-      "heat": 99,
-      "flow": 3.8,
-      "breadth": "1/1"
+      "change": 4.48,
+      "heat": 86,
+      "flow": 0.6,
+      "breadth": "3/3"
     },
     {
-      "name": "玻纤制造",
+      "name": "乳品",
       "group": "other",
-      "change": 5.58,
-      "heat": 99,
-      "flow": 29.5,
-      "breadth": "8/8"
+      "change": 4.41,
+      "heat": 87,
+      "flow": 1.3,
+      "breadth": "19/19"
     },
     {
-      "name": "第四代半导体",
-      "group": "tech",
-      "change": 4.58,
-      "heat": 90,
-      "flow": 3.5,
+      "name": "饮料乳品",
+      "group": "other",
+      "change": 4.32,
+      "heat": 87,
+      "flow": 2.8,
+      "breadth": "27/27"
+    },
+    {
+      "name": "氮肥",
+      "group": "other",
+      "change": 4.31,
+      "heat": 87,
+      "flow": 2.2,
+      "breadth": "6/6"
+    },
+    {
+      "name": "养殖业",
+      "group": "other",
+      "change": 4.27,
+      "heat": 87,
+      "flow": 2.9,
+      "breadth": "22/22"
+    },
+    {
+      "name": "饲料",
+      "group": "other",
+      "change": 4.22,
+      "heat": 85,
+      "flow": 1,
+      "breadth": "17/17"
+    },
+    {
+      "name": "水产饲料",
+      "group": "other",
+      "change": 4.19,
+      "heat": 84,
+      "flow": -0.2,
       "breadth": "4/4"
     },
     {
-      "name": "化学制剂",
+      "name": "地面兵装Ⅲ",
+      "group": "defense",
+      "change": 4.15,
+      "heat": 88,
+      "flow": 5.2,
+      "breadth": "11/12"
+    },
+    {
+      "name": "地面兵装Ⅱ",
+      "group": "defense",
+      "change": 4.15,
+      "heat": 88,
+      "flow": 5.2,
+      "breadth": "11/12"
+    },
+    {
+      "name": "软饮料",
       "group": "other",
-      "change": 4.47,
-      "heat": 99,
-      "flow": 36.7,
-      "breadth": "107/113"
+      "change": 4.11,
+      "heat": 84,
+      "flow": 1.5,
+      "breadth": "8/8"
     },
     {
-      "name": "化学制药",
+      "name": "锦纶",
       "group": "other",
-      "change": 4.38,
-      "heat": 99,
-      "flow": 41,
-      "breadth": "152/159"
+      "change": 4.09,
+      "heat": 83,
+      "flow": 0.4,
+      "breadth": "5/5"
     },
     {
-      "name": "贵金属",
+      "name": "酒店",
       "group": "other",
-      "change": 4.36,
-      "heat": 94,
-      "flow": 9.5,
-      "breadth": "12/13"
-    },
-    {
-      "name": "半导体材料",
-      "group": "tech",
-      "change": 3.71,
-      "heat": 95,
-      "flow": 15.5,
-      "breadth": "31/31"
-    },
-    {
-      "name": "半导体设备",
-      "group": "tech",
-      "change": 3.69,
+      "change": 3.79,
       "heat": 81,
-      "flow": 1.7,
-      "breadth": "23/24"
+      "flow": 0.4,
+      "breadth": "6/6"
     },
     {
-      "name": "半导体",
-      "group": "tech",
-      "change": 3.51,
-      "heat": 96,
-      "flow": 108.2,
-      "breadth": "174/183"
-    },
-    {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 2.91,
-      "heat": 91,
-      "flow": 35.9,
-      "breadth": "91/108"
-    },
-    {
-      "name": "半导体概念",
-      "group": "tech",
-      "change": 2.78,
-      "heat": 90,
-      "flow": 198.4,
-      "breadth": "424/509"
-    },
-    {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 2.32,
-      "heat": 70,
+      "name": "煤化工",
+      "group": "cycle",
+      "change": 2.83,
+      "heat": 74,
       "flow": 1,
-      "breadth": "9/9"
+      "breadth": "10/10"
     },
     {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 2.32,
-      "heat": 70,
-      "flow": 1,
-      "breadth": "9/9"
+      "name": "磷化工",
+      "group": "cycle",
+      "change": 1.79,
+      "heat": 66,
+      "flow": 1.2,
+      "breadth": "43/49"
     },
     {
-      "name": "军工电子Ⅲ",
-      "group": "defense",
-      "change": 1.67,
-      "heat": 65,
-      "flow": 2,
-      "breadth": "47/61"
+      "name": "化工原料",
+      "group": "cycle",
+      "change": 1.71,
+      "heat": 66,
+      "flow": 1.8,
+      "breadth": "63/77"
     },
     {
-      "name": "军工电子Ⅱ",
-      "group": "defense",
-      "change": 1.67,
-      "heat": 65,
-      "flow": 2,
-      "breadth": "47/61"
+      "name": "煤化工概念",
+      "group": "cycle",
+      "change": 1.66,
+      "heat": 69,
+      "flow": 5.3,
+      "breadth": "61/75"
     }
   ],
   "aShareBreadth": {
-    "rising": 2671,
-    "falling": 2352,
-    "flat": 132,
-    "total": 5155
+    "rising": 3546,
+    "falling": 1537,
+    "flat": 75,
+    "total": 5158
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-08-09",
+    "date": "2026-08-10",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3940.04,
-      "change": 1.02,
+      "price": 3947.88,
+      "change": 0.2,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 14311.01,
-      "change": 1.42,
+      "price": 14187.91,
+      "change": -0.86,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -316,7 +316,7 @@
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
     "sectors": "fulfilled",
-    "breadth": "rejected"
+    "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-08-09T04:51:20.295Z"
+  "refreshedAt": "2026-08-10T06:01:46.865Z"
 }
