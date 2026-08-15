@@ -3,14 +3,14 @@
   "range": "1D",
   "points": [
     {
-      "label": "2026-08-12",
-      "value": 4408.9
+      "label": "2026-08-13",
+      "value": 4363.6
     },
     {
       "label": "2026-08-14",
-      "value": 4371.5
+      "value": 4432
     }
   ],
   "source": "XAUS公开日频黄金现货",
-  "refreshedAt": "2026-08-14T06:04:58.422Z"
+  "refreshedAt": "2026-08-15T03:23:13.746Z"
 }
