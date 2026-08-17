@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4377.6001,
-      "change": 0.32,
+      "price": 4398.2002,
+      "change": 0.4,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 64.827,
-      "change": -0.1,
+      "price": 65.669,
+      "change": 1.03,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "稀土",
+      "name": "其他养殖",
       "group": "other",
-      "change": 5.82,
+      "change": 10.86,
       "heat": 99,
-      "flow": 14.9,
-      "breadth": "4/4"
-    },
-    {
-      "name": "通信线缆及配套",
-      "group": "tech",
-      "change": 5.33,
-      "heat": 99,
-      "flow": 55,
-      "breadth": "13/13"
-    },
-    {
-      "name": "激光设备",
-      "group": "other",
-      "change": 4.44,
-      "heat": 97,
-      "flow": 11.1,
-      "breadth": "11/11"
-    },
-    {
-      "name": "电子化学品Ⅲ",
-      "group": "tech",
-      "change": 3.75,
-      "heat": 82,
-      "flow": 2.4,
-      "breadth": "36/37"
-    },
-    {
-      "name": "电子化学品Ⅱ",
-      "group": "tech",
-      "change": 3.75,
-      "heat": 82,
-      "flow": 2.4,
-      "breadth": "36/37"
-    },
-    {
-      "name": "非金属材料Ⅲ",
-      "group": "other",
-      "change": 3.61,
-      "heat": 81,
-      "flow": 2.5,
-      "breadth": "9/13"
-    },
-    {
-      "name": "非金属材料Ⅱ",
-      "group": "other",
-      "change": 3.61,
-      "heat": 81,
-      "flow": 2.5,
-      "breadth": "9/13"
-    },
-    {
-      "name": "玻纤制造",
-      "group": "other",
-      "change": 3.52,
-      "heat": 86,
-      "flow": 8.3,
-      "breadth": "8/8"
-    },
-    {
-      "name": "被动元件",
-      "group": "other",
-      "change": 3.4,
-      "heat": 89,
-      "flow": 11.8,
-      "breadth": "15/19"
-    },
-    {
-      "name": "磁性材料",
-      "group": "other",
-      "change": 3.07,
-      "heat": 76,
-      "flow": 1.7,
-      "breadth": "15/15"
-    },
-    {
-      "name": "模拟芯片设计",
-      "group": "other",
-      "change": 2.84,
-      "heat": 75,
-      "flow": 2.2,
-      "breadth": "31/36"
-    },
-    {
-      "name": "元件",
-      "group": "other",
-      "change": 2.68,
-      "heat": 76,
-      "flow": -4.9,
-      "breadth": "55/67"
-    },
-    {
-      "name": "大气治理",
-      "group": "other",
-      "change": 2.6,
-      "heat": 71,
       "flow": 0.5,
-      "breadth": "6/7"
+      "breadth": "3/3"
     },
     {
-      "name": "印制电路板",
+      "name": "种子",
       "group": "other",
-      "change": 2.39,
-      "heat": 86,
-      "flow": -16.6,
-      "breadth": "40/48"
+      "change": 7.88,
+      "heat": 99,
+      "flow": 4.8,
+      "breadth": "10/10"
     },
     {
-      "name": "通信设备",
-      "group": "tech",
-      "change": 2.37,
-      "heat": 87,
-      "flow": 118.7,
-      "breadth": "68/90"
+      "name": "种植业",
+      "group": "other",
+      "change": 5.3,
+      "heat": 98,
+      "flow": 5.8,
+      "breadth": "21/21"
     },
     {
       "name": "半导体材料",
       "group": "tech",
-      "change": 2.3,
-      "heat": 78,
-      "flow": -10,
-      "breadth": "29/31"
+      "change": 5.04,
+      "heat": 99,
+      "flow": 20.6,
+      "breadth": "30/31"
     },
     {
-      "name": "半导体",
-      "group": "tech",
-      "change": 1.8,
-      "heat": 82,
-      "flow": -61.2,
-      "breadth": "148/183"
+      "name": "集成电路制造",
+      "group": "other",
+      "change": 4.89,
+      "heat": 91,
+      "flow": 2.3,
+      "breadth": "8/8"
     },
     {
-      "name": "半导体概念",
-      "group": "tech",
-      "change": 1.76,
-      "heat": 82,
-      "flow": -33.4,
-      "breadth": "385/511"
-    },
-    {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 1.5,
-      "heat": 70,
-      "flow": -8.4,
-      "breadth": "78/108"
-    },
-    {
-      "name": "煤炭开采",
-      "group": "cycle",
-      "change": 1.41,
-      "heat": 67,
-      "flow": 5.8,
-      "breadth": "21/26"
-    },
-    {
-      "name": "煤炭",
-      "group": "cycle",
-      "change": 1.07,
-      "heat": 65,
-      "flow": 6.2,
-      "breadth": "23/33"
-    },
-    {
-      "name": "氟化工概念",
-      "group": "cycle",
-      "change": 1.02,
-      "heat": 61,
-      "flow": -2.9,
-      "breadth": "25/40"
-    },
-    {
-      "name": "商业航天",
-      "group": "defense",
-      "change": 0.9,
-      "heat": 61,
-      "flow": -4.1,
-      "breadth": "189/297"
+      "name": "硅料硅片",
+      "group": "other",
+      "change": 4.87,
+      "heat": 92,
+      "flow": 3.4,
+      "breadth": "5/5"
     },
     {
       "name": "半导体设备",
       "group": "tech",
-      "change": 0.84,
-      "heat": 75,
-      "flow": -28.3,
-      "breadth": "18/25"
+      "change": 4.24,
+      "heat": 93,
+      "flow": 8.7,
+      "breadth": "23/25"
+    },
+    {
+      "name": "集成电路封测",
+      "group": "other",
+      "change": 4.2,
+      "heat": 99,
+      "flow": 29.6,
+      "breadth": "12/13"
+    },
+    {
+      "name": "粮食种植",
+      "group": "other",
+      "change": 4.18,
+      "heat": 84,
+      "flow": 0.6,
+      "breadth": "2/2"
+    },
+    {
+      "name": "电子化学品Ⅲ",
+      "group": "tech",
+      "change": 4.03,
+      "heat": 99,
+      "flow": 17.8,
+      "breadth": "34/37"
+    },
+    {
+      "name": "电子化学品Ⅱ",
+      "group": "tech",
+      "change": 4.03,
+      "heat": 99,
+      "flow": 17.8,
+      "breadth": "34/37"
+    },
+    {
+      "name": "分立器件",
+      "group": "other",
+      "change": 3.94,
+      "heat": 87,
+      "flow": 5.8,
+      "breadth": "17/18"
+    },
+    {
+      "name": "半导体",
+      "group": "tech",
+      "change": 3.88,
+      "heat": 99,
+      "flow": 137.4,
+      "breadth": "174/185"
+    },
+    {
+      "name": "粮油加工",
+      "group": "other",
+      "change": 3.85,
+      "heat": 82,
+      "flow": 1.6,
+      "breadth": "9/9"
+    },
+    {
+      "name": "铜",
+      "group": "other",
+      "change": 3.62,
+      "heat": 90,
+      "flow": 11.4,
+      "breadth": "17/17"
+    },
+    {
+      "name": "磷肥及磷化工",
+      "group": "cycle",
+      "change": 3.3,
+      "heat": 79,
+      "flow": 2.6,
+      "breadth": "9/9"
+    },
+    {
+      "name": "第四代半导体",
+      "group": "tech",
+      "change": 3.25,
+      "heat": 79,
+      "flow": 2.6,
+      "breadth": "3/4"
+    },
+    {
+      "name": "半导体概念",
+      "group": "tech",
+      "change": 2.99,
+      "heat": 92,
+      "flow": 191.1,
+      "breadth": "462/515"
+    },
+    {
+      "name": "航天装备Ⅲ",
+      "group": "defense",
+      "change": 2.68,
+      "heat": 73,
+      "flow": 1.1,
+      "breadth": "9/9"
+    },
+    {
+      "name": "航天装备Ⅱ",
+      "group": "defense",
+      "change": 2.68,
+      "heat": 73,
+      "flow": 1.1,
+      "breadth": "9/9"
+    },
+    {
+      "name": "第三代半导体",
+      "group": "tech",
+      "change": 2.47,
+      "heat": 88,
+      "flow": 45.5,
+      "breadth": "97/112"
+    },
+    {
+      "name": "磷化工",
+      "group": "cycle",
+      "change": 2.02,
+      "heat": 77,
+      "flow": 10.5,
+      "breadth": "45/49"
+    },
+    {
+      "name": "商业航天",
+      "group": "defense",
+      "change": 1.84,
+      "heat": 83,
+      "flow": 18.4,
+      "breadth": "257/302"
+    },
+    {
+      "name": "基础化工",
+      "group": "cycle",
+      "change": 1.75,
+      "heat": 78,
+      "flow": 13.6,
+      "breadth": "379/445"
     }
   ],
   "aShareBreadth": {
-    "rising": 2322,
-    "falling": 2671,
-    "flat": 163,
-    "total": 5156
+    "rising": 3636,
+    "falling": 1353,
+    "flat": 165,
+    "total": 5154
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3927.18,
-      "change": 0.01,
+      "price": 3960.19,
+      "change": 0.84,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 14354.31,
-      "change": 0.45,
+      "price": 14534.46,
+      "change": 1.26,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-08-16T03:36:23.049Z"
+  "refreshedAt": "2026-08-17T04:00:49.432Z"
 }
