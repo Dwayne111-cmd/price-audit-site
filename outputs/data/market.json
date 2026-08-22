@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4527.3999,
-      "change": 0.29,
+      "price": 4604.3999,
+      "change": 2.04,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 68.792,
-      "change": 0.93,
+      "price": 69.108,
+      "change": 1.22,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -64,221 +64,221 @@
     {
       "name": "白银",
       "group": "other",
-      "change": 7.1,
+      "change": 8.68,
       "heat": 99,
-      "flow": 8.1,
+      "flow": 20.5,
       "breadth": "3/3"
-    },
-    {
-      "name": "锂",
-      "group": "other",
-      "change": 7.08,
-      "heat": 99,
-      "flow": 9.3,
-      "breadth": "8/8"
-    },
-    {
-      "name": "能源金属",
-      "group": "other",
-      "change": 5.69,
-      "heat": 99,
-      "flow": 10.9,
-      "breadth": "10/11"
     },
     {
       "name": "贵金属",
       "group": "other",
-      "change": 4.52,
-      "heat": 98,
-      "flow": 12.1,
+      "change": 5.99,
+      "heat": 99,
+      "flow": 34.2,
       "breadth": "12/12"
     },
     {
-      "name": "钼",
+      "name": "锂",
       "group": "other",
-      "change": 4.08,
-      "heat": 83,
-      "flow": 0.6,
-      "breadth": "3/3"
-    },
-    {
-      "name": "镍",
-      "group": "other",
-      "change": 3.79,
-      "heat": 82,
-      "flow": 1.6,
-      "breadth": "1/1"
+      "change": 5.91,
+      "heat": 99,
+      "flow": 11.4,
+      "breadth": "8/8"
     },
     {
       "name": "黄金",
       "group": "other",
-      "change": 3.67,
-      "heat": 83,
-      "flow": 4,
+      "change": 5.09,
+      "heat": 99,
+      "flow": 13.8,
       "breadth": "9/9"
     },
     {
-      "name": "油气及炼化工程",
+      "name": "钨",
+      "group": "other",
+      "change": 4.9,
+      "heat": 99,
+      "flow": 10.6,
+      "breadth": "4/4"
+    },
+    {
+      "name": "涂料",
+      "group": "other",
+      "change": 4.68,
+      "heat": 87,
+      "flow": 0.1,
+      "breadth": "2/2"
+    },
+    {
+      "name": "能源金属",
+      "group": "other",
+      "change": 4.63,
+      "heat": 99,
+      "flow": 13.9,
+      "breadth": "10/11"
+    },
+    {
+      "name": "钼",
+      "group": "other",
+      "change": 4.39,
+      "heat": 85,
+      "flow": 0.2,
+      "breadth": "3/3"
+    },
+    {
+      "name": "铅锌",
+      "group": "other",
+      "change": 3.74,
+      "heat": 86,
+      "flow": 5.7,
+      "breadth": "11/11"
+    },
+    {
+      "name": "铜",
+      "group": "other",
+      "change": 3.21,
+      "heat": 94,
+      "flow": 27.8,
+      "breadth": "17/17"
+    },
+    {
+      "name": "镍",
+      "group": "other",
+      "change": 3.15,
+      "heat": 77,
+      "flow": 2.3,
+      "breadth": "1/1"
+    },
+    {
+      "name": "硅料硅片",
+      "group": "other",
+      "change": 3.11,
+      "heat": 76,
+      "flow": 0.7,
+      "breadth": "4/5"
+    },
+    {
+      "name": "其他石化",
+      "group": "other",
+      "change": 2.81,
+      "heat": 74,
+      "flow": 1.5,
+      "breadth": "11/14"
+    },
+    {
+      "name": "有色金属",
       "group": "cycle",
-      "change": 1.55,
-      "heat": 63,
-      "flow": 0.6,
-      "breadth": "5/6"
+      "change": 2.59,
+      "heat": 89,
+      "flow": 88.3,
+      "breadth": "121/142"
+    },
+    {
+      "name": "工业金属",
+      "group": "other",
+      "change": 2.56,
+      "heat": 88,
+      "flow": 34.5,
+      "breadth": "51/57"
+    },
+    {
+      "name": "改性塑料",
+      "group": "other",
+      "change": 2.47,
+      "heat": 72,
+      "flow": 2.4,
+      "breadth": "16/22"
+    },
+    {
+      "name": "金融信息服务",
+      "group": "other",
+      "change": 2.39,
+      "heat": 71,
+      "flow": 1.5,
+      "breadth": "3/3"
     },
     {
       "name": "石油石化",
       "group": "cycle",
-      "change": 1.37,
-      "heat": 63,
-      "flow": 2,
-      "breadth": "33/48"
+      "change": 1.49,
+      "heat": 66,
+      "flow": 3.7,
+      "breadth": "39/48"
+    },
+    {
+      "name": "第三代半导体",
+      "group": "tech",
+      "change": 1.18,
+      "heat": 77,
+      "flow": 20.6,
+      "breadth": "72/111"
+    },
+    {
+      "name": "综合电力设备商",
+      "group": "cycle",
+      "change": 1.15,
+      "heat": 59,
+      "flow": 0.2,
+      "breadth": "2/2"
     },
     {
       "name": "保险Ⅲ",
       "group": "finance",
-      "change": 0.98,
-      "heat": 60,
-      "flow": 1.8,
+      "change": 1.04,
+      "heat": 61,
+      "flow": 2.6,
       "breadth": "5/5"
     },
     {
       "name": "保险Ⅱ",
       "group": "finance",
-      "change": 0.98,
-      "heat": 60,
-      "flow": 1.8,
+      "change": 1.04,
+      "heat": 61,
+      "flow": 2.6,
       "breadth": "5/5"
-    },
-    {
-      "name": "煤炭开采",
-      "group": "cycle",
-      "change": 0.94,
-      "heat": 58,
-      "flow": 0.1,
-      "breadth": "22/27"
-    },
-    {
-      "name": "氟化工概念",
-      "group": "cycle",
-      "change": 0.62,
-      "heat": 56,
-      "flow": -1,
-      "breadth": "21/40"
-    },
-    {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 0.57,
-      "heat": 67,
-      "flow": 12.3,
-      "breadth": "53/108"
-    },
-    {
-      "name": "磷化工",
-      "group": "cycle",
-      "change": 0.51,
-      "heat": 56,
-      "flow": 2.2,
-      "breadth": "22/45"
-    },
-    {
-      "name": "氟化工",
-      "group": "cycle",
-      "change": 0.45,
-      "heat": 54,
-      "flow": -0.5,
-      "breadth": "4/10"
-    },
-    {
-      "name": "煤炭",
-      "group": "cycle",
-      "change": 0.45,
-      "heat": 54,
-      "flow": -0.2,
-      "breadth": "25/33"
-    },
-    {
-      "name": "电力设备",
-      "group": "cycle",
-      "change": 0.4,
-      "heat": 67,
-      "flow": 13.9,
-      "breadth": "205/402"
-    },
-    {
-      "name": "炼油化工",
-      "group": "cycle",
-      "change": 0.38,
-      "heat": 54,
-      "flow": -0.5,
-      "breadth": "6/10"
-    },
-    {
-      "name": "半导体概念",
-      "group": "tech",
-      "change": 0.28,
-      "heat": 69,
-      "flow": 16.4,
-      "breadth": "247/509"
-    },
-    {
-      "name": "半导体",
-      "group": "tech",
-      "change": 0.27,
-      "heat": 70,
-      "flow": 19.2,
-      "breadth": "89/184"
     },
     {
       "name": "军工电子Ⅲ",
       "group": "defense",
-      "change": 0.24,
-      "heat": 53,
-      "flow": -0.9,
-      "breadth": "31/60"
+      "change": 1,
+      "heat": 61,
+      "flow": -3.3,
+      "breadth": "44/58"
     },
     {
       "name": "军工电子Ⅱ",
       "group": "defense",
-      "change": 0.24,
-      "heat": 53,
-      "flow": -0.9,
-      "breadth": "31/60"
-    },
-    {
-      "name": "综合电力设备商",
-      "group": "cycle",
-      "change": 0.18,
-      "heat": 52,
-      "flow": -0.1,
-      "breadth": "1/2"
+      "change": 1,
+      "heat": 61,
+      "flow": -3.3,
+      "breadth": "44/58"
     }
   ],
   "aShareBreadth": {
-    "rising": 4169,
-    "falling": 880,
-    "flat": 103,
-    "total": 5152
+    "rising": 2407,
+    "falling": 2575,
+    "flat": 171,
+    "total": 5153
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-08-21",
+    "date": "2026-08-22",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3902.98,
-      "change": -0.02,
+      "price": 3905.2,
+      "change": 0.04,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 14081.06,
-      "change": 0.77,
+      "price": 14094.17,
+      "change": 0.87,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -316,7 +316,7 @@
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
     "sectors": "fulfilled",
-    "breadth": "rejected"
+    "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-08-21T02:35:39.322Z"
+  "refreshedAt": "2026-08-22T02:19:40.745Z"
 }
