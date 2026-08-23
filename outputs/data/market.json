@@ -263,7 +263,7 @@
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-08-22",
+    "date": "2026-08-23",
     "limited": false
   },
   "overview": {
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-08-22T02:19:40.745Z"
+  "refreshedAt": "2026-08-23T02:35:57.551Z"
 }
