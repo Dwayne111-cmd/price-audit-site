@@ -9,9 +9,9 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4660.4,
-      "change": 1.35,
-      "source": "XAUS公开日频黄金现货",
+      "price": 4590.8999,
+      "change": -0.49,
+      "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
     },
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 68.472,
-      "change": 0.33,
+      "price": 70.466,
+      "change": 1.39,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "教育运营及其他",
+      "name": "氮肥",
       "group": "other",
-      "change": 7.64,
+      "change": 7.33,
       "heat": 99,
-      "flow": 0.5,
-      "breadth": "2/2"
+      "flow": 3,
+      "breadth": "6/6"
     },
     {
-      "name": "集成电路制造",
+      "name": "房产租赁经纪",
       "group": "other",
-      "change": 6.81,
-      "heat": 99,
-      "flow": 10.7,
-      "breadth": "8/8"
+      "change": 5.44,
+      "heat": 96,
+      "flow": 2.3,
+      "breadth": "3/3"
     },
     {
-      "name": "其他种植业",
+      "name": "运动服装",
       "group": "other",
-      "change": 6.74,
-      "heat": 99,
-      "flow": 1.4,
-      "breadth": "4/5"
+      "change": 5.12,
+      "heat": 93,
+      "flow": 1.7,
+      "breadth": "4/4"
     },
     {
       "name": "种子",
       "group": "other",
-      "change": 6.3,
-      "heat": 99,
-      "flow": 3.1,
-      "breadth": "10/10"
+      "change": 4.53,
+      "heat": 88,
+      "flow": 1.8,
+      "breadth": "8/10"
     },
     {
-      "name": "模拟芯片设计",
+      "name": "农用机械",
       "group": "other",
-      "change": 5.77,
-      "heat": 99,
-      "flow": 7.3,
-      "breadth": "35/36"
+      "change": 4.34,
+      "heat": 85,
+      "flow": 0.6,
+      "breadth": "7/10"
     },
     {
-      "name": "印制电路板",
+      "name": "海洋捕捞",
       "group": "other",
-      "change": 5.72,
-      "heat": 99,
-      "flow": 105.5,
-      "breadth": "48/48"
+      "change": 3.96,
+      "heat": 82,
+      "flow": 0.6,
+      "breadth": "2/3"
     },
     {
-      "name": "半导体材料",
-      "group": "tech",
-      "change": 5.42,
-      "heat": 99,
-      "flow": 16.4,
-      "breadth": "31/31"
+      "name": "林业Ⅲ",
+      "group": "other",
+      "change": 3.96,
+      "heat": 83,
+      "flow": -1.2,
+      "breadth": "3/4"
     },
     {
-      "name": "半导体",
-      "group": "tech",
-      "change": 5.04,
-      "heat": 99,
-      "flow": 173.7,
-      "breadth": "183/185"
+      "name": "林业Ⅱ",
+      "group": "other",
+      "change": 3.96,
+      "heat": 83,
+      "flow": -1.2,
+      "breadth": "3/4"
     },
     {
-      "name": "半导体设备",
-      "group": "tech",
-      "change": 4.37,
-      "heat": 99,
-      "flow": 18.1,
-      "breadth": "25/25"
-    },
-    {
-      "name": "半导体概念",
-      "group": "tech",
-      "change": 3.77,
-      "heat": 98,
-      "flow": 309.8,
-      "breadth": "473/517"
-    },
-    {
-      "name": "第四代半导体",
-      "group": "tech",
-      "change": 3.66,
-      "heat": 81,
+      "name": "纺织化学制品",
+      "group": "other",
+      "change": 3.94,
+      "heat": 83,
       "flow": 1.5,
+      "breadth": "12/13"
+    },
+    {
+      "name": "渔业",
+      "group": "other",
+      "change": 3.8,
+      "heat": 81,
+      "flow": 0.6,
+      "breadth": "6/7"
+    },
+    {
+      "name": "水产养殖",
+      "group": "other",
+      "change": 3.68,
+      "heat": 79,
+      "flow": 0,
       "breadth": "4/4"
     },
     {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 3.62,
-      "heat": 97,
-      "flow": 75.9,
-      "breadth": "102/111"
+      "name": "煤化工",
+      "group": "cycle",
+      "change": 3.6,
+      "heat": 83,
+      "flow": 4.3,
+      "breadth": "9/9"
     },
     {
       "name": "氟化工",
       "group": "cycle",
-      "change": 3.41,
-      "heat": 84,
-      "flow": 7.1,
+      "change": 3.52,
+      "heat": 81,
+      "flow": 3.1,
+      "breadth": "10/10"
+    },
+    {
+      "name": "种植业",
+      "group": "other",
+      "change": 3.42,
+      "heat": 80,
+      "flow": 3.1,
+      "breadth": "17/21"
+    },
+    {
+      "name": "复合肥",
+      "group": "other",
+      "change": 3.29,
+      "heat": 77,
+      "flow": 0.2,
       "breadth": "9/10"
     },
     {
-      "name": "氟化工概念",
-      "group": "cycle",
-      "change": 3.24,
-      "heat": 93,
-      "flow": 16.9,
-      "breadth": "35/42"
-    },
-    {
-      "name": "煤炭开采",
-      "group": "cycle",
-      "change": 2.63,
-      "heat": 72,
-      "flow": -1,
-      "breadth": "26/27"
-    },
-    {
-      "name": "煤炭",
-      "group": "cycle",
-      "change": 2.51,
-      "heat": 72,
-      "flow": -1.7,
-      "breadth": "33/34"
+      "name": "横向通用软件",
+      "group": "tech",
+      "change": 3.25,
+      "heat": 94,
+      "flow": 21.7,
+      "breadth": "29/33"
     },
     {
       "name": "炼油化工",
       "group": "cycle",
-      "change": 2.31,
+      "change": 3.05,
+      "heat": 81,
+      "flow": 6.8,
+      "breadth": "10/10"
+    },
+    {
+      "name": "化工原料",
+      "group": "cycle",
+      "change": 2.38,
+      "heat": 87,
+      "flow": 19.4,
+      "breadth": "81/93"
+    },
+    {
+      "name": "磷化工",
+      "group": "cycle",
+      "change": 2.05,
       "heat": 69,
-      "flow": 0.6,
-      "breadth": "8/10"
+      "flow": -2.9,
+      "breadth": "43/47"
     },
     {
-      "name": "商业航天",
-      "group": "defense",
-      "change": 2.23,
-      "heat": 86,
-      "flow": 72.7,
-      "breadth": "266/310"
-    },
-    {
-      "name": "军工电子Ⅲ",
-      "group": "defense",
-      "change": 2.21,
-      "heat": 71,
-      "flow": 3.7,
-      "breadth": "50/60"
-    },
-    {
-      "name": "军工电子Ⅱ",
-      "group": "defense",
-      "change": 2.21,
-      "heat": 71,
-      "flow": 3.7,
-      "breadth": "50/60"
-    },
-    {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 2.17,
-      "heat": 68,
-      "flow": -0.9,
-      "breadth": "8/9"
-    },
-    {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 2.17,
-      "heat": 68,
-      "flow": -0.9,
-      "breadth": "8/9"
+      "name": "石油石化",
+      "group": "cycle",
+      "change": 2,
+      "heat": 70,
+      "flow": 3.8,
+      "breadth": "45/48"
     },
     {
       "name": "磷肥及磷化工",
       "group": "cycle",
-      "change": 2.04,
-      "heat": 68,
-      "flow": -1.8,
-      "breadth": "8/9"
+      "change": 1.93,
+      "heat": 66,
+      "flow": -1,
+      "breadth": "9/9"
     },
     {
-      "name": "国防军工",
-      "group": "defense",
-      "change": 1.97,
-      "heat": 75,
-      "flow": 9.7,
-      "breadth": "120/140"
+      "name": "煤化工概念",
+      "group": "cycle",
+      "change": 1.91,
+      "heat": 72,
+      "flow": 7.1,
+      "breadth": "64/74"
+    },
+    {
+      "name": "油气及炼化工程",
+      "group": "cycle",
+      "change": 1.66,
+      "heat": 64,
+      "flow": 0.3,
+      "breadth": "6/6"
+    },
+    {
+      "name": "基础化工",
+      "group": "cycle",
+      "change": 1.57,
+      "heat": 81,
+      "flow": 26.8,
+      "breadth": "334/447"
     }
   ],
   "aShareBreadth": {
-    "rising": 3191,
-    "falling": 1767,
-    "flat": 197,
-    "total": 5155
+    "rising": 2796,
+    "falling": 2216,
+    "flat": 142,
+    "total": 5154
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-08-27",
+    "date": "2026-08-28",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3956.57,
-      "change": 1.13,
+      "price": 3952.18,
+      "change": -0.11,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 14048.88,
-      "change": 1.5,
+      "price": 13953.07,
+      "change": -0.68,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-08-27T11:09:37.021Z"
+  "refreshedAt": "2026-08-28T12:42:43.014Z"
 }
