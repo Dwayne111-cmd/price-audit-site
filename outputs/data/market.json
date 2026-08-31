@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4456.3999,
-      "change": -3.44,
+      "price": 4439.7998,
+      "change": -0.83,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 66.503,
-      "change": -4.51,
+      "price": 66.814,
+      "change": -0.59,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "氮肥",
+      "name": "视频媒体",
       "group": "other",
-      "change": 7.33,
+      "change": 20,
       "heat": 99,
       "flow": 3,
-      "breadth": "6/6"
+      "breadth": "1/1"
     },
     {
-      "name": "房产租赁经纪",
+      "name": "文字媒体",
       "group": "other",
-      "change": 5.44,
-      "heat": 96,
-      "flow": 2.3,
-      "breadth": "3/3"
+      "change": 15,
+      "heat": 99,
+      "flow": 13.1,
+      "breadth": "2/2"
     },
     {
-      "name": "运动服装",
+      "name": "教育运营及其他",
       "group": "other",
-      "change": 5.12,
-      "heat": 93,
-      "flow": 1.7,
-      "breadth": "4/4"
+      "change": 10.65,
+      "heat": 99,
+      "flow": 0.4,
+      "breadth": "2/2"
     },
     {
-      "name": "种子",
+      "name": "影视动漫制作",
       "group": "other",
-      "change": 4.53,
-      "heat": 88,
-      "flow": 1.8,
-      "breadth": "8/10"
+      "change": 7.69,
+      "heat": 99,
+      "flow": 12.5,
+      "breadth": "14/14"
     },
     {
-      "name": "农用机械",
+      "name": "数字媒体",
       "group": "other",
-      "change": 4.34,
-      "heat": 85,
-      "flow": 0.6,
-      "breadth": "7/10"
+      "change": 6.73,
+      "heat": 99,
+      "flow": 25.5,
+      "breadth": "15/15"
     },
     {
-      "name": "海洋捕捞",
+      "name": "影视院线",
       "group": "other",
-      "change": 3.96,
-      "heat": 82,
-      "flow": 0.6,
-      "breadth": "2/3"
+      "change": 6.64,
+      "heat": 99,
+      "flow": 12.7,
+      "breadth": "18/18"
     },
     {
-      "name": "林业Ⅲ",
+      "name": "其他数字媒体",
       "group": "other",
-      "change": 3.96,
+      "change": 6.61,
+      "heat": 99,
+      "flow": 1.1,
+      "breadth": "2/2"
+    },
+    {
+      "name": "电视广播Ⅲ",
+      "group": "other",
+      "change": 6.01,
+      "heat": 99,
+      "flow": 6.9,
+      "breadth": "12/12"
+    },
+    {
+      "name": "电视广播Ⅱ",
+      "group": "other",
+      "change": 6.01,
+      "heat": 99,
+      "flow": 6.9,
+      "breadth": "12/12"
+    },
+    {
+      "name": "传媒",
+      "group": "other",
+      "change": 4.49,
+      "heat": 99,
+      "flow": 58.7,
+      "breadth": "123/126"
+    },
+    {
+      "name": "其他黑色家电",
+      "group": "other",
+      "change": 4.3,
+      "heat": 84,
+      "flow": 0.1,
+      "breadth": "4/5"
+    },
+    {
+      "name": "氮肥",
+      "group": "other",
+      "change": 4.27,
+      "heat": 86,
+      "flow": 2.2,
+      "breadth": "4/6"
+    },
+    {
+      "name": "大众出版",
+      "group": "other",
+      "change": 4.18,
+      "heat": 86,
+      "flow": 2.1,
+      "breadth": "17/18"
+    },
+    {
+      "name": "营销代理",
+      "group": "other",
+      "change": 4.15,
+      "heat": 91,
+      "flow": 7.6,
+      "breadth": "27/27"
+    },
+    {
+      "name": "图片媒体",
+      "group": "other",
+      "change": 4.05,
       "heat": 83,
-      "flow": -1.2,
-      "breadth": "3/4"
-    },
-    {
-      "name": "林业Ⅱ",
-      "group": "other",
-      "change": 3.96,
-      "heat": 83,
-      "flow": -1.2,
-      "breadth": "3/4"
-    },
-    {
-      "name": "纺织化学制品",
-      "group": "other",
-      "change": 3.94,
-      "heat": 83,
-      "flow": 1.5,
-      "breadth": "12/13"
-    },
-    {
-      "name": "渔业",
-      "group": "other",
-      "change": 3.8,
-      "heat": 81,
-      "flow": 0.6,
-      "breadth": "6/7"
-    },
-    {
-      "name": "水产养殖",
-      "group": "other",
-      "change": 3.68,
-      "heat": 79,
-      "flow": 0,
-      "breadth": "4/4"
-    },
-    {
-      "name": "煤化工",
-      "group": "cycle",
-      "change": 3.6,
-      "heat": 83,
-      "flow": 4.3,
-      "breadth": "9/9"
-    },
-    {
-      "name": "氟化工",
-      "group": "cycle",
-      "change": 3.52,
-      "heat": 81,
-      "flow": 3.1,
-      "breadth": "10/10"
-    },
-    {
-      "name": "种植业",
-      "group": "other",
-      "change": 3.42,
-      "heat": 80,
-      "flow": 3.1,
-      "breadth": "17/21"
-    },
-    {
-      "name": "复合肥",
-      "group": "other",
-      "change": 3.29,
-      "heat": 77,
       "flow": 0.2,
-      "breadth": "9/10"
+      "breadth": "1/1"
     },
     {
-      "name": "横向通用软件",
-      "group": "tech",
-      "change": 3.25,
-      "heat": 94,
-      "flow": 21.7,
-      "breadth": "29/33"
-    },
-    {
-      "name": "炼油化工",
-      "group": "cycle",
-      "change": 3.05,
-      "heat": 81,
-      "flow": 6.8,
-      "breadth": "10/10"
-    },
-    {
-      "name": "化工原料",
-      "group": "cycle",
-      "change": 2.38,
-      "heat": 87,
-      "flow": 19.4,
-      "breadth": "81/93"
-    },
-    {
-      "name": "磷化工",
-      "group": "cycle",
-      "change": 2.05,
-      "heat": 69,
-      "flow": -2.9,
-      "breadth": "43/47"
-    },
-    {
-      "name": "石油石化",
-      "group": "cycle",
-      "change": 2,
-      "heat": 70,
-      "flow": 3.8,
-      "breadth": "45/48"
-    },
-    {
-      "name": "磷肥及磷化工",
-      "group": "cycle",
-      "change": 1.93,
-      "heat": 66,
-      "flow": -1,
-      "breadth": "9/9"
-    },
-    {
-      "name": "煤化工概念",
-      "group": "cycle",
-      "change": 1.91,
-      "heat": 72,
-      "flow": 7.1,
-      "breadth": "64/74"
-    },
-    {
-      "name": "油气及炼化工程",
-      "group": "cycle",
-      "change": 1.66,
-      "heat": 64,
-      "flow": 0.3,
+      "name": "国有大型银行Ⅲ",
+      "group": "finance",
+      "change": 3.08,
+      "heat": 85,
+      "flow": 10.6,
       "breadth": "6/6"
     },
     {
-      "name": "基础化工",
+      "name": "军工电子Ⅲ",
+      "group": "defense",
+      "change": 2.57,
+      "heat": 73,
+      "flow": -2.4,
+      "breadth": "56/61"
+    },
+    {
+      "name": "军工电子Ⅱ",
+      "group": "defense",
+      "change": 2.57,
+      "heat": 73,
+      "flow": -2.4,
+      "breadth": "56/61"
+    },
+    {
+      "name": "煤炭开采",
       "group": "cycle",
-      "change": 1.57,
-      "heat": 81,
-      "flow": 26.8,
-      "breadth": "334/447"
+      "change": 2.41,
+      "heat": 79,
+      "flow": 9.7,
+      "breadth": "24/27"
+    },
+    {
+      "name": "半导体",
+      "group": "tech",
+      "change": 2.35,
+      "heat": 84,
+      "flow": -15.2,
+      "breadth": "146/183"
+    },
+    {
+      "name": "航天装备Ⅲ",
+      "group": "defense",
+      "change": 2.02,
+      "heat": 66,
+      "flow": -0.1,
+      "breadth": "9/9"
+    },
+    {
+      "name": "航天装备Ⅱ",
+      "group": "defense",
+      "change": 2.02,
+      "heat": 66,
+      "flow": -0.1,
+      "breadth": "9/9"
+    },
+    {
+      "name": "煤炭",
+      "group": "cycle",
+      "change": 1.99,
+      "heat": 75,
+      "flow": 9.3,
+      "breadth": "28/34"
+    },
+    {
+      "name": "国防军工",
+      "group": "defense",
+      "change": 1.8,
+      "heat": 65,
+      "flow": 0.8,
+      "breadth": "116/141"
     }
   ],
   "aShareBreadth": {
-    "rising": 2796,
-    "falling": 2216,
-    "flat": 142,
-    "total": 5154
+    "rising": 2961,
+    "falling": 2047,
+    "flat": 123,
+    "total": 5131
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-08-30",
+    "date": "2026-08-31",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3952.18,
-      "change": -0.11,
+      "price": 3982.23,
+      "change": 0.76,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 13953.07,
-      "change": -0.68,
+      "price": 14008.16,
+      "change": 0.39,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-08-30T06:35:10.979Z"
+  "refreshedAt": "2026-08-31T06:59:40.454Z"
 }
