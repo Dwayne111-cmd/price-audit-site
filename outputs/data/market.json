@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4439.7998,
-      "change": -0.83,
+      "price": 4435.6001,
+      "change": 0,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 66.814,
-      "change": -0.59,
+      "price": 66.817,
+      "change": 0.53,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -64,221 +64,221 @@
     {
       "name": "视频媒体",
       "group": "other",
-      "change": 20,
+      "change": 20.02,
       "heat": 99,
-      "flow": 3,
+      "flow": 3.6,
       "breadth": "1/1"
+    },
+    {
+      "name": "种子",
+      "group": "other",
+      "change": 12.02,
+      "heat": 99,
+      "flow": 15.8,
+      "breadth": "10/10"
+    },
+    {
+      "name": "种植业",
+      "group": "other",
+      "change": 7.86,
+      "heat": 99,
+      "flow": 16.9,
+      "breadth": "20/21"
+    },
+    {
+      "name": "农业综合Ⅲ",
+      "group": "other",
+      "change": 6.4,
+      "heat": 99,
+      "flow": 0.1,
+      "breadth": "3/3"
+    },
+    {
+      "name": "农业综合Ⅱ",
+      "group": "other",
+      "change": 6.4,
+      "heat": 99,
+      "flow": 0.1,
+      "breadth": "3/3"
     },
     {
       "name": "文字媒体",
       "group": "other",
-      "change": 15,
+      "change": 6.3,
       "heat": 99,
-      "flow": 13.1,
+      "flow": -1.2,
       "breadth": "2/2"
     },
     {
-      "name": "教育运营及其他",
+      "name": "农用机械",
       "group": "other",
-      "change": 10.65,
-      "heat": 99,
+      "change": 5.97,
+      "heat": 98,
       "flow": 0.4,
+      "breadth": "10/10"
+    },
+    {
+      "name": "金融信息服务",
+      "group": "other",
+      "change": 4.93,
+      "heat": 92,
+      "flow": 2.5,
+      "breadth": "2/3"
+    },
+    {
+      "name": "粮食种植",
+      "group": "other",
+      "change": 4.93,
+      "heat": 89,
+      "flow": -0.1,
       "breadth": "2/2"
     },
     {
-      "name": "影视动漫制作",
+      "name": "粮油加工",
       "group": "other",
-      "change": 7.69,
-      "heat": 99,
-      "flow": 12.5,
-      "breadth": "14/14"
+      "change": 4.93,
+      "heat": 94,
+      "flow": 4.9,
+      "breadth": "9/9"
     },
     {
-      "name": "数字媒体",
+      "name": "超市",
       "group": "other",
-      "change": 6.73,
-      "heat": 99,
-      "flow": 25.5,
-      "breadth": "15/15"
+      "change": 4.88,
+      "heat": 93,
+      "flow": 3.8,
+      "breadth": "7/7"
     },
     {
-      "name": "影视院线",
+      "name": "百货",
       "group": "other",
-      "change": 6.64,
-      "heat": 99,
-      "flow": 12.7,
-      "breadth": "18/18"
+      "change": 4.41,
+      "heat": 90,
+      "flow": 4.8,
+      "breadth": "19/19"
     },
     {
-      "name": "其他数字媒体",
+      "name": "林业Ⅲ",
       "group": "other",
-      "change": 6.61,
-      "heat": 99,
+      "change": 4.36,
+      "heat": 86,
+      "flow": 1.5,
+      "breadth": "4/4"
+    },
+    {
+      "name": "林业Ⅱ",
+      "group": "other",
+      "change": 4.36,
+      "heat": 86,
+      "flow": 1.5,
+      "breadth": "4/4"
+    },
+    {
+      "name": "其他种植业",
+      "group": "other",
+      "change": 4.25,
+      "heat": 85,
       "flow": 1.1,
-      "breadth": "2/2"
-    },
-    {
-      "name": "电视广播Ⅲ",
-      "group": "other",
-      "change": 6.01,
-      "heat": 99,
-      "flow": 6.9,
-      "breadth": "12/12"
-    },
-    {
-      "name": "电视广播Ⅱ",
-      "group": "other",
-      "change": 6.01,
-      "heat": 99,
-      "flow": 6.9,
-      "breadth": "12/12"
-    },
-    {
-      "name": "传媒",
-      "group": "other",
-      "change": 4.49,
-      "heat": 99,
-      "flow": 58.7,
-      "breadth": "123/126"
-    },
-    {
-      "name": "其他黑色家电",
-      "group": "other",
-      "change": 4.3,
-      "heat": 84,
-      "flow": 0.1,
       "breadth": "4/5"
     },
     {
-      "name": "氮肥",
+      "name": "其他养殖",
       "group": "other",
-      "change": 4.27,
-      "heat": 86,
-      "flow": 2.2,
-      "breadth": "4/6"
-    },
-    {
-      "name": "大众出版",
-      "group": "other",
-      "change": 4.18,
-      "heat": 86,
-      "flow": 2.1,
-      "breadth": "17/18"
-    },
-    {
-      "name": "营销代理",
-      "group": "other",
-      "change": 4.15,
-      "heat": 91,
-      "flow": 7.6,
-      "breadth": "27/27"
-    },
-    {
-      "name": "图片媒体",
-      "group": "other",
-      "change": 4.05,
+      "change": 4.14,
       "heat": 83,
       "flow": 0.2,
-      "breadth": "1/1"
+      "breadth": "3/3"
+    },
+    {
+      "name": "旅游零售Ⅲ",
+      "group": "other",
+      "change": 3.9,
+      "heat": 83,
+      "flow": 1.4,
+      "breadth": "2/2"
+    },
+    {
+      "name": "保险Ⅲ",
+      "group": "finance",
+      "change": 3.61,
+      "heat": 91,
+      "flow": 12.1,
+      "breadth": "5/5"
+    },
+    {
+      "name": "保险Ⅱ",
+      "group": "finance",
+      "change": 3.61,
+      "heat": 91,
+      "flow": 12.1,
+      "breadth": "5/5"
+    },
+    {
+      "name": "银行",
+      "group": "finance",
+      "change": 2.08,
+      "heat": 70,
+      "flow": 3.1,
+      "breadth": "41/42"
+    },
+    {
+      "name": "银行Ⅱ",
+      "group": "finance",
+      "change": 2.08,
+      "heat": 70,
+      "flow": 3.1,
+      "breadth": "41/42"
     },
     {
       "name": "国有大型银行Ⅲ",
       "group": "finance",
-      "change": 3.08,
-      "heat": 85,
-      "flow": 10.6,
+      "change": 2.05,
+      "heat": 68,
+      "flow": 1.7,
       "breadth": "6/6"
     },
     {
-      "name": "军工电子Ⅲ",
-      "group": "defense",
-      "change": 2.57,
-      "heat": 73,
-      "flow": -2.4,
-      "breadth": "56/61"
-    },
-    {
-      "name": "军工电子Ⅱ",
-      "group": "defense",
-      "change": 2.57,
-      "heat": 73,
-      "flow": -2.4,
-      "breadth": "56/61"
-    },
-    {
-      "name": "煤炭开采",
+      "name": "煤化工",
       "group": "cycle",
-      "change": 2.41,
-      "heat": 79,
-      "flow": 9.7,
-      "breadth": "24/27"
+      "change": 1.96,
+      "heat": 68,
+      "flow": -1.8,
+      "breadth": "7/8"
     },
     {
-      "name": "半导体",
-      "group": "tech",
-      "change": 2.35,
-      "heat": 84,
-      "flow": -15.2,
-      "breadth": "146/183"
-    },
-    {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 2.02,
-      "heat": 66,
-      "flow": -0.1,
-      "breadth": "9/9"
-    },
-    {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 2.02,
-      "heat": 66,
-      "flow": -0.1,
-      "breadth": "9/9"
-    },
-    {
-      "name": "煤炭",
-      "group": "cycle",
-      "change": 1.99,
-      "heat": 75,
-      "flow": 9.3,
-      "breadth": "28/34"
-    },
-    {
-      "name": "国防军工",
-      "group": "defense",
-      "change": 1.8,
-      "heat": 65,
-      "flow": 0.8,
-      "breadth": "116/141"
+      "name": "股份制银行Ⅲ",
+      "group": "finance",
+      "change": 1.91,
+      "heat": 71,
+      "flow": 5.4,
+      "breadth": "8/9"
     }
   ],
   "aShareBreadth": {
-    "rising": 2961,
-    "falling": 2047,
-    "flat": 123,
-    "total": 5131
+    "rising": 3011,
+    "falling": 2017,
+    "flat": 121,
+    "total": 5149
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-08-31",
+    "date": "2026-09-01",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3982.23,
-      "change": 0.76,
+      "price": 3983.03,
+      "change": -0.08,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 14008.16,
-      "change": 0.39,
+      "price": 13880.31,
+      "change": -0.96,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -290,18 +290,18 @@
     "indexes": "腾讯财经公开行情"
   },
   "health": {
-    "history:gold:1D": "fulfilled",
-    "history:gold:5D": "fulfilled",
-    "history:gold:1M": "fulfilled",
-    "history:gold:6M": "fulfilled",
-    "history:gold:1Y": "fulfilled",
-    "history:gold:2Y": "fulfilled",
-    "history:silver:1D": "fulfilled",
-    "history:silver:5D": "fulfilled",
-    "history:silver:1M": "fulfilled",
-    "history:silver:6M": "fulfilled",
-    "history:silver:1Y": "fulfilled",
-    "history:silver:2Y": "fulfilled",
+    "history:gold:1D": "reused-previous: 503 Service Unavailable",
+    "history:gold:5D": "reused-previous: 503 Service Unavailable",
+    "history:gold:1M": "reused-previous: 503 Service Unavailable",
+    "history:gold:6M": "reused-previous: 503 Service Unavailable",
+    "history:gold:1Y": "reused-previous: 503 Service Unavailable",
+    "history:gold:2Y": "reused-previous: 503 Service Unavailable",
+    "history:silver:1D": "reused-previous: 503 Service Unavailable",
+    "history:silver:5D": "reused-previous: 503 Service Unavailable",
+    "history:silver:1M": "reused-previous: 503 Service Unavailable",
+    "history:silver:6M": "reused-previous: 503 Service Unavailable",
+    "history:silver:1Y": "reused-previous: 503 Service Unavailable",
+    "history:silver:2Y": "reused-previous: 503 Service Unavailable",
     "history:wti:1D": "fulfilled",
     "history:wti:5D": "fulfilled",
     "history:wti:1M": "fulfilled",
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-08-31T06:59:40.454Z"
+  "refreshedAt": "2026-09-01T06:12:54.371Z"
 }
