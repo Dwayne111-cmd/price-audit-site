@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4430,
-      "change": 1.41,
+      "price": 4473.1001,
+      "change": -0.5,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 65.867,
-      "change": 1.37,
+      "price": 66.878,
+      "change": -0.57,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "旅游零售Ⅲ",
+      "name": "畜禽饲料",
       "group": "other",
-      "change": 5.92,
+      "change": 8.96,
       "heat": 99,
-      "flow": 2.6,
-      "breadth": "2/2"
+      "flow": 6.2,
+      "breadth": "9/9"
     },
     {
-      "name": "旅游零售Ⅱ",
+      "name": "饲料",
       "group": "other",
-      "change": 5.92,
+      "change": 6.57,
       "heat": 99,
-      "flow": 2.6,
-      "breadth": "2/2"
+      "flow": 6.5,
+      "breadth": "17/17"
     },
     {
-      "name": "白银",
+      "name": "生猪养殖",
       "group": "other",
-      "change": 4.49,
-      "heat": 88,
+      "change": 6.48,
+      "heat": 99,
+      "flow": 7.8,
+      "breadth": "10/11"
+    },
+    {
+      "name": "视频媒体",
+      "group": "other",
+      "change": 5.66,
+      "heat": 97,
       "flow": 2,
+      "breadth": "1/1"
+    },
+    {
+      "name": "房产租赁经纪",
+      "group": "other",
+      "change": 5.65,
+      "heat": 99,
+      "flow": 7.7,
       "breadth": "3/3"
+    },
+    {
+      "name": "养殖业",
+      "group": "other",
+      "change": 5.48,
+      "heat": 99,
+      "flow": 8.2,
+      "breadth": "21/22"
+    },
+    {
+      "name": "金融信息服务",
+      "group": "other",
+      "change": 5.46,
+      "heat": 96,
+      "flow": 2.5,
+      "breadth": "2/3"
+    },
+    {
+      "name": "动物保健Ⅲ",
+      "group": "other",
+      "change": 5.07,
+      "heat": 91,
+      "flow": 0.5,
+      "breadth": "11/12"
+    },
+    {
+      "name": "动物保健Ⅱ",
+      "group": "other",
+      "change": 5.07,
+      "heat": 91,
+      "flow": 0.5,
+      "breadth": "11/12"
+    },
+    {
+      "name": "综合电商",
+      "group": "other",
+      "change": 5,
+      "heat": 91,
+      "flow": 1.4,
+      "breadth": "1/1"
+    },
+    {
+      "name": "水产饲料",
+      "group": "other",
+      "change": 4.91,
+      "heat": 90,
+      "flow": 0.2,
+      "breadth": "4/4"
+    },
+    {
+      "name": "房地产综合服务",
+      "group": "other",
+      "change": 4.84,
+      "heat": 89,
+      "flow": -0.1,
+      "breadth": "1/1"
+    },
+    {
+      "name": "肉鸡养殖",
+      "group": "other",
+      "change": 4.62,
+      "heat": 87,
+      "flow": 0.3,
+      "breadth": "8/8"
+    },
+    {
+      "name": "海洋捕捞",
+      "group": "other",
+      "change": 4.56,
+      "heat": 87,
+      "flow": 0.8,
+      "breadth": "3/3"
+    },
+    {
+      "name": "教育运营及其他",
+      "group": "other",
+      "change": 4.38,
+      "heat": 85,
+      "flow": 0,
+      "breadth": "2/2"
+    },
+    {
+      "name": "其他种植业",
+      "group": "other",
+      "change": 4.28,
+      "heat": 86,
+      "flow": 1.9,
+      "breadth": "5/5"
+    },
+    {
+      "name": "其他养殖",
+      "group": "other",
+      "change": 4.14,
+      "heat": 83,
+      "flow": 0.1,
+      "breadth": "3/3"
+    },
+    {
+      "name": "农林牧渔",
+      "group": "other",
+      "change": 4.12,
+      "heat": 99,
+      "flow": 29.9,
+      "breadth": "108/113"
     },
     {
       "name": "涂料",
       "group": "other",
-      "change": 3.43,
-      "heat": 78,
-      "flow": 0.2,
+      "change": 3.98,
+      "heat": 82,
+      "flow": 0.1,
       "breadth": "2/2"
     },
     {
-      "name": "金属包装",
+      "name": "渔业",
       "group": "other",
-      "change": 3.39,
-      "heat": 80,
-      "flow": 2.9,
-      "breadth": "5/7"
-    },
-    {
-      "name": "航运",
-      "group": "other",
-      "change": 3.05,
+      "change": 3.94,
       "heat": 83,
-      "flow": 8.4,
-      "breadth": "17/17"
+      "flow": 1.1,
+      "breadth": "7/7"
     },
     {
-      "name": "贵金属",
+      "name": "其他酒类",
       "group": "other",
-      "change": 2.71,
-      "heat": 79,
-      "flow": 7.5,
-      "breadth": "12/13"
-    },
-    {
-      "name": "保险Ⅲ",
-      "group": "finance",
-      "change": 2.57,
-      "heat": 81,
-      "flow": 10.7,
-      "breadth": "5/5"
-    },
-    {
-      "name": "保险Ⅱ",
-      "group": "finance",
-      "change": 2.57,
-      "heat": 81,
-      "flow": 10.7,
-      "breadth": "5/5"
-    },
-    {
-      "name": "磨具磨料",
-      "group": "other",
-      "change": 2.38,
+      "change": 3.73,
       "heat": 83,
-      "flow": 13.6,
-      "breadth": "8/14"
+      "flow": 2.8,
+      "breadth": "11/11"
     },
     {
-      "name": "会展服务",
-      "group": "other",
-      "change": 2.33,
-      "heat": 69,
-      "flow": 0.6,
-      "breadth": "2/3"
-    },
-    {
-      "name": "黄金",
-      "group": "other",
-      "change": 2.18,
-      "heat": 73,
-      "flow": 5.5,
-      "breadth": "9/10"
-    },
-    {
-      "name": "航运港口",
-      "group": "other",
-      "change": 1.87,
-      "heat": 74,
-      "flow": 9.3,
-      "breadth": "27/33"
-    },
-    {
-      "name": "院线",
-      "group": "other",
-      "change": 1.84,
-      "heat": 65,
-      "flow": 0.4,
-      "breadth": "3/4"
-    },
-    {
-      "name": "超市",
-      "group": "other",
-      "change": 1.83,
-      "heat": 66,
-      "flow": 1.8,
-      "breadth": "5/7"
-    },
-    {
-      "name": "百货",
-      "group": "other",
-      "change": 1.82,
-      "heat": 68,
-      "flow": 3.2,
-      "breadth": "10/18"
-    },
-    {
-      "name": "炼油化工",
+      "name": "综合电力设备商",
       "group": "cycle",
-      "change": 1.8,
-      "heat": 66,
-      "flow": 2.1,
-      "breadth": "6/10"
+      "change": 2.27,
+      "heat": 71,
+      "flow": 2.6,
+      "breadth": "2/2"
     },
     {
-      "name": "证券Ⅲ",
+      "name": "参股保险",
       "group": "finance",
-      "change": 0.45,
-      "heat": 70,
-      "flow": 16.2,
-      "breadth": "35/45"
-    },
-    {
-      "name": "证券Ⅱ",
-      "group": "finance",
-      "change": 0.45,
-      "heat": 70,
-      "flow": 16.2,
-      "breadth": "35/45"
-    },
-    {
-      "name": "航空机场",
-      "group": "defense",
-      "change": 0.41,
-      "heat": 54,
-      "flow": 1,
-      "breadth": "9/11"
-    },
-    {
-      "name": "航空运输",
-      "group": "defense",
-      "change": 0.27,
-      "heat": 53,
-      "flow": 0.8,
-      "breadth": "5/6"
-    },
-    {
-      "name": "股份制银行Ⅲ",
-      "group": "finance",
-      "change": 0.18,
-      "heat": 52,
-      "flow": -0.9,
-      "breadth": "6/8"
+      "change": 1.81,
+      "heat": 77,
+      "flow": 12.6,
+      "breadth": "65/74"
     },
     {
       "name": "通用航空",
       "group": "defense",
-      "change": 0.12,
-      "heat": 54,
-      "flow": 3.4,
-      "breadth": "17/34"
-    },
-    {
-      "name": "第四代半导体",
-      "group": "tech",
-      "change": 0.09,
-      "heat": 51,
-      "flow": 0,
-      "breadth": "2/4"
+      "change": 1.29,
+      "heat": 63,
+      "flow": 2.6,
+      "breadth": "29/35"
     }
   ],
   "aShareBreadth": {
-    "rising": 1551,
-    "falling": 3464,
-    "flat": 134,
+    "rising": 3132,
+    "falling": 1885,
+    "flat": 132,
     "total": 5149
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-03",
+    "date": "2026-09-04",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3937.28,
-      "change": -0.1,
+      "price": 3952.75,
+      "change": 0.27,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 13583.87,
-      "change": -0.2,
+      "price": 13630.95,
+      "change": 0.04,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-09-03T05:43:34.885Z"
+  "refreshedAt": "2026-09-04T05:49:06.540Z"
 }
