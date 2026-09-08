@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4394.7998,
-      "change": -0.85,
+      "price": 4421.8999,
+      "change": -0.17,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 65.768,
-      "change": -0.82,
+      "price": 66.765,
+      "change": 0.82,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "印制电路板",
+      "name": "粮食种植",
       "group": "other",
-      "change": 7.42,
+      "change": 7.8,
       "heat": 99,
-      "flow": 122.9,
-      "breadth": "48/48"
+      "flow": 1.3,
+      "breadth": "2/2"
     },
     {
-      "name": "元件",
+      "name": "房产租赁经纪",
       "group": "other",
-      "change": 6.56,
+      "change": 7.47,
       "heat": 99,
-      "flow": 143.5,
-      "breadth": "67/67"
+      "flow": 3.3,
+      "breadth": "3/3"
+    },
+    {
+      "name": "磷肥及磷化工",
+      "group": "cycle",
+      "change": 6.85,
+      "heat": 99,
+      "flow": 11.4,
+      "breadth": "9/9"
+    },
+    {
+      "name": "教育运营及其他",
+      "group": "other",
+      "change": 6.74,
+      "heat": 99,
+      "flow": 0.1,
+      "breadth": "2/2"
+    },
+    {
+      "name": "学历教育",
+      "group": "other",
+      "change": 6.73,
+      "heat": 99,
+      "flow": 0.8,
+      "breadth": "2/2"
+    },
+    {
+      "name": "其他农产品加工",
+      "group": "other",
+      "change": 6.7,
+      "heat": 99,
+      "flow": 5.6,
+      "breadth": "13/13"
+    },
+    {
+      "name": "氮肥",
+      "group": "other",
+      "change": 6.68,
+      "heat": 99,
+      "flow": 6.6,
+      "breadth": "6/6"
     },
     {
       "name": "其他种植业",
       "group": "other",
-      "change": 6.16,
-      "heat": 99,
-      "flow": -0.6,
+      "change": 5.56,
+      "heat": 97,
+      "flow": 2.5,
       "breadth": "5/5"
     },
     {
-      "name": "通信网络设备及器件",
-      "group": "tech",
-      "change": 5.43,
-      "heat": 99,
-      "flow": 150.9,
-      "breadth": "33/37"
+      "name": "风电整机",
+      "group": "other",
+      "change": 5.51,
+      "heat": 96,
+      "flow": 1.6,
+      "breadth": "5/5"
     },
     {
-      "name": "种子",
+      "name": "焦炭Ⅲ",
       "group": "other",
       "change": 5.33,
-      "heat": 93,
-      "flow": -0.2,
-      "breadth": "10/10"
-    },
-    {
-      "name": "种植业",
-      "group": "other",
-      "change": 4.82,
-      "heat": 90,
-      "flow": -1.3,
-      "breadth": "21/21"
-    },
-    {
-      "name": "水产饲料",
-      "group": "other",
-      "change": 4.57,
-      "heat": 87,
-      "flow": -0.1,
-      "breadth": "3/4"
-    },
-    {
-      "name": "被动元件",
-      "group": "other",
-      "change": 4.38,
-      "heat": 99,
-      "flow": 20.5,
-      "breadth": "19/19"
-    },
-    {
-      "name": "百货",
-      "group": "other",
-      "change": 4.38,
-      "heat": 89,
-      "flow": 4.1,
-      "breadth": "19/19"
-    },
-    {
-      "name": "半导体设备",
-      "group": "tech",
-      "change": 4.35,
-      "heat": 99,
-      "flow": 14.6,
-      "breadth": "25/25"
-    },
-    {
-      "name": "通信线缆及配套",
-      "group": "tech",
-      "change": 4.31,
-      "heat": 99,
-      "flow": 19.3,
-      "breadth": "12/13"
-    },
-    {
-      "name": "超市",
-      "group": "other",
-      "change": 4.29,
-      "heat": 89,
-      "flow": 4.2,
+      "heat": 94,
+      "flow": 1.3,
       "breadth": "7/7"
     },
     {
-      "name": "电子化学品Ⅲ",
-      "group": "tech",
-      "change": 4.26,
-      "heat": 98,
-      "flow": 13.4,
-      "breadth": "37/37"
-    },
-    {
-      "name": "电子化学品Ⅱ",
-      "group": "tech",
-      "change": 4.26,
-      "heat": 98,
-      "flow": 13.4,
-      "breadth": "37/37"
-    },
-    {
-      "name": "海洋捕捞",
+      "name": "焦炭Ⅱ",
       "group": "other",
-      "change": 4.25,
-      "heat": 84,
-      "flow": 0.3,
-      "breadth": "2/2"
+      "change": 5.33,
+      "heat": 94,
+      "flow": 1.3,
+      "breadth": "7/7"
     },
     {
-      "name": "激光设备",
-      "group": "other",
+      "name": "煤化工",
+      "group": "cycle",
       "change": 4.08,
-      "heat": 92,
-      "flow": 9.2,
-      "breadth": "11/11"
+      "heat": 85,
+      "flow": 2.4,
+      "breadth": "10/10"
     },
     {
-      "name": "渔业",
-      "group": "other",
-      "change": 3.97,
-      "heat": 82,
-      "flow": 0.4,
+      "name": "磷化工",
+      "group": "cycle",
+      "change": 3.39,
+      "heat": 95,
+      "flow": 30.1,
+      "breadth": "44/50"
+    },
+    {
+      "name": "煤化工概念",
+      "group": "cycle",
+      "change": 2.82,
+      "heat": 91,
+      "flow": 18.6,
+      "breadth": "71/77"
+    },
+    {
+      "name": "化工原料",
+      "group": "cycle",
+      "change": 2.7,
+      "heat": 90,
+      "flow": 27.5,
+      "breadth": "83/91"
+    },
+    {
+      "name": "煤炭",
+      "group": "cycle",
+      "change": 2.49,
+      "heat": 72,
+      "flow": 2.5,
+      "breadth": "32/34"
+    },
+    {
+      "name": "炼油化工",
+      "group": "cycle",
+      "change": 2.34,
+      "heat": 73,
+      "flow": 4,
+      "breadth": "9/10"
+    },
+    {
+      "name": "石油石化",
+      "group": "cycle",
+      "change": 2.3,
+      "heat": 74,
+      "flow": 5.2,
+      "breadth": "45/49"
+    },
+    {
+      "name": "油气及炼化工程",
+      "group": "cycle",
+      "change": 2.19,
+      "heat": 68,
+      "flow": -0.4,
       "breadth": "6/6"
     },
     {
-      "name": "其他自动化设备",
-      "group": "other",
-      "change": 3.95,
-      "heat": 89,
-      "flow": 7,
-      "breadth": "25/30"
+      "name": "航空装备Ⅲ",
+      "group": "defense",
+      "change": 1.77,
+      "heat": 69,
+      "flow": 5.2,
+      "breadth": "43/49"
     },
     {
-      "name": "半导体材料",
-      "group": "tech",
-      "change": 3.92,
-      "heat": 93,
-      "flow": 11.2,
-      "breadth": "29/30"
+      "name": "航空装备Ⅱ",
+      "group": "defense",
+      "change": 1.77,
+      "heat": 69,
+      "flow": 5.2,
+      "breadth": "43/49"
     },
     {
-      "name": "光学元件",
-      "group": "other",
-      "change": 3.87,
-      "heat": 82,
-      "flow": 1.5,
-      "breadth": "26/27"
+      "name": "参股银行",
+      "group": "finance",
+      "change": 1.48,
+      "heat": 73,
+      "flow": 10.7,
+      "breadth": "173/223"
     },
     {
-      "name": "半导体",
-      "group": "tech",
-      "change": 2.54,
-      "heat": 88,
-      "flow": 87.3,
-      "breadth": "157/184"
+      "name": "航天航空",
+      "group": "defense",
+      "change": 1.34,
+      "heat": 64,
+      "flow": 3.1,
+      "breadth": "43/54"
     },
     {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 2.48,
-      "heat": 88,
-      "flow": 35.1,
-      "breadth": "96/117"
-    },
-    {
-      "name": "半导体概念",
-      "group": "tech",
-      "change": 2.46,
-      "heat": 88,
-      "flow": 157.9,
-      "breadth": "427/525"
-    },
-    {
-      "name": "第四代半导体",
-      "group": "tech",
-      "change": 1.86,
-      "heat": 65,
-      "flow": 0.3,
-      "breadth": "3/4"
+      "name": "参股保险",
+      "group": "finance",
+      "change": 1.34,
+      "heat": 61,
+      "flow": 0.6,
+      "breadth": "54/69"
     }
   ],
   "aShareBreadth": {
-    "rising": 3083,
-    "falling": 1904,
-    "flat": 165,
-    "total": 5152
+    "rising": 3286,
+    "falling": 1759,
+    "flat": 97,
+    "total": 5142
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-07",
+    "date": "2026-09-08",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3931.43,
-      "change": 0.03,
+      "price": 3942.08,
+      "change": 0.24,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 13758.95,
-      "change": 1.79,
+      "price": 13731,
+      "change": -0.32,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-09-07T06:00:57.850Z"
+  "refreshedAt": "2026-09-08T05:54:43.401Z"
 }
