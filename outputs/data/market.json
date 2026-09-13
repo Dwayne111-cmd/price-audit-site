@@ -263,7 +263,7 @@
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "limited": false
   },
   "overview": {
@@ -296,12 +296,12 @@
     "history:gold:6M": "fulfilled",
     "history:gold:1Y": "fulfilled",
     "history:gold:2Y": "fulfilled",
-    "history:silver:1D": "fulfilled",
-    "history:silver:5D": "fulfilled",
-    "history:silver:1M": "fulfilled",
-    "history:silver:6M": "fulfilled",
-    "history:silver:1Y": "fulfilled",
-    "history:silver:2Y": "fulfilled",
+    "history:silver:1D": "reused-previous: 国际银价 XAUS intraday history has insufficient points.",
+    "history:silver:5D": "reused-previous: 国际银价 XAUS intraday history has insufficient points.",
+    "history:silver:1M": "reused-previous: 国际银价 XAUS intraday history has insufficient points.",
+    "history:silver:6M": "reused-previous: 国际银价 XAUS intraday history has insufficient points.",
+    "history:silver:1Y": "reused-previous: 国际银价 XAUS intraday history has insufficient points.",
+    "history:silver:2Y": "reused-previous: 国际银价 XAUS intraday history has insufficient points.",
     "history:wti:1D": "fulfilled",
     "history:wti:5D": "fulfilled",
     "history:wti:1M": "fulfilled",
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-09-12T05:42:47.058Z"
+  "refreshedAt": "2026-09-13T06:03:15.117Z"
 }
