@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4373.6001,
-      "change": 0.33,
+      "price": 4379,
+      "change": 0.43,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 66.604,
-      "change": 1.42,
+      "price": 66.377,
+      "change": 0.89,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -64,221 +64,221 @@
     {
       "name": "其他医疗服务",
       "group": "other",
-      "change": 6.39,
+      "change": 6.72,
       "heat": 99,
-      "flow": 1.9,
+      "flow": 2,
       "breadth": "5/5"
     },
     {
       "name": "第四代半导体",
       "group": "tech",
-      "change": 4.98,
+      "change": 4.96,
       "heat": 91,
-      "flow": 1.1,
+      "flow": 1.2,
+      "breadth": "4/4"
+    },
+    {
+      "name": "房产租赁经纪",
+      "group": "other",
+      "change": 4.86,
+      "heat": 90,
+      "flow": 1,
+      "breadth": "3/3"
+    },
+    {
+      "name": "半导体设备",
+      "group": "tech",
+      "change": 4.83,
+      "heat": 99,
+      "flow": 18.2,
+      "breadth": "23/25"
+    },
+    {
+      "name": "数字芯片设计",
+      "group": "other",
+      "change": 4.68,
+      "heat": 99,
+      "flow": 75.3,
+      "breadth": "53/54"
+    },
+    {
+      "name": "集成电路制造",
+      "group": "other",
+      "change": 4.59,
+      "heat": 99,
+      "flow": 12.4,
+      "breadth": "9/9"
+    },
+    {
+      "name": "光伏加工设备",
+      "group": "other",
+      "change": 4.52,
+      "heat": 87,
+      "flow": 0.6,
+      "breadth": "11/11"
+    },
+    {
+      "name": "分立器件",
+      "group": "other",
+      "change": 4.46,
+      "heat": 97,
+      "flow": 11.3,
+      "breadth": "18/18"
+    },
+    {
+      "name": "集成电路封测",
+      "group": "other",
+      "change": 4.43,
+      "heat": 99,
+      "flow": 50.8,
+      "breadth": "13/13"
+    },
+    {
+      "name": "模拟芯片设计",
+      "group": "other",
+      "change": 4.42,
+      "heat": 87,
+      "flow": 1.3,
+      "breadth": "35/36"
+    },
+    {
+      "name": "半导体",
+      "group": "tech",
+      "change": 4.35,
+      "heat": 99,
+      "flow": 182.2,
+      "breadth": "182/186"
+    },
+    {
+      "name": "资产管理",
+      "group": "other",
+      "change": 4.31,
+      "heat": 86,
+      "flow": 1.2,
       "breadth": "4/4"
     },
     {
       "name": "诊断服务",
       "group": "other",
-      "change": 4.72,
-      "heat": 89,
-      "flow": 1,
-      "breadth": "5/5"
-    },
-    {
-      "name": "集成电路制造",
-      "group": "other",
-      "change": 4.64,
-      "heat": 99,
-      "flow": 11.4,
-      "breadth": "9/9"
-    },
-    {
-      "name": "半导体设备",
-      "group": "tech",
-      "change": 4.61,
-      "heat": 99,
-      "flow": 17,
-      "breadth": "24/25"
-    },
-    {
-      "name": "数字芯片设计",
-      "group": "other",
-      "change": 4.16,
-      "heat": 99,
-      "flow": 74.6,
-      "breadth": "53/54"
-    },
-    {
-      "name": "分立器件",
-      "group": "other",
-      "change": 4.05,
-      "heat": 94,
-      "flow": 11.6,
-      "breadth": "18/18"
-    },
-    {
-      "name": "资产管理",
-      "group": "other",
-      "change": 3.99,
+      "change": 3.97,
       "heat": 83,
-      "flow": 1.1,
-      "breadth": "4/4"
-    },
-    {
-      "name": "半导体",
-      "group": "tech",
-      "change": 3.92,
-      "heat": 99,
-      "flow": 173.9,
-      "breadth": "182/186"
-    },
-    {
-      "name": "模拟芯片设计",
-      "group": "other",
-      "change": 3.91,
-      "heat": 85,
-      "flow": 3.4,
-      "breadth": "35/36"
-    },
-    {
-      "name": "集成电路封测",
-      "group": "other",
-      "change": 3.87,
-      "heat": 99,
-      "flow": 47.2,
-      "breadth": "13/13"
-    },
-    {
-      "name": "光伏加工设备",
-      "group": "other",
-      "change": 3.79,
-      "heat": 81,
-      "flow": 0.7,
-      "breadth": "11/11"
-    },
-    {
-      "name": "房产租赁经纪",
-      "group": "other",
-      "change": 3.64,
-      "heat": 79,
-      "flow": 0.4,
-      "breadth": "2/2"
+      "flow": 0.9,
+      "breadth": "5/5"
     },
     {
       "name": "白银",
       "group": "other",
-      "change": 3.17,
-      "heat": 76,
-      "flow": 1,
+      "change": 3.9,
+      "heat": 83,
+      "flow": 1.9,
       "breadth": "3/3"
     },
     {
-      "name": "超市",
+      "name": "跨境电商",
       "group": "other",
-      "change": 3.15,
-      "heat": 76,
-      "flow": 1,
-      "breadth": "7/7"
-    },
-    {
-      "name": "生活用纸",
-      "group": "other",
-      "change": 2.92,
-      "heat": 75,
-      "flow": 1.7,
-      "breadth": "9/9"
+      "change": 3.58,
+      "heat": 80,
+      "flow": -1.7,
+      "breadth": "4/7"
     },
     {
       "name": "半导体材料",
       "group": "tech",
-      "change": 2.66,
-      "heat": 80,
-      "flow": 8.6,
-      "breadth": "30/31"
+      "change": 3.11,
+      "heat": 88,
+      "flow": 12.9,
+      "breadth": "31/31"
     },
     {
       "name": "半导体概念",
       "group": "tech",
-      "change": 2.64,
-      "heat": 89,
-      "flow": 189.7,
-      "breadth": "470/531"
+      "change": 3.07,
+      "heat": 93,
+      "flow": 207.3,
+      "breadth": "486/535"
+    },
+    {
+      "name": "第三代半导体",
+      "group": "tech",
+      "change": 2.82,
+      "heat": 91,
+      "flow": 41.2,
+      "breadth": "111/122"
     },
     {
       "name": "航天装备Ⅲ",
       "group": "defense",
-      "change": 2.32,
-      "heat": 70,
-      "flow": 1.3,
+      "change": 2.79,
+      "heat": 74,
+      "flow": 2.1,
       "breadth": "9/9"
     },
     {
       "name": "航天装备Ⅱ",
       "group": "defense",
-      "change": 2.32,
-      "heat": 70,
-      "flow": 1.3,
+      "change": 2.79,
+      "heat": 74,
+      "flow": 2.1,
       "breadth": "9/9"
-    },
-    {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 2.2,
-      "heat": 86,
-      "flow": 33,
-      "breadth": "105/121"
     },
     {
       "name": "航天航空",
       "group": "defense",
-      "change": 1.86,
-      "heat": 67,
-      "flow": 2.4,
-      "breadth": "41/52"
+      "change": 2.29,
+      "heat": 70,
+      "flow": 1.7,
+      "breadth": "47/58"
     },
     {
       "name": "商业航天",
       "group": "defense",
-      "change": 1.71,
-      "heat": 66,
-      "flow": 2.1,
-      "breadth": "272/313"
+      "change": 2.13,
+      "heat": 72,
+      "flow": 5,
+      "breadth": "288/321"
+    },
+    {
+      "name": "综合电力设备商",
+      "group": "cycle",
+      "change": 2.1,
+      "heat": 68,
+      "flow": 1.4,
+      "breadth": "2/2"
     },
     {
       "name": "电力设备",
       "group": "cycle",
-      "change": 1.57,
-      "heat": 80,
-      "flow": 17.8,
-      "breadth": "349/398"
+      "change": 2.1,
+      "heat": 85,
+      "flow": 33.1,
+      "breadth": "369/410"
     }
   ],
   "aShareBreadth": {
-    "rising": 3667,
-    "falling": 1287,
-    "flat": 190,
-    "total": 5144
+    "rising": 3937,
+    "falling": 1049,
+    "flat": 164,
+    "total": 5150
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-18",
+    "date": "2026-09-19",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3908.1,
-      "change": 0.84,
+      "price": 3911.87,
+      "change": 0.94,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 13599.27,
-      "change": 1.41,
+      "price": 13640.87,
+      "change": 1.72,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-09-18T05:51:34.319Z"
+  "refreshedAt": "2026-09-19T05:47:16.819Z"
 }
