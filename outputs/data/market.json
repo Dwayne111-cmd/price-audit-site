@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4379,
-      "change": 0.43,
+      "price": 4354.2998,
+      "change": -0.79,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 66.377,
-      "change": 0.89,
+      "price": 66.242,
+      "change": -0.86,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -64,221 +64,221 @@
     {
       "name": "其他医疗服务",
       "group": "other",
-      "change": 6.72,
+      "change": 7.77,
       "heat": 99,
-      "flow": 2,
+      "flow": 0.4,
       "breadth": "5/5"
-    },
-    {
-      "name": "第四代半导体",
-      "group": "tech",
-      "change": 4.96,
-      "heat": 91,
-      "flow": 1.2,
-      "breadth": "4/4"
     },
     {
       "name": "房产租赁经纪",
       "group": "other",
-      "change": 4.86,
-      "heat": 90,
-      "flow": 1,
+      "change": 7.28,
+      "heat": 99,
+      "flow": 2.5,
       "breadth": "3/3"
     },
     {
-      "name": "半导体设备",
-      "group": "tech",
-      "change": 4.83,
+      "name": "宠物食品",
+      "group": "other",
+      "change": 6.5,
       "heat": 99,
-      "flow": 18.2,
-      "breadth": "23/25"
-    },
-    {
-      "name": "数字芯片设计",
-      "group": "other",
-      "change": 4.68,
-      "heat": 99,
-      "flow": 75.3,
-      "breadth": "53/54"
-    },
-    {
-      "name": "集成电路制造",
-      "group": "other",
-      "change": 4.59,
-      "heat": 99,
-      "flow": 12.4,
-      "breadth": "9/9"
-    },
-    {
-      "name": "光伏加工设备",
-      "group": "other",
-      "change": 4.52,
-      "heat": 87,
-      "flow": 0.6,
-      "breadth": "11/11"
-    },
-    {
-      "name": "分立器件",
-      "group": "other",
-      "change": 4.46,
-      "heat": 97,
-      "flow": 11.3,
-      "breadth": "18/18"
-    },
-    {
-      "name": "集成电路封测",
-      "group": "other",
-      "change": 4.43,
-      "heat": 99,
-      "flow": 50.8,
-      "breadth": "13/13"
-    },
-    {
-      "name": "模拟芯片设计",
-      "group": "other",
-      "change": 4.42,
-      "heat": 87,
-      "flow": 1.3,
-      "breadth": "35/36"
-    },
-    {
-      "name": "半导体",
-      "group": "tech",
-      "change": 4.35,
-      "heat": 99,
-      "flow": 182.2,
-      "breadth": "182/186"
-    },
-    {
-      "name": "资产管理",
-      "group": "other",
-      "change": 4.31,
-      "heat": 86,
-      "flow": 1.2,
+      "flow": 0.9,
       "breadth": "4/4"
+    },
+    {
+      "name": "会展服务",
+      "group": "other",
+      "change": 6.48,
+      "heat": 99,
+      "flow": 0.4,
+      "breadth": "3/3"
+    },
+    {
+      "name": "防水材料",
+      "group": "other",
+      "change": 6.16,
+      "heat": 99,
+      "flow": 1.7,
+      "breadth": "3/3"
+    },
+    {
+      "name": "其他家电Ⅲ",
+      "group": "other",
+      "change": 5.53,
+      "heat": 95,
+      "flow": 0.3,
+      "breadth": "3/3"
+    },
+    {
+      "name": "其他家电Ⅱ",
+      "group": "other",
+      "change": 5.53,
+      "heat": 95,
+      "flow": 0.3,
+      "breadth": "3/3"
     },
     {
       "name": "诊断服务",
       "group": "other",
-      "change": 3.97,
-      "heat": 83,
+      "change": 5.42,
+      "heat": 94,
+      "flow": -0.3,
+      "breadth": "5/5"
+    },
+    {
+      "name": "涂料",
+      "group": "other",
+      "change": 5.37,
+      "heat": 93,
+      "flow": -0.1,
+      "breadth": "2/2"
+    },
+    {
+      "name": "医疗研发外包",
+      "group": "other",
+      "change": 5.13,
+      "heat": 98,
+      "flow": 7.4,
+      "breadth": "29/29"
+    },
+    {
+      "name": "视频媒体",
+      "group": "other",
+      "change": 5.09,
+      "heat": 93,
+      "flow": 1.9,
+      "breadth": "1/1"
+    },
+    {
+      "name": "医疗服务",
+      "group": "other",
+      "change": 5.07,
+      "heat": 99,
+      "flow": 10.1,
+      "breadth": "54/54"
+    },
+    {
+      "name": "其他生物制品",
+      "group": "other",
+      "change": 5.03,
+      "heat": 99,
+      "flow": 8.7,
+      "breadth": "38/39"
+    },
+    {
+      "name": "房地产综合服务",
+      "group": "other",
+      "change": 4.89,
+      "heat": 89,
+      "flow": 0,
+      "breadth": "1/1"
+    },
+    {
+      "name": "油气及炼化工程",
+      "group": "cycle",
+      "change": 4.62,
+      "heat": 87,
+      "flow": 0.4,
+      "breadth": "6/6"
+    },
+    {
+      "name": "化学制剂",
+      "group": "other",
+      "change": 4.62,
+      "heat": 99,
+      "flow": 27.3,
+      "breadth": "113/114"
+    },
+    {
+      "name": "生物制品",
+      "group": "other",
+      "change": 4.56,
+      "heat": 97,
+      "flow": 10.7,
+      "breadth": "57/58"
+    },
+    {
+      "name": "化学制药",
+      "group": "other",
+      "change": 4.51,
+      "heat": 99,
+      "flow": 27.6,
+      "breadth": "154/160"
+    },
+    {
+      "name": "无机盐",
+      "group": "other",
+      "change": 4.32,
+      "heat": 88,
+      "flow": 3.6,
+      "breadth": "10/11"
+    },
+    {
+      "name": "原料药",
+      "group": "other",
+      "change": 4.26,
+      "heat": 84,
+      "flow": 0.2,
+      "breadth": "41/46"
+    },
+    {
+      "name": "人工景区",
+      "group": "other",
+      "change": 4.22,
+      "heat": 85,
       "flow": 0.9,
       "breadth": "5/5"
     },
     {
-      "name": "白银",
+      "name": "广告媒体",
       "group": "other",
-      "change": 3.9,
-      "heat": 83,
-      "flow": 1.9,
+      "change": 4.22,
+      "heat": 84,
+      "flow": 0.7,
       "breadth": "3/3"
     },
     {
-      "name": "跨境电商",
+      "name": "房地产服务",
       "group": "other",
-      "change": 3.58,
-      "heat": 80,
-      "flow": -1.7,
-      "breadth": "4/7"
-    },
-    {
-      "name": "半导体材料",
-      "group": "tech",
-      "change": 3.11,
-      "heat": 88,
-      "flow": 12.9,
-      "breadth": "31/31"
-    },
-    {
-      "name": "半导体概念",
-      "group": "tech",
-      "change": 3.07,
-      "heat": 93,
-      "flow": 207.3,
-      "breadth": "486/535"
-    },
-    {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 2.82,
-      "heat": 91,
-      "flow": 41.2,
-      "breadth": "111/122"
-    },
-    {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 2.79,
-      "heat": 74,
-      "flow": 2.1,
-      "breadth": "9/9"
-    },
-    {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 2.79,
-      "heat": 74,
-      "flow": 2.1,
-      "breadth": "9/9"
-    },
-    {
-      "name": "航天航空",
-      "group": "defense",
-      "change": 2.29,
-      "heat": 70,
-      "flow": 1.7,
-      "breadth": "47/58"
-    },
-    {
-      "name": "商业航天",
-      "group": "defense",
-      "change": 2.13,
-      "heat": 72,
-      "flow": 5,
-      "breadth": "288/321"
-    },
-    {
-      "name": "综合电力设备商",
-      "group": "cycle",
-      "change": 2.1,
-      "heat": 68,
-      "flow": 1.4,
-      "breadth": "2/2"
-    },
-    {
-      "name": "电力设备",
-      "group": "cycle",
-      "change": 2.1,
+      "change": 4.09,
       "heat": 85,
-      "flow": 33.1,
-      "breadth": "369/410"
+      "flow": 2.5,
+      "breadth": "14/16"
+    },
+    {
+      "name": "体外诊断",
+      "group": "other",
+      "change": 4.08,
+      "heat": 85,
+      "flow": 2.3,
+      "breadth": "39/39"
     }
   ],
   "aShareBreadth": {
-    "rising": 3937,
-    "falling": 1049,
-    "flat": 164,
-    "total": 5150
+    "rising": 4060,
+    "falling": 995,
+    "flat": 98,
+    "total": 5153
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-20",
+    "date": "2026-09-21",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3911.87,
-      "change": 0.94,
+      "price": 3939.27,
+      "change": 0.7,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 13640.87,
-      "change": 1.72,
+      "price": 13684.03,
+      "change": 0.32,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-09-20T06:08:59.402Z"
+  "refreshedAt": "2026-09-21T06:14:57.045Z"
 }
