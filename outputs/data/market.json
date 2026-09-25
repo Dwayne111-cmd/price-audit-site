@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4283.2998,
-      "change": -0.05,
+      "price": 4268.8999,
+      "change": 0.09,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 64.178,
-      "change": -0.73,
+      "price": 63.721,
+      "change": 0.02,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -263,22 +263,22 @@
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-24",
+    "date": "2026-09-25",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3895,
-      "change": -1.05,
+      "price": 3888.37,
+      "change": -1.22,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 13355.52,
-      "change": -2.06,
+      "price": 13316.97,
+      "change": -2.34,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -315,8 +315,8 @@
     "history:copper:1Y": "fulfilled",
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "fulfilled",
-    "breadth": "fulfilled"
+    "sectors": "rejected",
+    "breadth": "rejected"
   },
-  "refreshedAt": "2026-09-24T06:07:05.903Z"
+  "refreshedAt": "2026-09-25T06:07:59.113Z"
 }
