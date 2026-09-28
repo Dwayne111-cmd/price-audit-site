@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4286.2002,
-      "change": 0.59,
+      "price": 4173.2002,
+      "change": -2.7,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 64.419,
-      "change": 1.23,
+      "price": 61.639,
+      "change": -4.47,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -255,30 +255,30 @@
     }
   ],
   "aShareBreadth": {
-    "rising": 800,
-    "falling": 1400,
-    "flat": 75,
-    "total": 2275
+    "rising": 100,
+    "falling": 3400,
+    "flat": 0,
+    "total": 3500
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-27",
+    "date": "2026-09-28",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3888.37,
-      "change": -1.22,
+      "price": 3826.39,
+      "change": -1.59,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 13316.97,
-      "change": -2.34,
+      "price": 12874.27,
+      "change": -3.32,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -290,18 +290,18 @@
     "indexes": "腾讯财经公开行情"
   },
   "health": {
-    "history:gold:1D": "fulfilled",
-    "history:gold:5D": "fulfilled",
-    "history:gold:1M": "fulfilled",
-    "history:gold:6M": "fulfilled",
-    "history:gold:1Y": "fulfilled",
-    "history:gold:2Y": "fulfilled",
-    "history:silver:1D": "fulfilled",
-    "history:silver:5D": "fulfilled",
-    "history:silver:1M": "fulfilled",
-    "history:silver:6M": "fulfilled",
-    "history:silver:1Y": "fulfilled",
-    "history:silver:2Y": "fulfilled",
+    "history:gold:1D": "reused-previous: 503 Service Unavailable",
+    "history:gold:5D": "reused-previous: 503 Service Unavailable",
+    "history:gold:1M": "reused-previous: 503 Service Unavailable",
+    "history:gold:6M": "reused-previous: 503 Service Unavailable",
+    "history:gold:1Y": "reused-previous: 503 Service Unavailable",
+    "history:gold:2Y": "reused-previous: 503 Service Unavailable",
+    "history:silver:1D": "reused-previous: 503 Service Unavailable",
+    "history:silver:5D": "reused-previous: 503 Service Unavailable",
+    "history:silver:1M": "reused-previous: 503 Service Unavailable",
+    "history:silver:6M": "reused-previous: 503 Service Unavailable",
+    "history:silver:1Y": "reused-previous: 503 Service Unavailable",
+    "history:silver:2Y": "reused-previous: 503 Service Unavailable",
     "history:wti:1D": "fulfilled",
     "history:wti:5D": "fulfilled",
     "history:wti:1M": "fulfilled",
@@ -315,8 +315,8 @@
     "history:copper:1Y": "fulfilled",
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "fulfilled",
+    "sectors": "rejected",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-09-27T06:33:58.772Z"
+  "refreshedAt": "2026-09-28T06:45:39.746Z"
 }
