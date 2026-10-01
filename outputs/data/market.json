@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4182.7998,
-      "change": 0.82,
+      "price": 4181.2002,
+      "change": 0.59,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 61.208,
-      "change": 0.43,
+      "price": 61.199,
+      "change": 1.43,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -39,8 +39,8 @@
       "unit": "美元/桶",
       "color": "#155eef",
       "favorite": true,
-      "price": 96.41,
-      "change": -0.58,
+      "price": 96.16,
+      "change": -3.23,
       "source": "FRED公开日频商品价格",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "林业Ⅲ",
+      "name": "视频媒体",
       "group": "other",
-      "change": 5.83,
+      "change": 6.06,
       "heat": 99,
-      "flow": 6.4,
-      "breadth": "4/4"
-    },
-    {
-      "name": "林业Ⅱ",
-      "group": "other",
-      "change": 5.83,
-      "heat": 99,
-      "flow": 6.4,
-      "breadth": "4/4"
-    },
-    {
-      "name": "其他医疗服务",
-      "group": "other",
-      "change": 4.29,
-      "heat": 86,
-      "flow": 2,
-      "breadth": "3/5"
-    },
-    {
-      "name": "其他家电Ⅲ",
-      "group": "other",
-      "change": 4.24,
-      "heat": 85,
-      "flow": 0.7,
-      "breadth": "2/2"
-    },
-    {
-      "name": "其他家电Ⅱ",
-      "group": "other",
-      "change": 4.24,
-      "heat": 85,
-      "flow": 0.7,
-      "breadth": "2/2"
-    },
-    {
-      "name": "纺织鞋类制造",
-      "group": "other",
-      "change": 4.14,
-      "heat": 83,
-      "flow": 0.1,
+      "flow": 2.6,
       "breadth": "1/1"
     },
     {
-      "name": "风电零部件",
+      "name": "医美耗材",
       "group": "other",
-      "change": 2.67,
-      "heat": 78,
-      "flow": 6.9,
-      "breadth": "20/26"
+      "change": 5.23,
+      "heat": 93,
+      "flow": 0.7,
+      "breadth": "3/3"
     },
     {
-      "name": "运动服装",
+      "name": "其他生物制品",
       "group": "other",
-      "change": 2.53,
-      "heat": 71,
-      "flow": 0.5,
-      "breadth": "2/4"
+      "change": 4.72,
+      "heat": 97,
+      "flow": 9.1,
+      "breadth": "36/38"
     },
     {
-      "name": "焦炭Ⅲ",
+      "name": "疫苗",
       "group": "other",
-      "change": 2.25,
-      "heat": 73,
-      "flow": 4.7,
-      "breadth": "6/6"
+      "change": 4.64,
+      "heat": 91,
+      "flow": 4.2,
+      "breadth": "13/13"
     },
     {
-      "name": "焦炭Ⅱ",
+      "name": "生物制品",
       "group": "other",
-      "change": 2.25,
-      "heat": 73,
-      "flow": 4.7,
-      "breadth": "6/6"
+      "change": 4.53,
+      "heat": 99,
+      "flow": 13.5,
+      "breadth": "55/57"
     },
     {
-      "name": "风电设备",
+      "name": "种子",
       "group": "other",
-      "change": 2.15,
-      "heat": 74,
-      "flow": 7,
-      "breadth": "22/31"
+      "change": 4.43,
+      "heat": 88,
+      "flow": 2.5,
+      "breadth": "10/10"
     },
     {
-      "name": "公路货运",
+      "name": "涂料",
       "group": "other",
-      "change": 2.08,
-      "heat": 67,
-      "flow": 0.3,
-      "breadth": "3/4"
+      "change": 4.25,
+      "heat": 84,
+      "flow": 0.2,
+      "breadth": "2/2"
+    },
+    {
+      "name": "医疗研发外包",
+      "group": "other",
+      "change": 4.22,
+      "heat": 99,
+      "flow": 22.3,
+      "breadth": "28/29"
     },
     {
       "name": "诊断服务",
       "group": "other",
-      "change": 1.97,
-      "heat": 67,
-      "flow": 1.3,
+      "change": 4.08,
+      "heat": 85,
+      "flow": 1.9,
+      "breadth": "5/5"
+    },
+    {
+      "name": "光伏主材",
+      "group": "other",
+      "change": 3.5,
+      "heat": 79,
+      "flow": 1.1,
+      "breadth": "2/2"
+    },
+    {
+      "name": "种植业",
+      "group": "other",
+      "change": 3.21,
+      "heat": 81,
+      "flow": 5,
+      "breadth": "18/21"
+    },
+    {
+      "name": "医疗服务",
+      "group": "other",
+      "change": 3.09,
+      "heat": 93,
+      "flow": 26,
+      "breadth": "47/54"
+    },
+    {
+      "name": "血液制品",
+      "group": "other",
+      "change": 3.05,
+      "heat": 75,
+      "flow": 0.2,
+      "breadth": "6/6"
+    },
+    {
+      "name": "管材",
+      "group": "other",
+      "change": 2.86,
+      "heat": 73,
+      "flow": 0.5,
+      "breadth": "6/6"
+    },
+    {
+      "name": "镍",
+      "group": "other",
+      "change": 2.85,
+      "heat": 88,
+      "flow": 15.7,
+      "breadth": "2/2"
+    },
+    {
+      "name": "医疗美容",
+      "group": "other",
+      "change": 2.84,
+      "heat": 73,
+      "flow": 0.7,
+      "breadth": "4/5"
+    },
+    {
+      "name": "白酒Ⅲ",
+      "group": "other",
+      "change": 2.79,
+      "heat": 82,
+      "flow": 9.6,
+      "breadth": "20/20"
+    },
+    {
+      "name": "白酒Ⅱ",
+      "group": "other",
+      "change": 2.79,
+      "heat": 82,
+      "flow": 9.6,
+      "breadth": "20/20"
+    },
+    {
+      "name": "其他医疗服务",
+      "group": "other",
+      "change": 2.74,
+      "heat": 74,
+      "flow": 1.8,
       "breadth": "3/5"
     },
     {
-      "name": "煤炭",
-      "group": "cycle",
-      "change": 0.66,
-      "heat": 61,
-      "flow": 5.5,
-      "breadth": "20/32"
+      "name": "航空运输",
+      "group": "defense",
+      "change": 1.94,
+      "heat": 67,
+      "flow": 1.4,
+      "breadth": "9/9"
     },
     {
-      "name": "国有大型银行Ⅲ",
-      "group": "finance",
-      "change": 0.63,
-      "heat": 59,
-      "flow": 4.1,
-      "breadth": "6/6"
+      "name": "航空机场",
+      "group": "defense",
+      "change": 1.7,
+      "heat": 65,
+      "flow": 1.6,
+      "breadth": "14/14"
     },
     {
       "name": "银行",
       "group": "finance",
-      "change": 0.3,
-      "heat": 54,
-      "flow": 1.5,
-      "breadth": "25/39"
+      "change": 1.46,
+      "heat": 63,
+      "flow": -0.9,
+      "breadth": "42/42"
     },
     {
       "name": "银行Ⅱ",
       "group": "finance",
-      "change": 0.3,
-      "heat": 54,
-      "flow": 1.5,
-      "breadth": "25/39"
-    },
-    {
-      "name": "煤炭开采",
-      "group": "cycle",
-      "change": 0.25,
-      "heat": 53,
-      "flow": 0.8,
-      "breadth": "14/26"
-    },
-    {
-      "name": "油气及炼化工程",
-      "group": "cycle",
-      "change": 0.17,
-      "heat": 51,
-      "flow": 0.1,
-      "breadth": "3/6"
-    },
-    {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 0.03,
-      "heat": 52,
-      "flow": 1.7,
-      "breadth": "3/9"
-    },
-    {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 0.03,
-      "heat": 52,
-      "flow": 1.7,
-      "breadth": "3/9"
+      "change": 1.46,
+      "heat": 63,
+      "flow": -0.9,
+      "breadth": "42/42"
     },
     {
       "name": "股份制银行Ⅲ",
       "group": "finance",
-      "change": -0.15,
-      "heat": 50,
-      "flow": -1,
-      "breadth": "3/7"
-    },
-    {
-      "name": "参股保险",
-      "group": "finance",
-      "change": -0.38,
-      "heat": 50,
-      "flow": 3.3,
-      "breadth": "21/73"
-    },
-    {
-      "name": "绿色电力",
-      "group": "cycle",
-      "change": -0.7,
-      "heat": 48,
-      "flow": -3.8,
-      "breadth": "49/174"
+      "change": 1.43,
+      "heat": 61,
+      "flow": 0,
+      "breadth": "9/9"
     }
   ],
   "aShareBreadth": {
-    "rising": 1800,
-    "falling": 0,
-    "flat": 0,
-    "total": 1800
+    "rising": 2346,
+    "falling": 1051,
+    "flat": 155,
+    "total": 3552
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-09-30",
+    "date": "2026-10-01",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3849.11,
-      "change": 0.49,
+      "price": 3842.19,
+      "change": 0.31,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 12912.86,
-      "change": 0.08,
+      "price": 12887.62,
+      "change": -0.11,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -315,8 +315,8 @@
     "history:copper:1Y": "fulfilled",
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "rejected",
-    "breadth": "rejected"
+    "sectors": "fulfilled",
+    "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-09-30T06:38:23.198Z"
+  "refreshedAt": "2026-10-01T07:09:15.237Z"
 }
