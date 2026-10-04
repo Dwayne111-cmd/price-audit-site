@@ -255,15 +255,15 @@
     }
   ],
   "aShareBreadth": {
-    "rising": 1400,
-    "falling": 500,
-    "flat": 30,
-    "total": 1930
+    "rising": 1000,
+    "falling": 400,
+    "flat": 57,
+    "total": 1457
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-10-03",
+    "date": "2026-10-04",
     "limited": false
   },
   "overview": {
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-10-03T06:24:55.735Z"
+  "refreshedAt": "2026-10-04T06:47:55.527Z"
 }
