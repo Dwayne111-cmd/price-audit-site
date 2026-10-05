@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4141.7998,
-      "change": -0.77,
+      "price": 4152.5,
+      "change": 0.43,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 60.524,
-      "change": -0.87,
+      "price": 61.428,
+      "change": 2.09,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -255,15 +255,15 @@
     }
   ],
   "aShareBreadth": {
-    "rising": 1000,
-    "falling": 400,
-    "flat": 57,
-    "total": 1457
+    "rising": 2246,
+    "falling": 1851,
+    "flat": 155,
+    "total": 4252
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-10-04",
+    "date": "2026-10-05",
     "limited": false
   },
   "overview": {
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-10-04T06:47:55.527Z"
+  "refreshedAt": "2026-10-05T06:56:58.865Z"
 }
