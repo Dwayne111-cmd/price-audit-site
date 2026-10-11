@@ -255,15 +255,15 @@
     }
   ],
   "aShareBreadth": {
-    "rising": 1600,
-    "falling": 346,
-    "flat": 6,
-    "total": 1952
+    "rising": 2789,
+    "falling": 946,
+    "flat": 114,
+    "total": 3849
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-10-10",
+    "date": "2026-10-11",
     "limited": false
   },
   "overview": {
@@ -302,21 +302,21 @@
     "history:silver:6M": "fulfilled",
     "history:silver:1Y": "fulfilled",
     "history:silver:2Y": "fulfilled",
-    "history:wti:1D": "reused-previous: This operation was aborted",
-    "history:wti:5D": "reused-previous: This operation was aborted",
-    "history:wti:1M": "reused-previous: This operation was aborted",
-    "history:wti:6M": "reused-previous: This operation was aborted",
-    "history:wti:1Y": "reused-previous: This operation was aborted",
-    "history:wti:2Y": "reused-previous: This operation was aborted",
-    "history:copper:1D": "reused-previous: This operation was aborted",
-    "history:copper:5D": "reused-previous: This operation was aborted",
-    "history:copper:1M": "reused-previous: This operation was aborted",
-    "history:copper:6M": "reused-previous: This operation was aborted",
-    "history:copper:1Y": "reused-previous: This operation was aborted",
-    "history:copper:2Y": "reused-previous: This operation was aborted",
+    "history:wti:1D": "fulfilled",
+    "history:wti:5D": "fulfilled",
+    "history:wti:1M": "fulfilled",
+    "history:wti:6M": "fulfilled",
+    "history:wti:1Y": "fulfilled",
+    "history:wti:2Y": "fulfilled",
+    "history:copper:1D": "fulfilled",
+    "history:copper:5D": "fulfilled",
+    "history:copper:1M": "fulfilled",
+    "history:copper:6M": "fulfilled",
+    "history:copper:1Y": "fulfilled",
+    "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "rejected",
-    "breadth": "rejected"
+    "sectors": "fulfilled",
+    "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-10-10T06:59:23.586Z"
+  "refreshedAt": "2026-10-11T07:06:19.764Z"
 }
