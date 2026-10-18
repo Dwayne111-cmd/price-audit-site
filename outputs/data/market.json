@@ -64,7 +64,7 @@
     {
       "name": "燃料电池",
       "group": "other",
-      "change": 8.25,
+      "change": 6.56,
       "heat": 99,
       "flow": 0,
       "breadth": "1/1"
@@ -72,198 +72,198 @@
     {
       "name": "航空装备Ⅲ",
       "group": "defense",
-      "change": 6.82,
+      "change": 5.98,
       "heat": 99,
-      "flow": 16.9,
-      "breadth": "49/49"
+      "flow": 17.5,
+      "breadth": "48/49"
     },
     {
       "name": "航空装备Ⅱ",
       "group": "defense",
-      "change": 6.82,
+      "change": 5.98,
       "heat": 99,
-      "flow": 16.9,
-      "breadth": "49/49"
+      "flow": 17.5,
+      "breadth": "48/49"
     },
     {
       "name": "地面兵装Ⅲ",
       "group": "defense",
-      "change": 6.72,
+      "change": 5.97,
       "heat": 99,
-      "flow": 7.3,
+      "flow": 7.7,
       "breadth": "12/12"
     },
     {
       "name": "地面兵装Ⅱ",
       "group": "defense",
-      "change": 6.72,
+      "change": 5.97,
       "heat": 99,
-      "flow": 7.3,
+      "flow": 7.7,
       "breadth": "12/12"
     },
     {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 5.69,
-      "heat": 97,
-      "flow": 1.4,
-      "breadth": "9/9"
-    },
-    {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 5.69,
-      "heat": 97,
-      "flow": 1.4,
-      "breadth": "9/9"
+      "name": "纺织鞋类制造",
+      "group": "other",
+      "change": 4.93,
+      "heat": 89,
+      "flow": 0,
+      "breadth": "1/1"
     },
     {
       "name": "航海装备Ⅲ",
       "group": "other",
-      "change": 5.64,
-      "heat": 95,
-      "flow": 0.3,
+      "change": 4.72,
+      "heat": 89,
+      "flow": -0.9,
       "breadth": "10/10"
     },
     {
       "name": "航海装备Ⅱ",
       "group": "other",
-      "change": 5.64,
-      "heat": 95,
-      "flow": 0.3,
+      "change": 4.72,
+      "heat": 89,
+      "flow": -0.9,
       "breadth": "10/10"
     },
     {
-      "name": "航天航空",
+      "name": "航天装备Ⅲ",
       "group": "defense",
-      "change": 5.47,
-      "heat": 99,
-      "flow": 17.4,
-      "breadth": "58/59"
+      "change": 4.58,
+      "heat": 87,
+      "flow": 0.8,
+      "breadth": "9/9"
     },
     {
-      "name": "国防军工",
+      "name": "航天装备Ⅱ",
       "group": "defense",
-      "change": 5.46,
-      "heat": 99,
-      "flow": 32.2,
-      "breadth": "139/141"
-    },
-    {
-      "name": "火电设备",
-      "group": "other",
-      "change": 5.05,
-      "heat": 90,
-      "flow": 0,
-      "breadth": "4/4"
+      "change": 4.58,
+      "heat": 87,
+      "flow": 0.8,
+      "breadth": "9/9"
     },
     {
       "name": "粘胶",
       "group": "other",
-      "change": 5.03,
-      "heat": 92,
-      "flow": 1.8,
-      "breadth": "3/3"
-    },
-    {
-      "name": "其他家电Ⅲ",
-      "group": "other",
-      "change": 4.63,
-      "heat": 88,
-      "flow": 0.8,
-      "breadth": "3/3"
-    },
-    {
-      "name": "其他家电Ⅱ",
-      "group": "other",
-      "change": 4.63,
-      "heat": 88,
-      "flow": 0.8,
-      "breadth": "3/3"
-    },
-    {
-      "name": "军工电子Ⅲ",
-      "group": "defense",
-      "change": 4.06,
+      "change": 4.55,
       "heat": 89,
-      "flow": 6.3,
-      "breadth": "59/61"
+      "flow": 2.2,
+      "breadth": "2/3"
     },
     {
-      "name": "军工电子Ⅱ",
+      "name": "航天航空",
       "group": "defense",
-      "change": 4.06,
-      "heat": 89,
-      "flow": 6.3,
-      "breadth": "59/61"
+      "change": 4.51,
+      "heat": 99,
+      "flow": 16.9,
+      "breadth": "54/58"
     },
     {
-      "name": "通用航空",
+      "name": "国防军工",
       "group": "defense",
-      "change": 4.04,
-      "heat": 96,
-      "flow": 13.5,
-      "breadth": "35/36"
+      "change": 4.46,
+      "heat": 99,
+      "flow": 29.3,
+      "breadth": "133/141"
+    },
+    {
+      "name": "火电设备",
+      "group": "other",
+      "change": 4.07,
+      "heat": 83,
+      "flow": -0.2,
+      "breadth": "4/4"
     },
     {
       "name": "水泥制造",
       "group": "other",
-      "change": 3.72,
+      "change": 3.71,
       "heat": 83,
-      "flow": 3.3,
+      "flow": 3.2,
       "breadth": "14/14"
     },
     {
-      "name": "其他汽车零部件",
+      "name": "其他家电Ⅲ",
       "group": "other",
-      "change": 3.64,
-      "heat": 84,
-      "flow": 5,
-      "breadth": "51/56"
+      "change": 3.62,
+      "heat": 80,
+      "flow": 0.8,
+      "breadth": "3/3"
     },
     {
-      "name": "纺织鞋类制造",
-      "group": "other",
-      "change": 3.63,
-      "heat": 79,
-      "flow": 0,
-      "breadth": "1/1"
+      "name": "通用航空",
+      "group": "defense",
+      "change": 3.46,
+      "heat": 91,
+      "flow": 13.7,
+      "breadth": "34/36"
     },
     {
-      "name": "民爆制品",
-      "group": "other",
-      "change": 3.59,
-      "heat": 79,
-      "flow": 0.7,
-      "breadth": "11/12"
+      "name": "军工电子Ⅲ",
+      "group": "defense",
+      "change": 2.87,
+      "heat": 77,
+      "flow": 4.2,
+      "breadth": "54/61"
+    },
+    {
+      "name": "军工电子Ⅱ",
+      "group": "defense",
+      "change": 2.87,
+      "heat": 77,
+      "flow": 4.2,
+      "breadth": "54/61"
     },
     {
       "name": "军工",
       "group": "defense",
-      "change": 3.45,
-      "heat": 96,
-      "flow": 44.7,
-      "breadth": "382/423"
+      "change": 2.5,
+      "heat": 88,
+      "flow": 37.2,
+      "breadth": "337/426"
     },
     {
       "name": "商业航天",
       "group": "defense",
-      "change": 2.96,
-      "heat": 92,
-      "flow": 26,
-      "breadth": "280/316"
+      "change": 1.87,
+      "heat": 77,
+      "flow": 12.2,
+      "breadth": "249/319"
+    },
+    {
+      "name": "航空运输",
+      "group": "defense",
+      "change": 1.7,
+      "heat": 66,
+      "flow": 2.1,
+      "breadth": "9/9"
+    },
+    {
+      "name": "磷肥及磷化工",
+      "group": "cycle",
+      "change": 1.6,
+      "heat": 63,
+      "flow": -0.2,
+      "breadth": "6/8"
+    },
+    {
+      "name": "煤化工概念",
+      "group": "cycle",
+      "change": 1.04,
+      "heat": 67,
+      "flow": -9,
+      "breadth": "56/77"
     }
   ],
   "aShareBreadth": {
-    "rising": 3924,
-    "falling": 1130,
-    "flat": 100,
-    "total": 5154
+    "rising": 2061,
+    "falling": 500,
+    "flat": 81,
+    "total": 2642
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-10-17",
+    "date": "2026-10-18",
     "limited": false
   },
   "overview": {
@@ -315,8 +315,8 @@
     "history:copper:1Y": "fulfilled",
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "rejected",
-    "breadth": "rejected"
+    "sectors": "fulfilled",
+    "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-10-17T05:32:31.391Z"
+  "refreshedAt": "2026-10-18T05:49:11.201Z"
 }
