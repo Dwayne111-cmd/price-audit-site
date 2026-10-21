@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4121.7998,
-      "change": -0.48,
+      "price": 4119.1001,
+      "change": -0.19,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 57.218,
-      "change": 0.03,
+      "price": 57.457,
+      "change": -0.97,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -64,221 +64,221 @@
     {
       "name": "其他数字媒体",
       "group": "other",
-      "change": 12.86,
+      "change": 8.72,
       "heat": 99,
-      "flow": 3.6,
+      "flow": -1,
       "breadth": "2/2"
     },
     {
-      "name": "诊断服务",
+      "name": "广告媒体",
       "group": "other",
-      "change": 8.35,
+      "change": 6.03,
       "heat": 99,
-      "flow": 2.8,
-      "breadth": "5/5"
+      "flow": -0.6,
+      "breadth": "2/3"
     },
     {
-      "name": "汽车综合服务",
+      "name": "生猪养殖",
       "group": "other",
       "change": 4.18,
-      "heat": 84,
-      "flow": 0.6,
-      "breadth": "2/3"
+      "heat": 86,
+      "flow": 2.5,
+      "breadth": "11/11"
     },
     {
-      "name": "卫浴电器",
+      "name": "林业Ⅲ",
       "group": "other",
-      "change": 3.77,
-      "heat": 81,
-      "flow": 1.1,
-      "breadth": "2/3"
+      "change": 3.8,
+      "heat": 87,
+      "flow": 6.9,
+      "breadth": "4/4"
     },
     {
-      "name": "照明设备Ⅲ",
+      "name": "林业Ⅱ",
       "group": "other",
-      "change": 3.74,
-      "heat": 81,
-      "flow": 1.1,
-      "breadth": "11/15"
+      "change": 3.8,
+      "heat": 87,
+      "flow": 6.9,
+      "breadth": "4/4"
     },
     {
-      "name": "照明设备Ⅱ",
-      "group": "other",
-      "change": 3.74,
-      "heat": 81,
-      "flow": 1.1,
-      "breadth": "11/15"
-    },
-    {
-      "name": "医美耗材",
-      "group": "other",
-      "change": 3.65,
-      "heat": 80,
-      "flow": 0.5,
-      "breadth": "3/3"
-    },
-    {
-      "name": "其他自动化设备",
-      "group": "other",
-      "change": 3.5,
-      "heat": 81,
-      "flow": 2.6,
-      "breadth": "27/30"
-    },
-    {
-      "name": "燃料电池",
-      "group": "other",
-      "change": 3.49,
-      "heat": 78,
-      "flow": 0,
-      "breadth": "1/1"
-    },
-    {
-      "name": "工程机械器件",
+      "name": "电视广播Ⅲ",
       "group": "other",
       "change": 3.32,
-      "heat": 78,
-      "flow": 1.9,
-      "breadth": "10/13"
-    },
-    {
-      "name": "其他黑色家电",
-      "group": "other",
-      "change": 3,
-      "heat": 74,
-      "flow": 0,
-      "breadth": "4/5"
-    },
-    {
-      "name": "数字芯片设计",
-      "group": "other",
-      "change": 3,
-      "heat": 78,
-      "flow": -4.3,
-      "breadth": "41/56"
-    },
-    {
-      "name": "横向通用软件",
-      "group": "tech",
-      "change": 2.99,
-      "heat": 75,
-      "flow": 0.9,
-      "breadth": "32/33"
-    },
-    {
-      "name": "自动化设备",
-      "group": "other",
-      "change": 2.96,
-      "heat": 87,
-      "flow": 13.3,
-      "breadth": "84/95"
-    },
-    {
-      "name": "工控设备",
-      "group": "other",
-      "change": 2.91,
       "heat": 77,
-      "flow": 3.7,
-      "breadth": "27/32"
-    },
-    {
-      "name": "机器人",
-      "group": "other",
-      "change": 2.89,
-      "heat": 79,
-      "flow": 5.6,
-      "breadth": "21/22"
-    },
-    {
-      "name": "通信终端及配件",
-      "group": "tech",
-      "change": 2.84,
-      "heat": 78,
-      "flow": 5.4,
-      "breadth": "22/26"
-    },
-    {
-      "name": "胶黏剂及胶带",
-      "group": "other",
-      "change": 2.83,
-      "heat": 74,
-      "flow": 0.9,
-      "breadth": "4/5"
-    },
-    {
-      "name": "品牌消费电子",
-      "group": "tech",
-      "change": 2.74,
-      "heat": 74,
-      "flow": 1.7,
-      "breadth": "10/11"
-    },
-    {
-      "name": "医疗美容",
-      "group": "other",
-      "change": 2.73,
-      "heat": 72,
-      "flow": 0.4,
-      "breadth": "5/5"
-    },
-    {
-      "name": "半导体",
-      "group": "tech",
-      "change": 1.83,
-      "heat": 83,
-      "flow": -19.9,
-      "breadth": "150/188"
-    },
-    {
-      "name": "半导体材料",
-      "group": "tech",
-      "change": 1.78,
-      "heat": 69,
-      "flow": 4.9,
-      "breadth": "28/32"
-    },
-    {
-      "name": "第四代半导体",
-      "group": "tech",
-      "change": 1.33,
-      "heat": 61,
       "flow": 0.5,
+      "breadth": "13/13"
+    },
+    {
+      "name": "电视广播Ⅱ",
+      "group": "other",
+      "change": 3.32,
+      "heat": 77,
+      "flow": 0.5,
+      "breadth": "13/13"
+    },
+    {
+      "name": "大众出版",
+      "group": "other",
+      "change": 3.15,
+      "heat": 76,
+      "flow": 1.3,
+      "breadth": "16/18"
+    },
+    {
+      "name": "养殖业",
+      "group": "other",
+      "change": 3.09,
+      "heat": 77,
+      "flow": 2.4,
+      "breadth": "22/22"
+    },
+    {
+      "name": "其他医疗服务",
+      "group": "other",
+      "change": 2.66,
+      "heat": 72,
+      "flow": 0.3,
+      "breadth": "3/5"
+    },
+    {
+      "name": "水产饲料",
+      "group": "other",
+      "change": 2.65,
+      "heat": 72,
+      "flow": 1.1,
       "breadth": "3/4"
     },
     {
-      "name": "半导体概念",
+      "name": "IT服务Ⅲ",
+      "group": "other",
+      "change": 2.26,
+      "heat": 82,
+      "flow": 13.9,
+      "breadth": "115/135"
+    },
+    {
+      "name": "IT服务Ⅱ",
+      "group": "other",
+      "change": 2.26,
+      "heat": 82,
+      "flow": 13.9,
+      "breadth": "115/135"
+    },
+    {
+      "name": "出版",
+      "group": "other",
+      "change": 2.26,
+      "heat": 68,
+      "flow": 0.4,
+      "breadth": "20/26"
+    },
+    {
+      "name": "肉鸡养殖",
+      "group": "other",
+      "change": 2.18,
+      "heat": 68,
+      "flow": -0.2,
+      "breadth": "8/8"
+    },
+    {
+      "name": "LED",
+      "group": "other",
+      "change": 2.18,
+      "heat": 73,
+      "flow": 5.9,
+      "breadth": "22/27"
+    },
+    {
+      "name": "水产养殖",
+      "group": "other",
+      "change": 2.12,
+      "heat": 67,
+      "flow": 0,
+      "breadth": "4/4"
+    },
+    {
+      "name": "畜禽饲料",
+      "group": "other",
+      "change": 2.11,
+      "heat": 67,
+      "flow": 0.2,
+      "breadth": "9/9"
+    },
+    {
+      "name": "数字媒体",
+      "group": "other",
+      "change": 2.11,
+      "heat": 71,
+      "flow": -4,
+      "breadth": "10/15"
+    },
+    {
+      "name": "渔业",
+      "group": "other",
+      "change": 1.99,
+      "heat": 66,
+      "flow": -0.1,
+      "breadth": "6/7"
+    },
+    {
+      "name": "海洋捕捞",
+      "group": "other",
+      "change": 1.81,
+      "heat": 65,
+      "flow": 0,
+      "breadth": "2/3"
+    },
+    {
+      "name": "通信工程及服务",
       "group": "tech",
-      "change": 1.3,
-      "heat": 78,
-      "flow": -20.6,
-      "breadth": "404/533"
+      "change": 1.76,
+      "heat": 67,
+      "flow": 2.5,
+      "breadth": "15/17"
+    },
+    {
+      "name": "金融信息服务",
+      "group": "other",
+      "change": 1.76,
+      "heat": 64,
+      "flow": 0.3,
+      "breadth": "3/3"
+    },
+    {
+      "name": "教育运营及其他",
+      "group": "other",
+      "change": 1.75,
+      "heat": 64,
+      "flow": -0.1,
+      "breadth": "2/2"
     }
   ],
   "aShareBreadth": {
-    "rising": 2481,
-    "falling": 0,
-    "flat": 85,
-    "total": 2566
+    "rising": 2204,
+    "falling": 2743,
+    "flat": 203,
+    "total": 5150
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3708.79,
-      "change": -0.59,
+      "price": 3713.77,
+      "change": -0.58,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 11712,
-      "change": -0.89,
+      "price": 11727,
+      "change": -0.63,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-10-20T05:57:45.514Z"
+  "refreshedAt": "2026-10-21T05:58:50.996Z"
 }
