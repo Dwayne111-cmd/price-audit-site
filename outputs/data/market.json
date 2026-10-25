@@ -66,204 +66,204 @@
       "group": "other",
       "change": 15.02,
       "heat": 99,
-      "flow": 1.6,
+      "flow": 2.1,
       "breadth": "2/2"
     },
     {
       "name": "机器人",
       "group": "other",
-      "change": 5.34,
-      "heat": 96,
-      "flow": 3.4,
-      "breadth": "21/22"
+      "change": 7.98,
+      "heat": 99,
+      "flow": 10.9,
+      "breadth": "22/22"
+    },
+    {
+      "name": "视频媒体",
+      "group": "other",
+      "change": 6.56,
+      "heat": 99,
+      "flow": -0.4,
+      "breadth": "1/1"
+    },
+    {
+      "name": "横向通用软件",
+      "group": "tech",
+      "change": 5.72,
+      "heat": 99,
+      "flow": 6.9,
+      "breadth": "32/34"
     },
     {
       "name": "医美服务",
       "group": "other",
-      "change": 4.35,
-      "heat": 85,
-      "flow": 0.2,
-      "breadth": "1/2"
+      "change": 5.49,
+      "heat": 94,
+      "flow": 0.3,
+      "breadth": "2/2"
     },
     {
-      "name": "纺织鞋类制造",
-      "group": "other",
-      "change": 3.86,
-      "heat": 81,
-      "flow": 0,
-      "breadth": "1/1"
+      "name": "品牌消费电子",
+      "group": "tech",
+      "change": 5.39,
+      "heat": 94,
+      "flow": -1.1,
+      "breadth": "11/11"
     },
     {
-      "name": "电机Ⅲ",
+      "name": "数字芯片设计",
       "group": "other",
-      "change": 3.01,
-      "heat": 74,
-      "flow": -0.1,
-      "breadth": "20/26"
-    },
-    {
-      "name": "电机Ⅱ",
-      "group": "other",
-      "change": 3.01,
-      "heat": 74,
-      "flow": -0.1,
-      "breadth": "20/26"
-    },
-    {
-      "name": "集成电路制造",
-      "group": "other",
-      "change": 2.79,
-      "heat": 82,
-      "flow": 10.1,
-      "breadth": "5/8"
-    },
-    {
-      "name": "工程机械整机",
-      "group": "other",
-      "change": 2.38,
-      "heat": 71,
-      "flow": 2.3,
-      "breadth": "19/22"
-    },
-    {
-      "name": "快递",
-      "group": "other",
-      "change": 2.17,
-      "heat": 67,
-      "flow": 0.1,
-      "breadth": "4/4"
+      "change": 5.27,
+      "heat": 99,
+      "flow": 62.5,
+      "breadth": "56/56"
     },
     {
       "name": "锂电专用设备",
       "group": "other",
-      "change": 2.15,
-      "heat": 68,
-      "flow": 0.4,
-      "breadth": "15/19"
+      "change": 5.25,
+      "heat": 93,
+      "flow": 1.1,
+      "breadth": "19/19"
     },
     {
-      "name": "自动化设备",
+      "name": "电机Ⅲ",
       "group": "other",
-      "change": 2.1,
-      "heat": 69,
-      "flow": -2.3,
-      "breadth": "63/95"
+      "change": 5.18,
+      "heat": 94,
+      "flow": 2.2,
+      "breadth": "27/27"
     },
     {
-      "name": "工控设备",
+      "name": "电机Ⅱ",
       "group": "other",
-      "change": 2.02,
-      "heat": 66,
-      "flow": 0.1,
-      "breadth": "23/32"
+      "change": 5.18,
+      "heat": 94,
+      "flow": 2.2,
+      "breadth": "27/27"
     },
     {
-      "name": "农用机械",
+      "name": "集成电路制造",
       "group": "other",
-      "change": 1.94,
-      "heat": 66,
-      "flow": 0,
-      "breadth": "5/10"
+      "change": 5.15,
+      "heat": 99,
+      "flow": 13.9,
+      "breadth": "8/8"
+    },
+    {
+      "name": "软件开发",
+      "group": "tech",
+      "change": 5.02,
+      "heat": 99,
+      "flow": 22.6,
+      "breadth": "123/133"
+    },
+    {
+      "name": "模拟芯片设计",
+      "group": "other",
+      "change": 5.01,
+      "heat": 95,
+      "flow": 4.8,
+      "breadth": "34/36"
     },
     {
       "name": "其他黑色家电",
       "group": "other",
-      "change": 1.94,
-      "heat": 66,
-      "flow": 0.4,
-      "breadth": "3/5"
+      "change": 4.99,
+      "heat": 91,
+      "flow": 1.4,
+      "breadth": "5/5"
     },
     {
-      "name": "白酒Ⅲ",
+      "name": "自动化设备",
       "group": "other",
-      "change": 1.88,
-      "heat": 70,
-      "flow": 5.4,
-      "breadth": "19/20"
-    },
-    {
-      "name": "白酒Ⅱ",
-      "group": "other",
-      "change": 1.88,
-      "heat": 70,
-      "flow": 5.4,
-      "breadth": "19/20"
-    },
-    {
-      "name": "国际工程",
-      "group": "other",
-      "change": 1.88,
-      "heat": 65,
-      "flow": 0,
-      "breadth": "4/4"
+      "change": 4.97,
+      "heat": 96,
+      "flow": 6.1,
+      "breadth": "89/95"
     },
     {
       "name": "垂直应用软件",
       "group": "tech",
-      "change": 1.79,
-      "heat": 73,
-      "flow": 8.6,
-      "breadth": "71/100"
+      "change": 4.78,
+      "heat": 99,
+      "flow": 15.7,
+      "breadth": "91/99"
     },
     {
-      "name": "保险Ⅲ",
-      "group": "finance",
-      "change": 1.55,
-      "heat": 65,
-      "flow": -2.4,
-      "breadth": "5/5"
+      "name": "工控设备",
+      "group": "other",
+      "change": 4.76,
+      "heat": 88,
+      "flow": 0.2,
+      "breadth": "30/32"
     },
     {
-      "name": "保险Ⅱ",
-      "group": "finance",
-      "change": 1.55,
-      "heat": 65,
-      "flow": -2.4,
-      "breadth": "5/5"
+      "name": "影视动漫制作",
+      "group": "other",
+      "change": 4.61,
+      "heat": 90,
+      "flow": 2.8,
+      "breadth": "13/14"
     },
     {
-      "name": "综合电力设备商",
-      "group": "cycle",
-      "change": 0.69,
-      "heat": 56,
-      "flow": -0.4,
+      "name": "文字媒体",
+      "group": "other",
+      "change": 4.58,
+      "heat": 87,
+      "flow": 0.3,
       "breadth": "2/2"
     },
     {
-      "name": "证券Ⅲ",
-      "group": "finance",
-      "change": 0.65,
-      "heat": 58,
-      "flow": 3.2,
-      "breadth": "34/45"
+      "name": "影视院线",
+      "group": "other",
+      "change": 4.4,
+      "heat": 88,
+      "flow": 2.9,
+      "breadth": "17/18"
     },
     {
-      "name": "证券Ⅱ",
-      "group": "finance",
-      "change": 0.65,
-      "heat": 58,
-      "flow": 3.2,
-      "breadth": "34/45"
+      "name": "农用机械",
+      "group": "other",
+      "change": 4.27,
+      "heat": 84,
+      "flow": -0.1,
+      "breadth": "10/10"
     },
     {
       "name": "半导体",
       "group": "tech",
-      "change": 0.52,
-      "heat": 72,
-      "flow": 29.9,
-      "breadth": "95/188"
+      "change": 3.7,
+      "heat": 98,
+      "flow": 68.7,
+      "breadth": "172/187"
+    },
+    {
+      "name": "军工电子Ⅲ",
+      "group": "defense",
+      "change": 2.78,
+      "heat": 76,
+      "flow": -3.8,
+      "breadth": "60/61"
+    },
+    {
+      "name": "军工电子Ⅱ",
+      "group": "defense",
+      "change": 2.78,
+      "heat": 76,
+      "flow": -3.8,
+      "breadth": "60/61"
     }
   ],
   "aShareBreadth": {
-    "rising": 1920,
-    "falling": 3088,
-    "flat": 154,
-    "total": 5162
+    "rising": 3497,
+    "falling": 400,
+    "flat": 85,
+    "total": 3982
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "limited": false
   },
   "overview": {
@@ -315,8 +315,8 @@
     "history:copper:1Y": "fulfilled",
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "rejected",
-    "breadth": "rejected"
+    "sectors": "fulfilled",
+    "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-10-24T05:44:23.291Z"
+  "refreshedAt": "2026-10-25T06:00:30.338Z"
 }
