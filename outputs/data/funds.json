@@ -5,9 +5,9 @@
       "name": "宝盈国家安全沪港深股票A",
       "type": "股票型",
       "color": "#8aaeb0",
-      "nav": 2.454,
-      "navDate": "2026-10-23",
-      "dailyChange": 1.09,
+      "nav": 2.3644,
+      "navDate": "2026-10-26",
+      "dailyChange": -3.65,
       "source": "东方财富公开历史净值",
       "series": [
         {
@@ -3045,6 +3045,12 @@
           "timestamp": 1792684800000,
           "value": 2.454,
           "change": 1.09
+        },
+        {
+          "date": "2026-10-26",
+          "timestamp": 1792944000000,
+          "value": 2.3644,
+          "change": -3.65
         }
       ]
     },
@@ -3053,9 +3059,9 @@
       "name": "汇添富中证芯片产业指数增强发起式A",
       "type": "指数增强",
       "color": "#b58d5b",
-      "nav": 1.4479,
-      "navDate": "2026-10-23",
-      "dailyChange": 2.2,
+      "nav": 1.3987,
+      "navDate": "2026-10-26",
+      "dailyChange": -3.4,
       "source": "东方财富公开历史净值",
       "series": [
         {
@@ -6093,6 +6099,12 @@
           "timestamp": 1792684800000,
           "value": 1.4479,
           "change": 2.2
+        },
+        {
+          "date": "2026-10-26",
+          "timestamp": 1792944000000,
+          "value": 1.3987,
+          "change": -3.4
         }
       ]
     },
@@ -6101,9 +6113,9 @@
       "name": "永赢科技智选混合发起C",
       "type": "混合型",
       "color": "#7696b8",
-      "nav": 4.367,
-      "navDate": "2026-10-23",
-      "dailyChange": 2.85,
+      "nav": 4.2228,
+      "navDate": "2026-10-26",
+      "dailyChange": -3.3,
       "source": "东方财富公开历史净值",
       "series": [
         {
@@ -8979,6 +8991,12 @@
           "timestamp": 1792684800000,
           "value": 4.367,
           "change": 2.85
+        },
+        {
+          "date": "2026-10-26",
+          "timestamp": 1792944000000,
+          "value": 4.2228,
+          "change": -3.3
         }
       ]
     }
@@ -9001,5 +9019,5 @@
       "error": ""
     }
   ],
-  "refreshedAt": "2026-10-26T06:04:46.128Z"
+  "refreshedAt": "2026-10-27T06:12:25.766Z"
 }
