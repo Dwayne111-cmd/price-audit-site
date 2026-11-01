@@ -256,14 +256,14 @@
   ],
   "aShareBreadth": {
     "rising": 853,
-    "falling": 2627,
+    "falling": 2727,
     "flat": 63,
-    "total": 3543
+    "total": 3643
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-10-31",
+    "date": "2026-11-01",
     "limited": false
   },
   "overview": {
@@ -308,15 +308,15 @@
     "history:wti:6M": "fulfilled",
     "history:wti:1Y": "fulfilled",
     "history:wti:2Y": "fulfilled",
-    "history:copper:1D": "fulfilled",
-    "history:copper:5D": "fulfilled",
-    "history:copper:1M": "fulfilled",
-    "history:copper:6M": "fulfilled",
-    "history:copper:1Y": "fulfilled",
-    "history:copper:2Y": "fulfilled",
+    "history:copper:1D": "reused-previous: 404 Not Found",
+    "history:copper:5D": "reused-previous: 404 Not Found",
+    "history:copper:1M": "reused-previous: 404 Not Found",
+    "history:copper:6M": "reused-previous: 404 Not Found",
+    "history:copper:1Y": "reused-previous: 404 Not Found",
+    "history:copper:2Y": "reused-previous: 404 Not Found",
     "overview": "fulfilled",
     "sectors": "fulfilled",
-    "breadth": "rejected"
+    "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-10-31T06:56:00.998Z"
+  "refreshedAt": "2026-11-01T07:27:20.190Z"
 }
