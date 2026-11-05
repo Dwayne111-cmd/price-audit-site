@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4023.5,
-      "change": 2.38,
+      "price": 4122.7998,
+      "change": 1.51,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 51.871,
-      "change": 4.14,
+      "price": 52.729,
+      "change": 0.57,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -39,8 +39,8 @@
       "unit": "美元/桶",
       "color": "#155eef",
       "favorite": true,
-      "price": 103.37,
-      "change": -1.79,
+      "price": 99.64,
+      "change": -0.42,
       "source": "FRED公开日频商品价格",
       "delayed": true,
       "unavailable": false
@@ -62,223 +62,223 @@
   ],
   "sectors": [
     {
-      "name": "半导体设备",
-      "group": "tech",
-      "change": 15.22,
-      "heat": 99,
-      "flow": 42.5,
-      "breadth": "25/25"
-    },
-    {
-      "name": "半导体材料",
-      "group": "tech",
-      "change": 11.89,
-      "heat": 99,
-      "flow": 22.1,
-      "breadth": "32/32"
-    },
-    {
-      "name": "半导体",
-      "group": "tech",
-      "change": 10.64,
-      "heat": 99,
-      "flow": 195.9,
-      "breadth": "186/188"
-    },
-    {
-      "name": "集成电路制造",
+      "name": "光伏辅材",
       "group": "other",
-      "change": 10.63,
+      "change": 9.94,
       "heat": 99,
-      "flow": 11.2,
-      "breadth": "8/8"
+      "flow": 5.1,
+      "breadth": "18/18"
     },
     {
-      "name": "黄金",
+      "name": "光伏加工设备",
       "group": "other",
-      "change": 10.59,
+      "change": 9.58,
       "heat": 99,
-      "flow": 18.4,
-      "breadth": "10/10"
+      "flow": 6.9,
+      "breadth": "11/11"
     },
     {
-      "name": "贵金属",
+      "name": "视频媒体",
       "group": "other",
-      "change": 10.45,
+      "change": 9.27,
       "heat": 99,
-      "flow": 23.5,
-      "breadth": "13/13"
+      "flow": -2.1,
+      "breadth": "1/1"
     },
     {
-      "name": "数字芯片设计",
+      "name": "光伏电池组件",
       "group": "other",
-      "change": 10.29,
+      "change": 8.83,
       "heat": 99,
-      "flow": 82.5,
-      "breadth": "56/56"
+      "flow": 8.1,
+      "breadth": "22/22"
+    },
+    {
+      "name": "光伏设备",
+      "group": "other",
+      "change": 8.45,
+      "heat": 99,
+      "flow": 32.4,
+      "breadth": "67/67"
+    },
+    {
+      "name": "涂料",
+      "group": "other",
+      "change": 8.01,
+      "heat": 99,
+      "flow": 0.5,
+      "breadth": "2/2"
     },
     {
       "name": "白银",
       "group": "other",
-      "change": 10,
+      "change": 7.27,
       "heat": 99,
-      "flow": 5,
+      "flow": 3.9,
       "breadth": "3/3"
     },
     {
-      "name": "集成电路封测",
+      "name": "氨纶",
       "group": "other",
-      "change": 9.3,
-      "heat": 99,
-      "flow": 24.8,
-      "breadth": "13/13"
+      "change": 5.99,
+      "heat": 98,
+      "flow": 0.3,
+      "breadth": "1/1"
     },
     {
-      "name": "电子化学品Ⅲ",
+      "name": "品牌消费电子",
       "group": "tech",
-      "change": 8.99,
+      "change": 5.93,
       "heat": 99,
-      "flow": 10.9,
-      "breadth": "36/37"
-    },
-    {
-      "name": "电子化学品Ⅱ",
-      "group": "tech",
-      "change": 8.99,
-      "heat": 99,
-      "flow": 10.9,
-      "breadth": "36/37"
-    },
-    {
-      "name": "模拟芯片设计",
-      "group": "other",
-      "change": 8.86,
-      "heat": 99,
-      "flow": 4.5,
-      "breadth": "35/36"
-    },
-    {
-      "name": "激光设备",
-      "group": "other",
-      "change": 8.57,
-      "heat": 99,
-      "flow": 6.8,
+      "flow": 1.4,
       "breadth": "11/11"
     },
     {
-      "name": "钨",
+      "name": "硅料硅片",
       "group": "other",
-      "change": 8.36,
+      "change": 5.93,
       "heat": 99,
-      "flow": 9.7,
+      "flow": 1.2,
       "breadth": "4/4"
     },
     {
-      "name": "第四代半导体",
+      "name": "营销代理",
+      "group": "other",
+      "change": 5.93,
+      "heat": 99,
+      "flow": 20.5,
+      "breadth": "26/26"
+    },
+    {
+      "name": "诊断服务",
+      "group": "other",
+      "change": 5.84,
+      "heat": 98,
+      "flow": 1.5,
+      "breadth": "5/5"
+    },
+    {
+      "name": "贵金属",
+      "group": "other",
+      "change": 5.84,
+      "heat": 99,
+      "flow": 10.3,
+      "breadth": "13/13"
+    },
+    {
+      "name": "教育运营及其他",
+      "group": "other",
+      "change": 5.78,
+      "heat": 96,
+      "flow": -0.2,
+      "breadth": "2/2"
+    },
+    {
+      "name": "其他数字媒体",
+      "group": "other",
+      "change": 5.69,
+      "heat": 96,
+      "flow": 0.1,
+      "breadth": "2/2"
+    },
+    {
+      "name": "广告营销",
+      "group": "other",
+      "change": 5.65,
+      "heat": 99,
+      "flow": 20.1,
+      "breadth": "29/29"
+    },
+    {
+      "name": "逆变器",
+      "group": "other",
+      "change": 5.5,
+      "heat": 99,
+      "flow": 8.5,
+      "breadth": "10/10"
+    },
+    {
+      "name": "黄金",
+      "group": "other",
+      "change": 5.4,
+      "heat": 99,
+      "flow": 6.4,
+      "breadth": "10/10"
+    },
+    {
+      "name": "镍",
+      "group": "other",
+      "change": 5.08,
+      "heat": 94,
+      "flow": 3.3,
+      "breadth": "2/2"
+    },
+    {
+      "name": "半导体设备",
       "group": "tech",
-      "change": 7.74,
+      "change": 4.33,
       "heat": 99,
-      "flow": 0.8,
-      "breadth": "4/4"
-    },
-    {
-      "name": "半导体概念",
-      "group": "tech",
-      "change": 7.47,
-      "heat": 99,
-      "flow": 278.6,
-      "breadth": "531/546"
-    },
-    {
-      "name": "第三代半导体",
-      "group": "tech",
-      "change": 6.64,
-      "heat": 99,
-      "flow": 75.4,
-      "breadth": "119/122"
-    },
-    {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 4.61,
-      "heat": 90,
-      "flow": 2.9,
-      "breadth": "9/9"
-    },
-    {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 4.61,
-      "heat": 90,
-      "flow": 2.9,
-      "breadth": "9/9"
-    },
-    {
-      "name": "保险新进",
-      "group": "finance",
-      "change": 4.54,
-      "heat": 99,
-      "flow": 80.6,
-      "breadth": "101/116"
-    },
-    {
-      "name": "商业航天",
-      "group": "defense",
-      "change": 4.42,
-      "heat": 99,
-      "flow": 59.6,
-      "breadth": "314/328"
-    },
-    {
-      "name": "军工电子Ⅲ",
-      "group": "defense",
-      "change": 3.8,
-      "heat": 83,
-      "flow": 2.8,
-      "breadth": "60/61"
-    },
-    {
-      "name": "军工电子Ⅱ",
-      "group": "defense",
-      "change": 3.8,
-      "heat": 83,
-      "flow": 2.8,
-      "breadth": "60/61"
+      "flow": 54.3,
+      "breadth": "24/25"
     },
     {
       "name": "电力设备",
       "group": "cycle",
-      "change": 3.69,
+      "change": 3.79,
       "heat": 98,
-      "flow": 45.6,
-      "breadth": "389/411"
+      "flow": 63.1,
+      "breadth": "390/412"
+    },
+    {
+      "name": "氟化工概念",
+      "group": "cycle",
+      "change": 3.55,
+      "heat": 90,
+      "flow": 11.5,
+      "breadth": "43/44"
+    },
+    {
+      "name": "氟化工",
+      "group": "cycle",
+      "change": 3.29,
+      "heat": 77,
+      "flow": -1.1,
+      "breadth": "10/10"
+    },
+    {
+      "name": "半导体材料",
+      "group": "tech",
+      "change": 3.28,
+      "heat": 94,
+      "flow": 21.1,
+      "breadth": "30/32"
     }
   ],
   "aShareBreadth": {
-    "rising": 4331,
-    "falling": 701,
-    "flat": 125,
-    "total": 5157
+    "rising": 4538,
+    "falling": 540,
+    "flat": 78,
+    "total": 5156
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-11-04",
+    "date": "2026-11-05",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3686.17,
-      "change": 2.16,
+      "price": 3689.91,
+      "change": 0.1,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 11335.69,
-      "change": 4.22,
+      "price": 11471.09,
+      "change": 1.19,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-11-04T07:27:11.515Z"
+  "refreshedAt": "2026-11-05T07:52:06.896Z"
 }
