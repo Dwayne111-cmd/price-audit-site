@@ -9,8 +9,8 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 4118,
-      "change": 0.25,
+      "price": 4062.3,
+      "change": 0.97,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 52.949,
-      "change": 0.25,
+      "price": 53.137,
+      "change": 3.49,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -64,221 +64,221 @@
     {
       "name": "其他数字媒体",
       "group": "other",
-      "change": 9.8,
+      "change": 7.27,
       "heat": 99,
-      "flow": 2.2,
+      "flow": 2.4,
       "breadth": "2/2"
     },
     {
-      "name": "文字媒体",
-      "group": "other",
-      "change": 9.03,
+      "name": "通信网络设备及器件",
+      "group": "tech",
+      "change": 7.19,
       "heat": 99,
-      "flow": 10.6,
-      "breadth": "2/2"
+      "flow": 104.7,
+      "breadth": "37/38"
     },
     {
-      "name": "影视动漫制作",
-      "group": "other",
-      "change": 8.03,
+      "name": "通信线缆及配套",
+      "group": "tech",
+      "change": 6.04,
       "heat": 99,
-      "flow": 14.2,
-      "breadth": "14/14"
+      "flow": 21.8,
+      "breadth": "13/14"
     },
     {
-      "name": "影视院线",
+      "name": "印制电路板",
       "group": "other",
-      "change": 7.05,
+      "change": 5.76,
       "heat": 99,
-      "flow": 14.6,
+      "flow": 72.1,
+      "breadth": "48/48"
+    },
+    {
+      "name": "元件",
+      "group": "other",
+      "change": 4.9,
+      "heat": 99,
+      "flow": 81.8,
+      "breadth": "66/67"
+    },
+    {
+      "name": "其他能源发电",
+      "group": "other",
+      "change": 4.88,
+      "heat": 89,
+      "flow": 0.5,
+      "breadth": "1/2"
+    },
+    {
+      "name": "通信设备",
+      "group": "tech",
+      "change": 4.82,
+      "heat": 99,
+      "flow": 135.3,
+      "breadth": "87/94"
+    },
+    {
+      "name": "综合包装",
+      "group": "other",
+      "change": 4.61,
+      "heat": 87,
+      "flow": 0.4,
+      "breadth": "6/6"
+    },
+    {
+      "name": "激光设备",
+      "group": "other",
+      "change": 4.48,
+      "heat": 94,
+      "flow": 8.6,
+      "breadth": "11/12"
+    },
+    {
+      "name": "集成电路封测",
+      "group": "other",
+      "change": 4.3,
+      "heat": 92,
+      "flow": 7.5,
+      "breadth": "13/13"
+    },
+    {
+      "name": "分立器件",
+      "group": "other",
+      "change": 4.22,
+      "heat": 99,
+      "flow": 15.5,
       "breadth": "17/18"
     },
     {
-      "name": "其他黑色家电",
-      "group": "other",
-      "change": 6.42,
+      "name": "通信",
+      "group": "tech",
+      "change": 4.01,
       "heat": 99,
-      "flow": 1.1,
-      "breadth": "5/5"
+      "flow": 133.8,
+      "breadth": "117/132"
     },
     {
-      "name": "其他家电Ⅲ",
+      "name": "玻纤制造",
       "group": "other",
-      "change": 5.18,
-      "heat": 92,
-      "flow": 0.6,
-      "breadth": "3/3"
-    },
-    {
-      "name": "其他家电Ⅱ",
-      "group": "other",
-      "change": 5.18,
-      "heat": 92,
-      "flow": 0.6,
-      "breadth": "3/3"
+      "change": 3.84,
+      "heat": 89,
+      "flow": 8.5,
+      "breadth": "7/8"
     },
     {
       "name": "汽车综合服务",
       "group": "other",
-      "change": 5.04,
-      "heat": 91,
+      "change": 3.47,
+      "heat": 78,
+      "flow": -0.6,
+      "breadth": "2/3"
+    },
+    {
+      "name": "制冷空调设备",
+      "group": "other",
+      "change": 3.39,
+      "heat": 78,
+      "flow": 1,
+      "breadth": "15/19"
+    },
+    {
+      "name": "卫浴电器",
+      "group": "other",
+      "change": 3.38,
+      "heat": 78,
+      "flow": 0.7,
+      "breadth": "2/3"
+    },
+    {
+      "name": "数字芯片设计",
+      "group": "other",
+      "change": 3.36,
+      "heat": 95,
+      "flow": 55.3,
+      "breadth": "49/56"
+    },
+    {
+      "name": "长材",
+      "group": "other",
+      "change": 3.35,
+      "heat": 77,
       "flow": 0.5,
-      "breadth": "3/3"
-    },
-    {
-      "name": "数字媒体",
-      "group": "other",
-      "change": 4.84,
-      "heat": 99,
-      "flow": 13.8,
-      "breadth": "14/15"
-    },
-    {
-      "name": "钨",
-      "group": "other",
-      "change": 4.73,
-      "heat": 93,
-      "flow": 5.5,
-      "breadth": "4/4"
-    },
-    {
-      "name": "传媒",
-      "group": "other",
-      "change": 4.53,
-      "heat": 99,
-      "flow": 46.9,
-      "breadth": "123/128"
-    },
-    {
-      "name": "营销代理",
-      "group": "other",
-      "change": 4.46,
-      "heat": 99,
-      "flow": 13.2,
-      "breadth": "27/27"
-    },
-    {
-      "name": "消费电子零部件及组装",
-      "group": "tech",
-      "change": 4.44,
-      "heat": 99,
-      "flow": 21.4,
-      "breadth": "87/88"
-    },
-    {
-      "name": "LED",
-      "group": "other",
-      "change": 4.43,
-      "heat": 87,
-      "flow": 1.2,
-      "breadth": "28/29"
-    },
-    {
-      "name": "广告营销",
-      "group": "other",
-      "change": 4.4,
-      "heat": 99,
-      "flow": 14.3,
-      "breadth": "30/30"
-    },
-    {
-      "name": "游戏Ⅲ",
-      "group": "other",
-      "change": 4.39,
-      "heat": 87,
-      "flow": 2,
-      "breadth": "24/24"
-    },
-    {
-      "name": "游戏Ⅱ",
-      "group": "other",
-      "change": 4.39,
-      "heat": 87,
-      "flow": 2,
-      "breadth": "24/24"
-    },
-    {
-      "name": "机器人",
-      "group": "other",
-      "change": 4.36,
-      "heat": 89,
-      "flow": 3.8,
-      "breadth": "22/22"
-    },
-    {
-      "name": "黑色家电",
-      "group": "other",
-      "change": 4.32,
-      "heat": 86,
-      "flow": 1.1,
-      "breadth": "8/9"
-    },
-    {
-      "name": "燃料电池",
-      "group": "other",
-      "change": 4.3,
-      "heat": 84,
-      "flow": 0,
-      "breadth": "1/1"
-    },
-    {
-      "name": "航天装备Ⅲ",
-      "group": "defense",
-      "change": 3.19,
-      "heat": 77,
-      "flow": 1.1,
-      "breadth": "9/9"
-    },
-    {
-      "name": "航天装备Ⅱ",
-      "group": "defense",
-      "change": 3.19,
-      "heat": 77,
-      "flow": 1.1,
-      "breadth": "9/9"
+      "breadth": "2/3"
     },
     {
       "name": "半导体",
       "group": "tech",
-      "change": 2.97,
-      "heat": 92,
-      "flow": 40.6,
-      "breadth": "172/187"
+      "change": 3.1,
+      "heat": 93,
+      "flow": 76.8,
+      "breadth": "174/187"
     },
     {
       "name": "半导体材料",
       "group": "tech",
-      "change": 2.51,
-      "heat": 74,
+      "change": 2.88,
+      "heat": 76,
       "flow": 3.4,
-      "breadth": "30/32"
+      "breadth": "31/32"
+    },
+    {
+      "name": "半导体设备",
+      "group": "tech",
+      "change": 2.83,
+      "heat": 76,
+      "flow": 3.1,
+      "breadth": "25/25"
+    },
+    {
+      "name": "半导体概念",
+      "group": "tech",
+      "change": 2.22,
+      "heat": 86,
+      "flow": 112,
+      "breadth": "449/542"
+    },
+    {
+      "name": "第三代半导体",
+      "group": "tech",
+      "change": 2.15,
+      "heat": 85,
+      "flow": 20.1,
+      "breadth": "101/119"
+    },
+    {
+      "name": "保险新进",
+      "group": "finance",
+      "change": 1.81,
+      "heat": 82,
+      "flow": 79.1,
+      "breadth": "69/111"
     }
   ],
   "aShareBreadth": {
-    "rising": 4003,
-    "falling": 1010,
-    "flat": 146,
+    "rising": 3381,
+    "falling": 1584,
+    "flat": 194,
     "total": 5159
   },
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3663.72,
-      "change": 0.08,
+      "price": 3680.64,
+      "change": 0.46,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 11241.54,
-      "change": 0.86,
+      "price": 11389.74,
+      "change": 1.32,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -318,5 +318,5 @@
     "sectors": "fulfilled",
     "breadth": "fulfilled"
   },
-  "refreshedAt": "2026-11-10T08:21:21.659Z"
+  "refreshedAt": "2026-11-11T07:42:33.011Z"
 }
