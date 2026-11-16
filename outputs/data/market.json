@@ -9,9 +9,9 @@
       "unit": "美元/盎司",
       "color": "#d97706",
       "favorite": true,
-      "price": 3886.3,
-      "change": 0.03,
-      "source": "XAUS公开日频黄金现货",
+      "price": 3856.75,
+      "change": -0.81,
+      "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
     },
@@ -24,8 +24,8 @@
       "unit": "美元/盎司",
       "color": "#b7c4cf",
       "favorite": true,
-      "price": 48.65,
-      "change": -2.87,
+      "price": 47.38,
+      "change": -3.68,
       "source": "Gold-API公开现货报价",
       "delayed": true,
       "unavailable": false
@@ -263,22 +263,22 @@
   "aShareStatus": {
     "configured": false,
     "isTradingDay": null,
-    "date": "2026-11-15",
+    "date": "2026-11-16",
     "limited": false
   },
   "overview": {
     "shanghai": {
       "code": "s_sh000001",
       "name": "��ָ֤��",
-      "price": 3634.35,
-      "change": -0.59,
+      "price": 3602.57,
+      "change": -0.87,
       "source": "腾讯财经公开行情"
     },
     "shenzhen": {
       "code": "s_sz399001",
       "name": "��֤��ָ",
-      "price": 10968.79,
-      "change": -2.05,
+      "price": 10690.78,
+      "change": -2.53,
       "source": "腾讯财经公开行情"
     },
     "usdcny": null
@@ -315,8 +315,8 @@
     "history:copper:1Y": "fulfilled",
     "history:copper:2Y": "fulfilled",
     "overview": "fulfilled",
-    "sectors": "fulfilled",
-    "breadth": "fulfilled"
+    "sectors": "rejected",
+    "breadth": "rejected"
   },
-  "refreshedAt": "2026-11-15T07:47:14.812Z"
+  "refreshedAt": "2026-11-16T07:54:17.768Z"
 }
